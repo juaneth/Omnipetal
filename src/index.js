@@ -16,8 +16,13 @@ const createWindow = () => {
         minHeight: 720,
         title: "Omnipetal",
         icon: path.join(__dirname, "icon.ico"),
+        titleBarStyle: "hidden",
         autoHideMenuBar: true,
         frame: false,
+        titleBarOverlay: {
+            color: "#1f2937",
+            symbolColor: "#fff",
+        },
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

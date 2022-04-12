@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html >
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Omnipetal</title>
     <link rel="stylesheet" href="../index.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
+
 </head>
 
 
@@ -25,7 +28,31 @@
             <a href="../settings/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
         </div>
     </nav>
+    <div class="main-content grid place-items-center">
+        <div class="grid place-items-center">
+            <h1 class="text-xlg text-white p-3 pt-6 text-2xl" style="font-weight: 600;">Create Server</h1>
+
+            <p class="text-gray-400 p-5">Create a server with Vanilla, Fabric, Purpur and more</p>
+        </div>
+
+        <div class="bg-gray-800 max-w-xl rounded-lg text-middle">
+            <div class="">
+                <div class="bg-gray-800 m-5">
+                    <h1 class="text-white">Remote</h1>
+                    <form action="">
+                        <select class="" title="remotes" name="remotes" id="remotes" form="remoteform">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="app.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 </body>
 
 </html>
