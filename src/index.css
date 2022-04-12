@@ -1,6 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,500&display=swap');
 body,
 html {
     height: 100%;
     margin: 0%;
     padding: 0%;
+    /*overflow: hidden;*/
+}
+
+.window {
+    background-color: rgb(33, 36, 58);
+    height: 100%;
+    border-radius: 5px;
+}
+
+.topbar {
+    background-color: rgb(47, 53, 63);
+    -webkit-app-region: drag;
+    display: inline-grid;
+    width: 100vw;
+}
+
+.topbar-options {
+    -webkit-app-region: no-drag;
+}
+
+.topbar-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(160, 160, 160);
+    font-size: 12pt;
+    margin: 5px;
 }

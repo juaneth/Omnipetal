@@ -16,7 +16,7 @@ const createWindow = () => {
         icon: path.join(__dirname, "icon.ico"),
         autoHideMenuBar: true,
         frame: false,
-        transparent: true,
+        backgroundColor: '#212121',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
