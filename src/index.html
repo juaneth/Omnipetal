@@ -5,33 +5,45 @@
     <meta charset="UTF-8" />
     <title>Omnipetal</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="window">
-        <div class="topbar">
-            <h1 class="topbar-title">Omnipetal</h1>
+<body class="bg-gray-700">
+    <nav class="bg-gray-800 h-16 content-center flex items-center">
+        <img src="./icon.png" alt="Icon" style="max-width: 30px;" class="mx-5 draggable">
+
+        <div class="flex space-x-4" style="width: 100vw;">
+            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
+
+            <a href="../src/create-server/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Create Server</a>
+
+            <a href="../src/server-manager/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
+
+            <a href="../src/manage-remotes/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
+
+            <a href="../src/settings/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+
+            <div class="draggable p-4r" style="flex-grow: 1;"></div>
+        </div>
+    </nav>
+    <div class="main-content grid place-items-center">
+        <div class="grid place-items-center">
+            <h1 class="text-xlg text-white p-3 pt-6 text-2xl" style="font-weight: 600;">Omnipetal</h1>
+
+            <img src="../src/icon.png" alt="Icon" width="50px" height="50px">
+
+            <p class="text-gray-400 p-5">Minecraft Server Manager made with scale, simplicity, beauty and depth in mind</p>
         </div>
 
-        <div class="main">
-            <div class="main-content">
-                <div class="panel">
-                    <h1 class="title">Create Server</h1>
-
-                    <button>Create Server</button>
-                </div>
-
-                <div class="panel">
-                    <h1 class="title">Manage Servers</h1>
-                </div>
-
-                <div class="panel">
-                    <h1 class="title">Manage Remotes</h1>
-                </div>
-            </div>
+        <div class="bg-gray-800 max-w-lg inline-flex p-6 rounded-lg text-middle">
+            <button class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-3 m-3 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50">Create Server</button>
+            <button class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-3 m-3 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50">Manage Servers</button>
+            <button class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-3 m-3 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50">Manage Remotes</button>
         </div>
-
-        <script src="app.js"></script>
+    </div>
+    <script src="app.js"></script>
 </body>
+
+</html>
 
 </html>

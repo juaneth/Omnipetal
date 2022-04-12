@@ -5,16 +5,28 @@
     <meta charset="UTF-8" />
     <title>Omnipetal</title>
     <link rel="stylesheet" href="../index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="window">
-        <div class="topbar">
-            <h1 class="topbar-title">Omnipetal</h1>
+<body class="bg-gray-700">
+    <nav class="bg-gray-800 h-16 content-center flex items-center">
+        <img src="../icon.png" alt="Icon" style="max-width: 30px;" class="mx-5">
+
+        <div class="flex space-x-4">
+            <a href="../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
+
+            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Create Server</a>
+
+            <a href="../server-manager/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
+
+            <a href="../manage-remotes/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
+
+            <a href="../settings/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
         </div>
-
-
-    </div>
+    </nav>
+    <script src="app.js"></script>
 </body>
+
+</html>
 
 </html>
