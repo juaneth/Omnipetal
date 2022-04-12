@@ -6,4 +6,9 @@
 body {
     font-family: "Montserrat", sans-serif;
     user-select: none;
+    text-align: center;
+}
+
+html {
+    height: 100%;
 }
