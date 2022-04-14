@@ -18,7 +18,6 @@ function addRemote(remotename, remoteip, remoteport) {
 
         data.remotes.push(newRemote);
 
-        console.log(newRemote);
         fs.writeFileSync(
             `${getAppDataPath()}/omnipetal/config.json`,
             JSON.stringify(data)
@@ -28,11 +27,17 @@ function addRemote(remotename, remoteip, remoteport) {
 
 document.getElementById("add-remote").addEventListener("click", function() {
     addRemote(
-        `${document.getElementById("name").value.replace(/\s+/g, '-').toLowerCase()}`,
+        `${document
+      .getElementById("name")
+      .value.replace(/\s+/g, "-")
+      .toLowerCase()}`,
         `${document.getElementById("ip").value}`,
         `${document.getElementById("port").value}`
     );
 
+    document.getElementById("name").value = "";
+    document.getElementById("ip").value = "";
+    document.getElementById("port").value = "";
     const loader = document.getElementById("loader");
 
     loader.classList.add("visible");

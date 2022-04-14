@@ -12,7 +12,7 @@ const createWindow = () => {
     const mainWindow = new BrowserWindow({
         width: 1280,
         height: 720,
-        minWidth: 580,
+        minWidth: 800,
         minHeight: 720,
         title: "Omnipetal",
         icon: path.join(__dirname, "icon.ico"),

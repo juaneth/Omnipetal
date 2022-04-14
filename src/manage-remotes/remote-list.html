@@ -1,0 +1,61 @@
+<!DOCTYPE html >
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Omnipetal</title>
+    <link rel="stylesheet" href="../index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="./page-loader.css" />
+
+</head>
+
+<div id="loader" class="spinner">
+</div>
+
+<body class="bg-gray-700">
+    <nav class="bg-gray-800 h-16 content-center flex items-center">
+        <img src="../icon.png" alt="Icon" style="max-width: 30px;" class="mx-5">
+
+        <div class="flex space-x-4">
+            <a href="../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
+
+            <a href="../create-server/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Create Server</a>
+
+            <a href="../server-manager/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
+
+            <a href="./index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
+
+            <a href="../settings/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+        </div>
+    </nav>
+
+    <div class="main-content grid place-items-center">
+        <div class="grid place-items-center">
+            <h1 class="text-xlg text-white p-2 pt-6 text-2xl" style="font-weight: 600;">Saved Remotes</h1>
+
+            <p class="text-gray-400 p-2">Manage your saved remotes</p>
+        </div>
+
+        <div class="bg-gray-800 max-w-2xl rounded-lg text-middle bg-gray-800 m-4 mt-0 px-5 pb-3 pt-0">
+            <form>
+                <div class="grid grid-cols-3 gap-4 m-5 mb-0">
+
+                </div>
+            </form>
+        </div>
+
+
+
+        <button onclick="location.href='./index.html';" class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-4 mt-7 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50 ">Add a remote</button>
+    </div>
+
+    <script src="./create-remotes.js"></script>
+    <script src="./loader.js"></script>
+</body>
+
+</html>
+
+</html>
