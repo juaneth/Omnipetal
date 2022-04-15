@@ -35,10 +35,14 @@
                     }
                 },
                 {
-                    "name": "@electron-forge/maker-zip",
-                    "platforms": [
-                        "darwin"
-                    ]
+                    "name": "@electron-forge/maker-dmg",
+                    "config": {
+                        "background": "src/omnipetal.png",
+                        "icon": "src/icon.ico",
+                        "platforms": [
+                            "darwin"
+                        ]
+                    }
                 },
                 {
                     "name": "@electron-forge/maker-deb",
@@ -57,6 +61,7 @@
         "ping": "^0.4.1"
     },
     "devDependencies": {
+        "@electron-forge/maker-dmg": "^6.0.0-beta.63",
         "@electron-forge/cli": "^6.0.0-beta.63",
         "@electron-forge/maker-deb": "^6.0.0-beta.63",
         "@electron-forge/maker-rpm": "^6.0.0-beta.63",
