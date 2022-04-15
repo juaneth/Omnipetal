@@ -1,3 +1,5 @@
+const getAppDataPath = require("appdata-path");
+
 // Add remotes to remote list options
 let data = require(`${getAppDataPath()}/omnipetal/config.json`);
 

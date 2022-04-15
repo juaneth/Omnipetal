@@ -7,6 +7,7 @@
     "icon": "src/icon.ico",
     "scripts": {
         "start": "electron-forge start",
+        "dev": "electron-forge start -- dev",
         "package": "electron-forge package",
         "make": "electron-forge make",
         "publish": "electron-forge publish",
@@ -52,7 +53,8 @@
     },
     "dependencies": {
         "appdata-path": "^1.0.0",
-        "electron-squirrel-startup": "^1.0.0"
+        "electron-squirrel-startup": "^1.0.0",
+        "ping": "^0.4.1"
     },
     "devDependencies": {
         "@electron-forge/cli": "^6.0.0-beta.63",

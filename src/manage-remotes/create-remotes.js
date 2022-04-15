@@ -35,18 +35,26 @@ document.getElementById("add-remote").addEventListener("click", function() {
         `${document.getElementById("port").value}`
     );
 
-    document.getElementById("name").value = "";
-    document.getElementById("ip").value = "";
-    document.getElementById("port").value = "";
-    const loader = document.getElementById("loader");
+    if (
+        document.getElementById("name").value === "" ||
+        document.getElementById("ip").value === "" ||
+        document.getElementById("port").value === ""
+    ) {
+        return;
+    } else {
+        document.getElementById("name").value = "";
+        document.getElementById("ip").value = "";
+        document.getElementById("port").value = "";
+        const loader = document.getElementById("loader");
 
-    loader.classList.add("visible");
+        loader.classList.add("visible");
 
-    setTimeout(function() {
-        loader.classList.add("fadeOut");
         setTimeout(function() {
-            loader.classList.remove("fadeOut");
-            loader.classList.remove("visible");
+            loader.classList.add("fadeOut");
+            setTimeout(function() {
+                loader.classList.remove("fadeOut");
+                loader.classList.remove("visible");
+            }, 750);
         }, 750);
-    }, 750);
+    }
 });
