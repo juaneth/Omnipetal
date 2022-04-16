@@ -37,11 +37,20 @@
                 {
                     "name": "@electron-forge/maker-dmg",
                     "config": {
-                        "background": "src/omnipetal.png",
-                        "icon": "src/icon.ico",
+                        "icon": "src/icon.icns",
                         "platforms": [
                             "darwin"
-                        ]
+                        ],
+                        "overwrite": true,
+                        "name": "Omnipetal",
+                        "AdditionalDMGOptions": {
+                            "window": {
+                                "size": {
+                                    "height": 700,
+                                    "width": 500
+                                }
+                            }
+                        }
                     }
                 },
                 {
