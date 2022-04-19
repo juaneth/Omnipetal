@@ -1,7 +1,7 @@
 # Omnipetal (Client) <img src="https://user-images.githubusercontent.com/68202118/162853416-0ca7c63b-0d6d-4d28-9c5c-3f165bb31811.png" width="25" height="25">
 ## Minecraft Server Manager with Remote Managment and Docker integration
 
-<img src="https://user-images.githubusercontent.com/68202118/163295152-637cd263-a32b-43ca-a315-9402c8faf0d9.png" width="800">
+<img src="./src/omnipetal.png" width="800">
 
 ### For server daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
