@@ -5,10 +5,14 @@
 
 ### For server daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
+
+## What is it?
+Omnipetal is a client for creating Minecraft Servers remotely using docker. We have two components, a Client and a Daemon, this repository is for the client that connects to the Daemon. 
+
 ## Dev
 ### Getting started
 
-Firstly clone this repo and change directory into it: 
+Firstly check you have nodeJS and git installed and ready (run `node -v` if unsure) Then clone this repo and change directory into it: 
 ```
 git clone https://github.com/juaneth/Omnipetal.git
 cd Omnipetal

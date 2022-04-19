@@ -1,5 +1,5 @@
 const fs = require("fs");
-console.log(fs.readFileSync("./src/sign.txt", "utf8"));
+console.log(fs.readFileSync(__dirname + "/sign.txt", "utf8"));
 
 const getAppDataPath = require("appdata-path");
 
