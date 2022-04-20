@@ -72,4 +72,4 @@ Example:
 ```
 
 ## Support
-You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD)
+You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue
