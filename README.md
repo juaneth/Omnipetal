@@ -5,7 +5,7 @@
 
 ### For server daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
-<img src="./src/omnipetal.png" width="800">
+<img src="/src/omnipetal.png" width="800">
 
 
 ## What is it?
