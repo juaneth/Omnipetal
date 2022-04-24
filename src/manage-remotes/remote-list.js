@@ -8,8 +8,6 @@ let remoteList = document.getElementById("remotes");
 let saveButton = document.getElementById("save");
 
 data.remotes.forEach((obj) => {
-    let keys = Object.keys(obj);
-
     let option = document.createElement("option");
     option.text = obj.name;
     option.className = "text-center text-white transition-all";
@@ -20,11 +18,10 @@ data.remotes.forEach((obj) => {
 remoteList.addEventListener("change", function() {
     // Get specific remote in remote list
     data.remotes.forEach((obj) => {
-        let keys = Object.keys(obj);
-        if (keys[0] === remoteList.value) {
+        if (obj.name === remoteList.value) {
             // Fill out IP and Port fields
-            document.getElementById("ip").value = obj[keys[0]].ip;
-            document.getElementById("port").value = obj[keys[0]].port;
+            document.getElementById("ip").value = obj.ip;
+            document.getElementById("port").value = obj.port;
         }
     });
 });
@@ -45,8 +42,7 @@ window.addEventListener("load", function load() {
 saveButton.addEventListener("click", function() {
     // Get specific remote in remote list
     data.remotes.forEach((obj) => {
-        let keys = Object.keys(obj)
-        if (keys[0] === remoteList.value) {
+        if (obj.name === remoteList.value) {
             // Save changes to config json
             let newIp = document.getElementById("ip").value;
             let newPort = document.getElementById("port").value;
