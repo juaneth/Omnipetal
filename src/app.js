@@ -23,3 +23,10 @@ function createStore(path) {
 }
 
 createStore(`${getAppDataPath()}/omnipetal/config.json`);
+
+document.getElementById("joinDiscord").addEventListener("click", () => {
+    const open = require('open');
+
+    // opens the url in the default browser 
+    open('https://discord.gg/ufAX6VqcaD');
+});

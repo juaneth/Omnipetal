@@ -1931,11 +1931,6 @@
   "resolved" "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz"
   "version" "0.1.2"
 
-"jjg-ping@^1.0.3":
-  "integrity" "sha512-EwzIyFqqTSUd5p/ES73tYQ1i40J1GFaHV95CDUMOXYet1d1x6JhSu48j5UE9MAr8N8H1yTqtDWjh++SmGOUh2g=="
-  "resolved" "https://registry.npmjs.org/jjg-ping/-/jjg-ping-1.0.3.tgz"
-  "version" "1.0.3"
-
 "jsbn@~0.1.0":
   "integrity" "sha1-peZUwuWi3rXyAdls77yoDA7y9RM="
   "resolved" "https://registry.npmjs.org/jsbn/-/jsbn-0.1.1.tgz"
@@ -2462,7 +2457,7 @@
   dependencies:
     "mimic-fn" "^2.1.0"
 
-"open@^8.1.0":
+"open@^8.1.0", "open@^8.4.0":
   "integrity" "sha512-XgFPPM+B28FtCCgSb9I+s9szOC1vZRSwgWsRUA5ylIxRTgKozqjOCrVOqGsYABPYK5qnfqClxZTFBa8PKt2v6Q=="
   "resolved" "https://registry.npmjs.org/open/-/open-8.4.0.tgz"
   "version" "8.4.0"
