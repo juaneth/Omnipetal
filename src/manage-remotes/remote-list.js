@@ -47,18 +47,9 @@ saveButton.addEventListener("click", function() {
             let newIp = document.getElementById("ip").value;
             let newPort = document.getElementById("port").value;
 
-            var data = JSON.parse(
-                fs.readFileSync(`${getAppDataPath()}/omnipetal/config.json`)
-            );
-
-            let updatedRemote = {
-                name: remoteList.value,
-                ip: newIp,
-                port: newPort,
-
-            };
-
-            data.remotes.push(updatedRemote);
+            obj.name = remoteList.value;
+            obj.ip = newIp;
+            obj.port = newPort;
 
             fs.writeFileSync(
                 `${getAppDataPath()}/omnipetal/config.json`,
