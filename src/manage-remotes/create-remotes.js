@@ -10,10 +10,9 @@ function addRemote(remotename, remoteip, remoteport) {
         );
 
         let newRemote = {
-            [remotename]: {
-                ip: remoteip,
-                port: remoteport,
-            },
+            name: remotename,
+            ip: remoteip,
+            port: remoteport,
         };
 
         data.remotes.push(newRemote);

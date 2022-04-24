@@ -2,7 +2,7 @@
     "name": "omnipetal",
     "productName": "omnipetal",
     "version": "1.0.0",
-    "description": "My Electron application description",
+    "description": "Manage and create minecraft severs remotely using Docker",
     "main": "src/index.js",
     "icon": "src/icon.ico",
     "scripts": {
@@ -26,8 +26,7 @@
                 "executableName": "Omnipetal",
                 "icon": "src/icon.ico"
             },
-            "makers": [
-                {
+            "makers": [{
                     "name": "@electron-forge/maker-squirrel",
                     "config": {
                         "name": "Omnipetal",

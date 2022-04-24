@@ -11,10 +11,9 @@ function createStore(path) {
             "default-port": "2065",
         }, ],
         remotes: [{
-            "this-device": {
-                ip: "locahost",
-                port: "2065",
-            },
+            name: "this-device",
+            ip: "locahost",
+            port: "2065",
         }, ],
     };
 
