@@ -17,3 +17,48 @@ textarea:focus,
 input:focus {
     outline: none;
 }
+
+webkit-scrollbar-track {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#navbar {
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+::-webkit-scrollbar {
+    position: static;
+    top: 400px;
+    box-shadow: -18px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: rgb(31, 41, 55);
+    background: linear-gradient(180deg, rgba(31, 41, 55, 1) 0%, rgba(54, 62, 75, 1) 100%);
+    border-radius: 180px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(31, 41, 55);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(25, 28, 32) 100%);
+    border-radius: 180px;
+    transition: ease-in-out 200ms;
+    margin: 5px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: rgb(25, 27, 31);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.205) 0%, rgb(25, 28, 32) 100%);
+}

@@ -8,7 +8,7 @@ console.log(`Config:: ${getAppDataPath()}/omnipetal/config.json`);
 function createStore(path) {
     let defaultsettings = {
         settings: [{
-            "default-port": "2065",
+            "defaultPort": "2065",
         }, ],
         remotes: [{
             name: "this-device",
