@@ -41,7 +41,6 @@ webkit-scrollbar-track {
  ::-webkit-scrollbar-track {
     background: rgb(31, 41, 55);
     background: linear-gradient(180deg, rgba(31, 41, 55, 1) 0%, rgba(54, 62, 75, 1) 100%);
-    border-radius: 180px;
 }
 
 
