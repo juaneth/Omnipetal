@@ -58,3 +58,6 @@ saveButton.addEventListener("click", function() {
         }
     });
 });
+
+document.getElementById('port').placeholder = data.settings[0].defaultPort;
+console.log(data.settings[0].defaultPort);
