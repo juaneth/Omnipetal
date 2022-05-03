@@ -18,3 +18,7 @@ function savePort() {
 document.getElementById('change-port').addEventListener('click', function() {
     savePort()
 })
+
+var pjson = require('../../package.json');
+console.log(pjson.version);
+document.getElementById('version').innerHTML = pjson.version;
