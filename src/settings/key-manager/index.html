@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Omnipetal</title>
+    <link rel="stylesheet" href="../../index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-700">
+    <div id="macOS-titlebar"></div>
+    <nav class="bg-gray-800 h-16 content-center flex items-center" id="navbar">
+        <img src="../../icon.png" alt="Icon" style="max-width: 30px;" class="mx-5">
+
+        <div class="flex space-x-4">
+            <a href="../../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
+
+            <a href="../../create-server/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Create Server</a>
+
+            <a href="../../server-manager/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
+
+            <a href="../../manage-remotes/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
+
+            <a href="../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+        </div>
+    </nav>
+
+    <div class="main-content grid place-items-center">
+        <div class="grid place-items-center">
+            <h1 class="text-xlg text-white p-2 pt-6 text-2xl" style="font-weight: 600;">Key Manager</h1>
+
+            <p class="text-gray-400 p-2">Manage your SSH/SFTP keys</p>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg text-middle bg-gray-800 m-4 mt-0 px-5 pb-3 pt-0">
+            <form>
+                <h1 class="text-white m-3 mt-5 text-lg">Keys</h1>
+                <div class="grid grid-cols-1 gap-4 m-5 mb-0">
+                    <div class="mb-3 p-3">
+                        <select id="key-select" class="text-center p-2 w-64 m-2 mt-0 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl"></select>
+                    </div>
+                </div>
+            </form>
+            <button id="change-port" class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-4 m-3 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50 ">Change Port</button>
+        </div>
+    </div>
+    <script src="../../macOS.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
+
+</html>

@@ -1,7 +1,7 @@
 {
     "name": "omnipetal",
     "productName": "omnipetal",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "description": "Manage and create minecraft severs remotely using Docker",
     "main": "src/index.js",
     "icon": "src/icon.ico",
@@ -67,7 +67,8 @@
     "dependencies": {
         "appdata-path": "^1.0.0",
         "electron-squirrel-startup": "^1.0.0",
-        "open": "^8.4.0"
+        "open": "^8.4.0",
+        "update-electron-app": "^2.0.1"
     },
     "devDependencies": {
         "@electron-forge/cli": "^6.0.0-beta.63",

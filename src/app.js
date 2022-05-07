@@ -15,6 +15,9 @@ function createStore(path) {
             ip: "locahost",
             port: "2065",
         }, ],
+        keys: [{
+
+        }, ],
     };
 
     if (!fs.existsSync(path)) {

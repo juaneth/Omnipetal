@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
+require('update-electron-app')({
+    repo: 'juaneth/omnipetal',
+})
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
