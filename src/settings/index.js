@@ -20,5 +20,5 @@ document.getElementById('change-port').addEventListener('click', function() {
 })
 
 var pjson = require('../../package.json');
-console.log(pjson.version);
+
 document.getElementById('version').innerHTML = pjson.version;

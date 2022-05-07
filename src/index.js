@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Tray, Menu } = require("electron");
 const path = require("path");
 require('update-electron-app')({
     repo: 'juaneth/omnipetal',
@@ -35,9 +35,73 @@ const createWindow = () => {
 
     // and load the index.html of the app.
     mainWindow.loadFile(path.join(__dirname, "index.html"));
+
     if (process.argv.includes("dev")) {
         mainWindow.webContents.openDevTools()
     }
+
+    let tray = null
+    app.whenReady().then(() => {
+        tray = new Tray('./src/icon.png')
+        const contextMenu = Menu.buildFromTemplate([{
+                label: 'Manage Servers',
+                click: () => {
+                    app.focus()
+                    mainWindow.loadFile(path.join(__dirname, "/server-manager/index.html"));
+                }
+            },
+            {
+                label: 'Manage Remotes',
+                click: () => {
+                    app.focus()
+                    mainWindow.loadFile(path.join(__dirname, "/manage-remotes/index.html"));
+                }
+            },
+            {
+                label: 'Settings',
+                click: () => {
+                    app.focus()
+                    mainWindow.loadFile(path.join(__dirname, "/settings/index.html"));
+                }
+            },
+            { type: 'separator', label: ' ' },
+            {
+                label: 'Hide',
+                click: () => {
+                    mainWindow.hide()
+                }
+            },
+            {
+                label: 'Show',
+                click: () => {
+                    mainWindow.show()
+                }
+            },
+            {
+                label: 'Close',
+                click: () => {
+                    app.exit()
+                }
+            },
+            { type: 'separator', label: ' ' },
+            {
+                label: 'Toggle Dev Tools',
+                click: () => {
+                    if (mainWindow.webContents.isDevToolsOpened()) {
+                        mainWindow.webContents.closeDevTools()
+                    } else {
+                        mainWindow.webContents.openDevTools()
+                    }
+                }
+            },
+        ])
+        tray.setToolTip('Omnipetal')
+        tray.setContextMenu(contextMenu)
+
+        app.on('quit', () => {
+            tray.destroy()
+        })
+    })
 };
 
 // This method will be called when Electron has finished
