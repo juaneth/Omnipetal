@@ -42,7 +42,7 @@ const createWindow = () => {
 
     let tray = null
     app.whenReady().then(() => {
-        tray = new Tray('./src/icon.png')
+        tray = new Tray(path.join(__dirname, "icon.ico"))
         const contextMenu = Menu.buildFromTemplate([{
                 label: 'Manage Servers',
                 click: () => {
