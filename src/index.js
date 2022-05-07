@@ -21,6 +21,7 @@ const createWindow = () => {
         title: "Omnipetal",
         icon: path.join(__dirname, "icon.ico"),
         titleBarStyle: "hidden",
+        trafficLightPosition: "topRight",
         autoHideMenuBar: true,
         titleBarOverlay: {
             color: "#1f2937",
