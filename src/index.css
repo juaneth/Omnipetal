@@ -4,7 +4,8 @@
 }
 
 .topbar {
-    display: sticky;
+    position: sticky;
+    z-index: 999;
 }
 
 body {

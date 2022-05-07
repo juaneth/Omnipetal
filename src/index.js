@@ -20,7 +20,7 @@ const createWindow = () => {
         minWidth: 800,
         minHeight: 720,
         title: "Omnipetal",
-        icon: path.join(__dirname, "icon.ico"),
+        icon: path.join(__dirname, "icon.png"),
         titleBarStyle: "hidden",
         autoHideMenuBar: true,
         titleBarOverlay: {
