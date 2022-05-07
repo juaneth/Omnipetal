@@ -10,4 +10,5 @@ if (os.platform() == "darwin") {
     titlebar.classList.add('border-solid')
     titlebar.classList.add('border-b')
     titlebar.classList.add('border-slate-600')
+    titlebar.classList.add('topbar')
 }

@@ -3,10 +3,15 @@
     -webkit-app-region: drag;
 }
 
+.topbar {
+    display: sticky;
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     user-select: none;
     text-align: center;
+    overflow-x: hidden;
 }
 
 html {

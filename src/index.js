@@ -1,4 +1,5 @@
 const { app, BrowserWindow, Tray, Menu } = require("electron");
+const nativeImage = require('electron').nativeImage
 const path = require("path");
 require('update-electron-app')({
     repo: 'juaneth/omnipetal',
@@ -43,7 +44,10 @@ const createWindow = () => {
 
     let tray = null
     app.whenReady().then(() => {
-        tray = new Tray(path.join(__dirname, "icon.ico"))
+        const image = nativeImage.createFromPath(
+            path.join(__dirname, "icon.png")
+        );
+        tray = new Tray(image.resize({ width: 16, height: 16 }))
         const contextMenu = Menu.buildFromTemplate([{
                 label: 'Manage Servers',
                 click: () => {
