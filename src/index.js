@@ -60,6 +60,14 @@ const createWindow = () => {
         );
         tray = new Tray(image.resize({ width: 16, height: 16 }))
         const contextMenu = Menu.buildFromTemplate([{
+                label: 'Create a Server',
+                click: () => {
+                    mainWindow.show()
+                    app.focus()
+                    mainWindow.loadFile(path.join(__dirname, "/create-server/index.html"));
+                }
+            },
+            {
                 label: 'Manage Servers',
                 click: () => {
                     mainWindow.show()
