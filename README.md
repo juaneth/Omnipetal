@@ -1,12 +1,9 @@
 # Omnipetal (Client) <img src="https://user-images.githubusercontent.com/68202118/162853416-0ca7c63b-0d6d-4d28-9c5c-3f165bb31811.png" width="25" height="25"> [![Discord Link](https://img.shields.io/badge/-Server-5865F2?logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/ufAX6VqcaD)
 ## Minecraft Server Manager with Remote Managment and Docker integration - By Juan + Jamie
 
-
-
 ### For server daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
 <img src="/src/omnipetal.png" width="800">
-
 
 ## What is it?
 Omnipetal is a client for creating Minecraft Servers remotely using docker. We have two components, a Client and a Daemon, this repository is for the client that connects to the Daemon. 
@@ -95,4 +92,4 @@ if (!process.argv.includes("dev")) {
 ```
 
 ## Support
-You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue
+You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue. We currently officially support Windows only, this means it is possible for it to run on Linux and MacOS but we don't officially support it and we cannot offer support for tickets using Omnipetal on other Platforms or Downloads. If you want Omnipetal on these Platforms then you need to run the Electron Forge CLI and build it yourself
