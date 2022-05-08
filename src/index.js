@@ -22,7 +22,6 @@ const createWindow = () => {
         title: "Omnipetal",
         icon: path.join(__dirname, "icon.png"),
         titleBarStyle: "hidden",
-        trafficLightPosition: "topRight",
         autoHideMenuBar: true,
         titleBarOverlay: {
             color: "#1f2937",
@@ -51,6 +50,7 @@ const createWindow = () => {
         const contextMenu = Menu.buildFromTemplate([{
                 label: 'Manage Servers',
                 click: () => {
+                    mainWindow.show()
                     app.focus()
                     mainWindow.loadFile(path.join(__dirname, "/server-manager/index.html"));
                 }
@@ -58,6 +58,7 @@ const createWindow = () => {
             {
                 label: 'Manage Remotes',
                 click: () => {
+                    mainWindow.show()
                     app.focus()
                     mainWindow.loadFile(path.join(__dirname, "/manage-remotes/index.html"));
                 }
@@ -65,6 +66,7 @@ const createWindow = () => {
             {
                 label: 'Settings',
                 click: () => {
+                    mainWindow.show()
                     app.focus()
                     mainWindow.loadFile(path.join(__dirname, "/settings/index.html"));
                 }
