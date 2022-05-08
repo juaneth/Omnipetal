@@ -92,4 +92,4 @@ if (!process.argv.includes("dev")) {
 ```
 
 ## Support
-You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue. We currently officially support Windows only, this means it is possible for it to run on Linux and MacOS but we don't officially support it and we cannot offer support for tickets using Omnipetal on other Platforms or Downloads. If you want Omnipetal on these Platforms then you need to run the Electron Forge CLI and build it yourself
+You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue. We currently officially support Windows only, this means it is possible for it to run on Linux and MacOS but we don't officially support it and we cannot offer support for tickets using Omnipetal on other Platforms. If you want Omnipetal on these Platforms then you need to run the Electron Forge CLI and build it yourself as we don't build for these platforms
