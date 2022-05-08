@@ -2,6 +2,7 @@ const { app, BrowserWindow, Tray, Menu, autoUpdater } = require("electron");
 const nativeImage = require('electron').nativeImage
 const path = require("path");
 
+// Auto Updates
 const server = 'https://update.electronjs.org'
 const feed = `${server}/juaneth/omnipetal/${process.platform}-${process.arch}/${app.getVersion()}`
 
@@ -47,10 +48,11 @@ const createWindow = () => {
     // and load the index.html of the app.
     mainWindow.loadFile(path.join(__dirname, "index.html"));
 
+    // If running as debug, open the DevTools
     if (process.argv.includes("dev")) {
         mainWindow.webContents.openDevTools()
     }
-
+    // Setup the tray icon
     let tray = null
     app.whenReady().then(() => {
         const image = nativeImage.createFromPath(
@@ -115,6 +117,7 @@ const createWindow = () => {
         tray.setToolTip('Omnipetal')
         tray.setContextMenu(contextMenu)
 
+        // When the app is closed, destroy the tray
         app.on('quit', () => {
             tray.destroy()
         })
