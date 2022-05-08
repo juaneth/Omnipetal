@@ -21,7 +21,7 @@ cd Omnipetal
 ```
 Then from inside the folder run `npm i` to install all dependecies (Electron, Electron Forge etc.) and it should all be great from there!
 
-Then to start Omnipetal just run `npm run start` and to debug just run `npm run dev`
+Then to start Omnipetal just run `npm run dev`, DO NOT RUN `npm start` OR `npm run start` This will auto update and crash!
 
 ### Build
 To build Omnipetal just run `npm run make` and this wll put the build in `./out/make/[Platform]/`
@@ -69,6 +69,29 @@ Example:
             ]
         }
     },
+```
+### Auto Updates
+To configure auto-updates you can change the settings at the top of `./src/index.js`. Change [GITHUB USER] and [GITHUB REPO] to your GitHub Username and GitHub Repository Name
+
+Example: 
+```
+const { app, BrowserWindow, Tray, Menu, autoUpdater } = require("electron");
+const nativeImage = require('electron').nativeImage
+const path = require("path");
+
+// Auto Updates
+const server = 'https://update.electronjs.org'
+const feed = `${server}/[GITHUB USER (juaneth)]/[GITHUB REPO (omnipetal)]/${process.platform}-${process.arch}/${app.getVersion()}`
+
+if (!process.argv.includes("dev")) {
+    autoUpdater.setFeedURL(feed)
+
+    autoUpdater.checkForUpdates()
+
+    setInterval(() => {
+        autoUpdater.checkForUpdates()
+    }, 10 * 60 * 1000)
+}
 ```
 
 ## Support
