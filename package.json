@@ -1,7 +1,7 @@
 {
     "name": "omnipetal",
     "productName": "omnipetal",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "Manage and create minecraft severs remotely using Docker",
     "main": "src/index.js",
     "icon": "src/icon.ico",
@@ -13,7 +13,7 @@
         "start": "electron-forge start",
         "dev": "electron-forge start -- dev",
         "package": "electron-forge package",
-        "make": "electron-forge make",
+        "make": "electron-forge make --platform win32&&electron-forge make --platform linux",
         "publish": "electron-forge publish",
         "lint": "echo \"No linting configured\""
     },
