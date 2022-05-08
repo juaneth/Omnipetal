@@ -13,7 +13,7 @@ if (!process.argv.includes("dev")) {
 
     setInterval(() => {
         autoUpdater.checkForUpdates()
-    }, 10 * 60 * 1000)
+    }, 300000)
 }
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
