@@ -1,9 +1,19 @@
-const { app, BrowserWindow, Tray, Menu } = require("electron");
+const { app, BrowserWindow, Tray, Menu, autoUpdater } = require("electron");
 const nativeImage = require('electron').nativeImage
 const path = require("path");
-require('update-electron-app')({
-    repo: 'juaneth/omnipetal',
-})
+
+const server = 'https://update.electronjs.org'
+const feed = `${server}/juaneth/omnipetal/${process.platform}-${process.arch}/${app.getVersion()}`
+
+if (!process.argv.includes("dev")) {
+    autoUpdater.setFeedURL(feed)
+
+    autoUpdater.checkForUpdates()
+
+    setInterval(() => {
+        autoUpdater.checkForUpdates()
+    }, 10 * 60 * 1000)
+}
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
