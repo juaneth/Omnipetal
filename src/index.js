@@ -1,20 +1,6 @@
-const { app, BrowserWindow, Tray, Menu, autoUpdater } = require("electron");
+const { app, BrowserWindow, Tray, Menu, autoUpdater, dialog } = require("electron");
 const nativeImage = require('electron').nativeImage
 const path = require("path");
-
-// Auto Updates
-const server = 'https://update.electronjs.org'
-const feed = `${server}/juaneth/omnipetal/${process.platform}-${process.arch}/${app.getVersion()}`
-
-if (!process.argv.includes("dev")) {
-    autoUpdater.setFeedURL(feed)
-
-    autoUpdater.checkForUpdates()
-
-    setInterval(() => {
-        autoUpdater.checkForUpdates()
-    }, 300000)
-}
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -55,6 +41,32 @@ const createWindow = () => {
     // Setup the tray icon
     let tray = null
     app.whenReady().then(() => {
+        // Auto Updates
+
+        if (!process.argv.includes("dev")) {
+            if (process.platform === "win32") {
+                const server = 'https://update.electronjs.org'
+                const feed = `${server}/juaneth/omnipetal/${process.platform}-${process.arch}/${app.getVersion()}`
+
+                autoUpdater.setFeedURL(feed)
+
+                autoUpdater.checkForUpdates()
+
+                setInterval(() => {
+                    autoUpdater.checkForUpdates()
+                }, 300000)
+            } else {
+                setTimeout(() => {
+                    dialog.showMessageBox({
+                        type: "warning",
+                        title: "Omnipetal",
+                        message: "❤️ Omnipetal is not supported for your platform, some features may not work, Windows is our recommended platform ❤️.",
+                    });
+                }, 2000);
+            }
+        }
+
+
         const image = nativeImage.createFromPath(
             path.join(__dirname, "icon.png")
         );
@@ -120,7 +132,7 @@ const createWindow = () => {
                         mainWindow.webContents.openDevTools()
                     }
                 }
-            },
+            }
         ])
         tray.setToolTip('Omnipetal')
         tray.setContextMenu(contextMenu)
@@ -153,6 +165,3 @@ app.on("activate", () => {
         createWindow();
     }
 });
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
