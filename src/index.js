@@ -54,7 +54,7 @@ const createWindow = () => {
 
                 setInterval(() => {
                     autoUpdater.checkForUpdates()
-                }, 300000)
+                }, 30000)
 
                 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
                     const dialogOpts = {
@@ -155,6 +155,14 @@ const createWindow = () => {
         ])
         tray.setToolTip('Omnipetal')
         tray.setContextMenu(contextMenu)
+
+        tray.on('click', () => {
+            if (mainWindow.isVisible()) {
+                mainWindow.hide()
+            } else {
+                mainWindow.show()
+            }
+        })
 
         // When the app is closed, destroy the tray
         app.on('quit', () => {
