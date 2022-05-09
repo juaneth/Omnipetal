@@ -55,6 +55,25 @@ const createWindow = () => {
                 setInterval(() => {
                     autoUpdater.checkForUpdates()
                 }, 300000)
+
+                autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+                    const dialogOpts = {
+                        type: 'info',
+                        buttons: ['Restart', 'Later'],
+                        title: 'Omnipetal Update',
+                        message: process.platform === 'win32' ? releaseNotes : releaseName,
+                        detail: 'A new version of Omnipetal has been downloaded. Restart to apply the update'
+                    }
+
+                    dialog.showMessageBox(dialogOpts).then((returnValue) => {
+                        if (returnValue.response === 0) autoUpdater.quitAndInstall()
+                    })
+                })
+
+                autoUpdater.on('error', message => {
+                    console.error('There was a problem updating Omnipetal')
+                    console.error(message)
+                })
             } else {
                 setTimeout(() => {
                     dialog.showMessageBox({
