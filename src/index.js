@@ -20,6 +20,7 @@ const createWindow = () => {
         icon: path.join(__dirname, "icon.png"),
         titleBarStyle: "hidden",
         autoHideMenuBar: true,
+        backgroundColor: '#fff',
         titleBarOverlay: {
             color: "#1f2937",
             symbolColor: "#fff",
