@@ -38,6 +38,7 @@ const createWindow = () => {
     if (process.argv.includes("dev")) {
         mainWindow.webContents.openDevTools()
     }
+
     // Setup the tray icon
     let tray = null
     app.whenReady().then(() => {
