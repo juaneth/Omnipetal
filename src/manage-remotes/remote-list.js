@@ -20,6 +20,7 @@ remoteList.addEventListener("change", function() {
     data.remotes.forEach((obj) => {
         if (obj.name === remoteList.value) {
             // Fill out IP and Port fields
+            document.getElementById("name").value = obj.name;
             document.getElementById("ip").value = obj.ip;
             document.getElementById("port").value = obj.port;
         }
@@ -31,7 +32,8 @@ window.addEventListener("load", function load() {
     // Get specific remote in remote list
     data.remotes.forEach((obj) => {
         if (obj.name === remoteList.value) {
-            // Fill out IP and Port fields
+            // Fill out IP, Port and name fields
+            document.getElementById("name").value = obj.name;
             document.getElementById("ip").value = obj.ip;
             document.getElementById("port").value = obj.port;
         }
@@ -44,10 +46,11 @@ saveButton.addEventListener("click", function() {
     data.remotes.forEach((obj) => {
         if (obj.name === remoteList.value) {
             // Save changes to config json
+            let newName = document.getElementById("name").value;
             let newIp = document.getElementById("ip").value;
             let newPort = document.getElementById("port").value;
 
-            obj.name = remoteList.value;
+            obj.name = newName;
             obj.ip = newIp;
             obj.port = newPort;
 
@@ -57,7 +60,8 @@ saveButton.addEventListener("click", function() {
             );
         }
     });
+
+    location.reload()
 });
 
 document.getElementById('port').placeholder = data.settings[0].defaultPort;
-console.log(data.settings[0].defaultPort);

@@ -1,12 +1,23 @@
 const axios = require('axios');
 
-function create(ip, port, passkey) {
-    axios.post(`http://${ip}:${port}/create-server?passkey=${passkey}`).then(response => {
-            console.log(response.data);
+module.exports = {
+    getAllVersions: function(ip, port, passkey, software) {
+        return new Promise((resolve, reject) => {
+            axios.get(`http://${ip}:${port}/getVersionList?passkey=${passkey}&software=${software}`).then(response => {
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         })
-        .catch(error => {
-            console.log(error);
-        });
-}
+    },
 
-create('127.0.0.1', '2065', 'debug');
+    create: function(ip, port, passkey) {
+        axios.post(`http://${ip}:${port}/create-server?passkey=${passkey}`).then(response => {
+                return response.data
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    },
+}

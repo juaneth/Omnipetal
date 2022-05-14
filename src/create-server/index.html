@@ -36,21 +36,32 @@
             <p class="text-gray-400 p-2">Create a server with Vanilla, Fabric, Purpur and more</p>
         </div>
 
-        <div class="bg-gray-800 max-w-xl rounded-lg text-middle">
-            <div class="bg-gray-800 m-5">
-                <h1 class="text-white">Remote</h1>
-                <form class="text-center">
-                    <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="remotes" form="remoteform">
+        <div class="bg-gray-800 max-w-xl rounded-lg text-middle p-5">
+            <h1 class="text-white">Remote</h1>
+            <form class="text-center">
+                <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="remotes">
+                    <option value="" selected disabled hidden class="text-gray-400">Select Remote</option>
                         </select>
-                </form>
-                <p class="text-gray-500 p-2">Make sure to add a remote before trying to create a server!</p>
+            </form>
+            <p class="text-gray-500 p-2">Make sure to add a remote before trying to create a server!</p>
+        </div>
 
-                <h1 class="text-white">Software</h1>
-                <form class="text-center">
-                    <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="remotes" form="remoteform">
-                        </select>
-                </form>
-            </div>
+        <div class="bg-gray-800 max-w-xl rounded-lg text-middle mt-6 p-5">
+            <h1 class="text-white">Software</h1>
+            <form class="text-center mb-5">
+                <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="software">
+                            <option>Vanilla<z/option>
+                            <option>Paper</option>
+                            <option>Other</option>
+                            </select>
+            </form>
+
+            <h1 class="text-white">Versions</h1>
+            <form class="text-center">
+                <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="versions">
+
+                </select>
+            </form>
         </div>
     </div>
     <script src="create-server.js"></script>
