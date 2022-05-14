@@ -16,14 +16,18 @@ data.remotes.forEach((obj) => {
 });
 
 remoteList.addEventListener("change", () => {
-    api.getAllVersions("localhost", "2065", "debug", "vanilla").then((versions) => {
-        versions.forEach((obj) => {
-            let version = document.createElement("option");
-            console.log(obj.id)
-            version.text = obj.id;
-            version.className = "text-center text-white transition-all";
-            versionList.appendChild(version);
-        })
+    data.remotes.forEach((obj) => {
+        if (remoteList.value == obj.name) {
+            api.getAllVersions(obj.ip, obj.port, "debug", "vanilla").then((versions) => {
+                versions.forEach((obj) => {
+                    let version = document.createElement("option");
+                    version.text = obj.id;
+                    version.className = "text-center text-white transition-all";
+                    versionList.appendChild(version);
+                })
+            })
+        };
+
     })
 
     console.log(remoteList.value);
