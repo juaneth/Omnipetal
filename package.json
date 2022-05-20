@@ -12,6 +12,7 @@
     "scripts": {
         "start": "electron-forge start",
         "dev": "electron-forge start -- dev",
+        "release": "node gh-publish.js",
         "package": "electron-forge package",
         "make": "electron-forge make",
         "publish": "electron-forge publish",
@@ -30,7 +31,8 @@
                 "executableName": "Omnipetal",
                 "icon": "src/icon.ico"
             },
-            "makers": [{
+            "makers": [
+                {
                     "name": "@electron-forge/maker-squirrel",
                     "config": {
                         "name": "Omnipetal",
@@ -73,6 +75,7 @@
         "axios": "^0.27.2",
         "electron-squirrel-startup": "^1.0.0",
         "open": "^8.4.0",
+        "shelljs": "^0.8.5",
         "update-electron-app": "^2.0.1"
     },
     "devDependencies": {
