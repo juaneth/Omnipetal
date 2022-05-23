@@ -17,10 +17,10 @@
 
 <body class="bg-gray-700">
     <div id="macOS-titlebar"></div>
-    <nav class="bg-gray-800 h-16 content-center flex items-center">
+    <nav class="bg-gray-800 h-16 content-center flex items-center" id="navbar">
         <img src="../icon.png" alt="Icon" style="max-width: 30px;" class="mx-5">
 
-        <div class="flex space-x-4">
+        <div class="flex space-x-4" style="width: 100vw;">
             <a href="../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
 
             <a href="../create-server/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Create Server</a>
@@ -30,6 +30,8 @@
             <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
 
             <a href="../settings/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+
+            <div class="draggable p-4r" style="flex-grow: 1;"></div>
         </div>
     </nav>
 
