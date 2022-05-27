@@ -41,6 +41,8 @@ softwareList.addEventListener("change", (e) => {
 remoteList.addEventListener("change", () => {
     versionList.innerText = null;
     remoteList.classList.remove("text-gray-500");
+    document.getElementById("settings").classList.remove("hidden");
+    document.getElementById("settings").classList.add("fade-in");
 
     data.remotes.forEach((obj) => {
         if (remoteList.value == obj.name) {

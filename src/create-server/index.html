@@ -36,7 +36,7 @@
         <div class="grid place-items-center">
             <h1 class="text-xlg text-white p-2 pt-6 text-2xl" style="font-weight: 600;">Create Server</h1>
 
-            <p class="text-gray-400 p-2">Create a server with Vanilla, Fabric, Purpur and more</p>
+            <p class="text-gray-400 p-2">Create a server with Vanilla, Paper, Purpur and more</p>
         </div>
 
         <div class="bg-gray-800 max-w-xl rounded-lg text-middle p-5">
@@ -49,21 +49,27 @@
             <p class="text-gray-500 p-2">Make sure to add a remote before trying to create a server!</p>
         </div>
 
-        <div class="bg-gray-800 max-w-xl rounded-lg text-middle mt-6 p-5">
+        <div class="bg-gray-800 max-w-xl rounded-lg text-middle mt-6 p-5 hidden" id="settings">
             <h1 class="text-white">Software</h1>
             <form class="text-center mb-5">
                 <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="software">
                             <option value="vanilla">Vanilla</option>
                             <option value="paper">Paper</option>
-                            <option value="other">Other</option>
+                            <option value="purpur">Purpur</option>
+                            <option value="other">Other (upload server.jar)</option>
                 </select>
             </form>
 
             <h1 class="text-white">Versions</h1>
-            <form class="text-center">
+            <form class="text-center mb-5">
                 <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="versions">
 
                 </select>
+            </form>
+
+            <h1 class="text-white">Name</h1>
+            <form class="text-center">
+                <input type="text" class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="name" placeholder="My Minecraft Sever">
             </form>
         </div>
     </div>
