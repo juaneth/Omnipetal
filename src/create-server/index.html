@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./scrollbar-custom.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
-
 </head>
 
 
@@ -32,7 +31,7 @@
             <div class="draggable p-4r" style="flex-grow: 1;"></div>
         </div>
     </nav>
-    <div class="main-content grid place-items-center">
+    <div class="main-content grid place-items-center text-white">
         <div class="grid place-items-center">
             <h1 class="text-xlg text-white p-2 pt-6 text-2xl" style="font-weight: 600;">Create Server</h1>
 
@@ -46,10 +45,23 @@
                     <option value="" selected disabled hidden class="text-gray-400">Select Remote</option>
                         </select>
             </form>
+
+            <div class="bg-green-600 border-2 border-green-800 rounded-lg text-center shadow-lg shadow-green-500/50 m-3 hidden" id="status-online">
+                <h1 class="m-4">API Alive</h1>
+            </div>
+
+            <div class="bg-red-500 border-2 border-red-700 rounded-lg text-center shadow-lg shadow-red-500/50 m-3 hidden" id="status-offline">
+                <h1 class="m-4">API Offline</h1>
+            </div>
             <p class="text-gray-500 p-2">Make sure to add a remote before trying to create a server!</p>
         </div>
 
-        <div class="bg-gray-800 max-w-xl rounded-lg text-middle mt-6 p-5 hidden" id="settings">
+        <div class="bg-gray-800 max-w-xl rounded-lg text-middle m-6 p-5 hidden max-w-lg" id="settings">
+            <h1 class="text-white">Name</h1>
+            <form class="text-center mb-5">
+                <input type="text" class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="name" placeholder="My Minecraft Sever">
+            </form>
+
             <h1 class="text-white">Software</h1>
             <form class="text-center mb-5">
                 <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="software">
@@ -61,16 +73,14 @@
             </form>
 
             <h1 class="text-white">Versions</h1>
-            <form class="text-center mb-5">
+            <form class="text-center">
                 <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="versions">
 
                 </select>
             </form>
 
-            <h1 class="text-white">Name</h1>
-            <form class="text-center">
-                <input type="text" class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="name" placeholder="My Minecraft Sever">
-            </form>
+            <button class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-4 mt-7 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50 ">Create Server</button>
+            <p class="text-gray-500 p-2 mt-4">Ensure both this device and Remote are on stable internet connections and power sources before starting as any interuption will cancel the download and possibly corrupt the installation</p>
         </div>
     </div>
     <script src="create-server.js"></script>
