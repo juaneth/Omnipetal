@@ -12,12 +12,14 @@ module.exports = {
         })
     },
 
-    create: function(ip, port, passkey) {
-        axios.post(`http://${ip}:${port}/create-server?passkey=${passkey}`).then(response => {
-                return response.data
-            })
-            .catch(error => {
-                console.log(error);
-            });
+    createServer: function(ip, port, passkey) {
+        return new Promise((resolve, reject) => {
+            axios.post(`http://${ip}:${port}/create-server?passkey=${passkey}`).then(response => {
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    reject(error);
+                });
+        })
     },
 }

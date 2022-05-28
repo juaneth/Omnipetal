@@ -7,6 +7,8 @@ let remoteList = document.getElementById("remotes");
 let softwareList = document.getElementById("software");
 let versionList = document.getElementById("versions");
 
+let createServer = document.getElementById("create");
+
 const api = require("../api.js");
 
 console.log(remoteList.innerHTML)
@@ -73,4 +75,16 @@ remoteList.addEventListener("change", () => {
     })
 
     console.log(remoteList.value);
+})
+
+createServer.addEventListener("click", () => {
+    data.remotes.forEach((obj) => {
+        if (remoteList.value == obj.name) {
+            api.createServer(obj.ip, obj.port, "debug").then((data) => {
+                console.log(data);
+            }).catch(error => {
+                console.log(error)
+            })
+        };
+    })
 })
