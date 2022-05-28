@@ -4,6 +4,8 @@
 ### For server daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
 <img src="/src/omnipetal.png" width="800">
+<img src="https://user-images.githubusercontent.com/68202118/170801817-c02ba93e-05b2-4eaf-b330-451444eb98a6.png" width="800">
+
 
 ## What is it?
 Omnipetal is a client for creating Minecraft Servers remotely using docker. We have two components, a Client and a Daemon, this repository is for the client that connects to the Daemon. 
