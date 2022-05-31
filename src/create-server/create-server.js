@@ -11,8 +11,6 @@ let createServer = document.getElementById("create");
 
 const api = require("../api.js");
 
-console.log(remoteList.innerHTML)
-
 remoteList.classList.add("text-gray-500");
 
 data.remotes.forEach((obj) => {
@@ -40,26 +38,38 @@ softwareList.addEventListener("change", (e) => {
 })
 
 remoteList.addEventListener("change", () => {
+
+    function statusIndicator(status) {
+        if (status == 'online') {
+            document.getElementById("settings").classList.remove("hidden");
+            document.getElementById("settings").classList.add("fade-in");
+
+            document.getElementById("status-online").classList.remove("hidden");
+            document.getElementById("status-online").classList.add("fade-in");
+        } else if (status == 'offline') {
+            document.getElementById("status-offline").classList.remove("hidden");
+            document.getElementById("status-offline").classList.add("fade-in");
+        } else if (status == 'reset') {
+            document.getElementById("status-offline").classList.add("hidden");
+            document.getElementById("status-offline").classList.remove("fade-in");
+
+            document.getElementById("status-online").classList.add("hidden");
+            document.getElementById("status-online").classList.remove("fade-in");
+
+            document.getElementById("settings").classList.add("hidden");
+            document.getElementById("settings").classList.remove("fade-in");
+        }
+    }
+
     versionList.innerText = null;
     remoteList.classList.remove("text-gray-500");
 
-    document.getElementById("status-offline").classList.add("hidden");
-    document.getElementById("status-offline").classList.remove("fade-in");
-
-    document.getElementById("status-online").classList.add("hidden");
-    document.getElementById("status-online").classList.remove("fade-in");
-
-    document.getElementById("settings").classList.add("hidden");
-    document.getElementById("settings").classList.remove("fade-in");
+    statusIndicator("reset");
 
     data.remotes.forEach((obj) => {
         if (remoteList.value == obj.name) {
             api.getAllVersions(obj.ip, obj.port, "debug", "vanilla").then((versions) => {
-                document.getElementById("settings").classList.remove("hidden");
-                document.getElementById("settings").classList.add("fade-in");
-
-                document.getElementById("status-online").classList.remove("hidden");
-                document.getElementById("status-online").classList.add("fade-in");
+                statusIndicator('online');
 
                 versions.forEach((obj) => {
                     let version = document.createElement("option");
@@ -68,13 +78,10 @@ remoteList.addEventListener("change", () => {
                     versionList.appendChild(version);
                 })
             }).catch(error => {
-                document.getElementById("status-offline").classList.remove("hidden");
-                document.getElementById("status-offline").classList.add("fade-in");
+                statusIndicator('offline');
             })
         };
     })
-
-    console.log(remoteList.value);
 })
 
 createServer.addEventListener("click", () => {
