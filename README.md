@@ -4,96 +4,30 @@
 ### For server daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
 <img src="/src/omnipetal.png" width="800">
-<img src="https://user-images.githubusercontent.com/68202118/170801817-c02ba93e-05b2-4eaf-b330-451444eb98a6.png" width="800">
 
 
 ## What is it?
-Omnipetal is a client for creating Minecraft Servers remotely using docker. We have two components, a Client and a Daemon, this repository is for the client that connects to the Daemon. 
+Omnipetal is a client for creating Minecraft Servers remotely using docker
 
-## Dev
-### Getting started
+# Developers
+## Getting started
 
-Firstly check you have nodeJS and git installed and ready (run `node -v` if unsure) Then clone this repo and change directory into it: 
+Clone the git repo and install dependencies
 ```
 git clone https://github.com/juaneth/Omnipetal.git
 cd Omnipetal
+npm i
 ```
-Then from inside the folder run `npm i` to install all dependecies (Electron, Electron Forge etc.) and it should all be great from there!
 
 Then to start Omnipetal just run `npm run dev`, DO NOT RUN `npm start` OR `npm run start` This will auto update and crash!
 
-### Build
+## Build
 To build Omnipetal just run `npm run make` and this wll put the build in `./out/make/[Platform]/`
 
-All build settings are in `./package.json` under 
-```
-"config": {
-        "forge": {
+All of build configuration is in `./package.json`
 
-        }
-    },
-```
-
-Example: 
-```
-"config": {
-        "forge": {
-            "packagerConfig": {
-                "name": "Omnipetal",
-                "executableName": "Omnipetal",
-                "icon": "src/icon.ico"
-            },
-            "makers": [{
-                    "name": "@electron-forge/maker-squirrel",
-                    "config": {
-                        "name": "Omnipetal",
-                        "productName": "Omnipetal",
-                        "icon": "src/icon.ico"
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-zip",
-                    "platforms": [
-                        "darwin"
-                    ]
-                },
-                {
-                    "name": "@electron-forge/maker-deb",
-                    "config": {}
-                },
-                {
-                    "name": "@electron-forge/maker-rpm",
-                    "config": {}
-                }
-            ]
-        }
-    },
-```
-### Auto Updates
-To configure auto-updates you can change the settings at the top of `./src/index.js`. Change [GITHUB USER] and [GITHUB REPO] to your GitHub Username and GitHub Repository Name
-
-Example: 
-```
-const { app, BrowserWindow, Tray, Menu, autoUpdater } = require("electron");
-const nativeImage = require('electron').nativeImage
-const path = require("path");
-
-// Auto Updates
-const server = 'https://update.electronjs.org'
-const feed = `${server}/[GITHUB USER (juaneth)]/[GITHUB REPO (omnipetal)]/${process.platform}-${process.arch}/${app.getVersion()}`
-
-if (!process.argv.includes("dev")) {
-    autoUpdater.setFeedURL(feed)
-
-    autoUpdater.checkForUpdates()
-
-    setInterval(() => {
-        autoUpdater.checkForUpdates()
-    }, 10 * 60 * 1000)
-}
-```
+## Auto Updates
+To configure auto-updates you can change the settings at the top of `./src/index.js`
 
 ## Support
-You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue. We currently officially support Windows only, this means it is possible for it to run on Linux and MacOS but we don't officially support it and we cannot offer support for tickets using Omnipetal on other Platforms. If you want Omnipetal on these Platforms then you need to run the Electron Forge CLI and build it yourself as we don't build for these platforms.
-
-If a new feature isn't working, you can reset the config and re-enter your remotes in settings and it should work!
+You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue.
