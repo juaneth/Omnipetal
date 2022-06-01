@@ -38,7 +38,6 @@ softwareList.addEventListener("change", (e) => {
 })
 
 remoteList.addEventListener("change", () => {
-
     function statusIndicator(status) {
         if (status == 'online') {
             document.getElementById("settings").classList.remove("hidden");
@@ -66,21 +65,23 @@ remoteList.addEventListener("change", () => {
 
     statusIndicator("reset");
 
-    data.remotes.forEach((obj) => {
-        if (remoteList.value == obj.name) {
-            api.getAllVersions(obj.ip, obj.port, "debug", "vanilla").then((versions) => {
-                statusIndicator('online');
+    const remote = data.remotes.find(remotes => remotes.name === remoteList.value)
 
-                versions.forEach((obj) => {
-                    let version = document.createElement("option");
-                    version.text = obj.id;
-                    version.className = "text-center text-white transition-all";
-                    versionList.appendChild(version);
-                })
-            }).catch(error => {
-                statusIndicator('offline');
-            })
-        };
+    remoteList.disabled = true
+    api.getAllVersions(remote.ip, remote.port, "debug", "vanilla").then((versions) => {
+        statusIndicator('online');
+        remoteList.disabled = false
+
+        versions.forEach((remote) => {
+            let version = document.createElement("option");
+            version.text = remote.id;
+            version.className = "text-center text-white transition-all";
+            versionList.appendChild(version);
+        })
+    }).catch(error => {
+        console.log(error)
+        remoteList.disabled = false
+        statusIndicator('offline');
     })
 })
 
