@@ -24,10 +24,10 @@ Then to start Omnipetal just run `npm run dev`, DO NOT RUN `npm start` OR `npm r
 ## Build
 To build Omnipetal just run `npm run make` and this wll put the build in `./out/make/[Platform]/`
 
-All of build configuration is in `./package.json`
+Build configuration is located in `./package.json`
 
 ## Auto Updates
-To configure auto-updates you can change the settings at the top of `./src/index.js`
+To configure auto-updates you can change the settings in `./src/index.js`
 
 ## Support
 You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue.
