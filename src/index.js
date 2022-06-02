@@ -8,6 +8,9 @@ if (require("electron-squirrel-startup")) {
     app.quit();
 }
 
+// Disable hardware acceleration for lower end hardware (my gf's laptop)
+app.disableHardwareAcceleration();
+
 const createWindow = () => {
     // Create the browser window
 
@@ -20,7 +23,7 @@ const createWindow = () => {
         icon: path.join(__dirname, "icon.png"),
         titleBarStyle: "hidden",
         autoHideMenuBar: true,
-        backgroundColor: '#fff',
+        backgroundColor: "#fff",
         titleBarOverlay: {
             color: "#1f2937",
             symbolColor: "#fff",
@@ -37,45 +40,50 @@ const createWindow = () => {
 
     // If running as debug, open the DevTools
     if (process.argv.includes("dev")) {
-        mainWindow.webContents.openDevTools()
+        mainWindow.webContents.openDevTools();
     }
 
     // Setup the tray icon
-    let tray = null
+    let tray = null;
     app.whenReady().then(() => {
         // Auto Updates
 
         if (!process.argv.includes("dev")) {
             if (process.platform === "win32") {
-                const server = 'https://update.electronjs.org'
-                const feed = `${server}/juaneth/omnipetal/${process.platform}-${process.arch}/${app.getVersion()}`
+                const server = "https://update.electronjs.org";
+                const feed = `${server}/juaneth/omnipetal/${process.platform}-${
+          process.arch
+        }/${app.getVersion()}`;
 
-                autoUpdater.setFeedURL(feed)
+                autoUpdater.setFeedURL(feed);
 
-                autoUpdater.checkForUpdates()
+                autoUpdater.checkForUpdates();
 
                 setInterval(() => {
-                    autoUpdater.checkForUpdates()
-                }, 30000)
+                    autoUpdater.checkForUpdates();
+                }, 30000);
 
-                autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-                    const dialogOpts = {
-                        type: 'info',
-                        buttons: ['Restart', 'Later'],
-                        title: 'Omnipetal Update',
-                        message: process.platform === 'win32' ? releaseNotes : releaseName,
-                        detail: 'A new version of Omnipetal has been downloaded. Restart to apply the update'
+                autoUpdater.on(
+                    "update-downloaded",
+                    (event, releaseNotes, releaseName) => {
+                        const dialogOpts = {
+                            type: "info",
+                            buttons: ["Restart", "Later"],
+                            title: "Omnipetal Update",
+                            message: process.platform === "win32" ? releaseNotes : releaseName,
+                            detail: "A new version of Omnipetal has been downloaded. Restart to apply the update",
+                        };
+
+                        dialog.showMessageBox(dialogOpts).then((returnValue) => {
+                            if (returnValue.response === 0) autoUpdater.quitAndInstall();
+                        });
                     }
+                );
 
-                    dialog.showMessageBox(dialogOpts).then((returnValue) => {
-                        if (returnValue.response === 0) autoUpdater.quitAndInstall()
-                    })
-                })
-
-                autoUpdater.on('error', message => {
-                    console.error('There was a problem updating Omnipetal')
-                    console.error(message)
-                })
+                autoUpdater.on("error", (message) => {
+                    console.error("There was a problem updating Omnipetal");
+                    console.error(message);
+                });
             } else {
                 setTimeout(() => {
                     dialog.showMessageBox({
@@ -87,90 +95,93 @@ const createWindow = () => {
             }
         }
 
-
-        const image = nativeImage.createFromPath(
-            path.join(__dirname, "icon.png")
-        );
-        tray = new Tray(image.resize({ width: 16, height: 16 }))
+        const image = nativeImage.createFromPath(path.join(__dirname, "icon.png"));
+        tray = new Tray(image.resize({ width: 16, height: 16 }));
         const contextMenu = Menu.buildFromTemplate([{
-                label: 'Create a Server',
+                label: "Create a Server",
                 click: () => {
-                    mainWindow.show()
-                    app.focus()
-                    mainWindow.loadFile(path.join(__dirname, "/create-server/index.html"));
-                }
+                    mainWindow.show();
+                    app.focus();
+                    mainWindow.loadFile(
+                        path.join(__dirname, "/create-server/index.html")
+                    );
+                },
             },
             {
-                label: 'Manage Servers',
+                label: "Manage Servers",
                 click: () => {
-                    mainWindow.show()
-                    app.focus()
-                    mainWindow.loadFile(path.join(__dirname, "/server-manager/index.html"));
-                }
+                    mainWindow.show();
+                    app.focus();
+                    mainWindow.loadFile(
+                        path.join(__dirname, "/server-manager/index.html")
+                    );
+                },
             },
             {
-                label: 'Manage Remotes',
+                label: "Manage Remotes",
                 click: () => {
-                    mainWindow.show()
-                    app.focus()
-                    mainWindow.loadFile(path.join(__dirname, "/manage-remotes/index.html"));
-                }
+                    mainWindow.show();
+                    app.focus();
+                    mainWindow.loadFile(
+                        path.join(__dirname, "/manage-remotes/index.html")
+                    );
+                },
             },
             {
-                label: 'Settings',
+                label: "Settings",
                 click: () => {
-                    mainWindow.show()
-                    app.focus()
+                    mainWindow.show();
+                    app.focus();
                     mainWindow.loadFile(path.join(__dirname, "/settings/index.html"));
-                }
+                },
             },
-            { type: 'separator', label: ' ' },
+            { type: "separator", label: " " },
             {
-                label: 'Hide',
+                label: "Hide",
                 click: () => {
-                    mainWindow.hide()
-                }
+                    mainWindow.hide();
+                },
             },
             {
-                label: 'Show',
+                label: "Show",
                 click: () => {
-                    mainWindow.show()
-                }
+                    mainWindow.show();
+                },
             },
             {
-                label: 'Close',
+                label: "Close",
                 click: () => {
-                    app.exit()
-                }
+                    app.exit();
+                },
             },
-            { type: 'separator', label: ' ' },
+            { type: "separator", label: " " },
             {
-                label: 'Toggle Dev Tools',
+                label: "Toggle Dev Tools",
                 click: () => {
                     if (mainWindow.webContents.isDevToolsOpened()) {
-                        mainWindow.webContents.closeDevTools()
+                        mainWindow.webContents.closeDevTools();
                     } else {
-                        mainWindow.webContents.openDevTools()
+                        mainWindow.webContents.openDevTools();
                     }
-                }
-            }
-        ])
-        tray.setToolTip('Omnipetal')
-        tray.setContextMenu(contextMenu)
+                },
+            },
+        ]);
+        tray.setToolTip("Omnipetal");
+        tray.setContextMenu(contextMenu);
 
-        tray.on('click', () => {
+        tray.on("click", () => {
             if (mainWindow.isVisible()) {
-                mainWindow.hide()
+                mainWindow.hide();
             } else {
-                mainWindow.show()
+                mainWindow.show();
             }
-        })
+        });
 
         // When the app is closed, destroy the tray
-        app.on('quit', () => {
-            tray.destroy()
-        })
-    })
+        app.on("quit", () => {
+            tray.destroy();
+        });
+    });
 };
 
 // This method will be called when Electron has finished
