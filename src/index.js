@@ -1,5 +1,12 @@
-const { app, BrowserWindow, Tray, Menu, autoUpdater, dialog } = require("electron");
-const nativeImage = require('electron').nativeImage
+const {
+    app,
+    BrowserWindow,
+    Tray,
+    Menu,
+    autoUpdater,
+    dialog,
+} = require("electron");
+const nativeImage = require("electron").nativeImage;
 const path = require("path");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
