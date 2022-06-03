@@ -31,5 +31,5 @@ document.getElementById("joinDiscord").addEventListener("click", () => {
     const open = require('open');
 
     // opens the url in the default browser 
-    open('https://discord.gg/ufAX6VqcaD');
+    open("https://discord.gg/tt5rmneEN6");
 });
