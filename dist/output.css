@@ -585,6 +585,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .w-64 {
   width: 16rem;
 }
@@ -858,10 +862,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
-.text-gray-500\/50 {
-  color: rgb(107 114 128 / 0.5);
 }
 
 .placeholder-gray-400::-moz-placeholder {

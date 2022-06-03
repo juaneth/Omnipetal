@@ -16,7 +16,8 @@
         "package": "electron-forge package",
         "make": "electron-forge make",
         "publish": "electron-forge publish",
-        "lint": "echo \"No linting configured\""
+        "lint": "echo \"No linting configured\"",
+        "tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
     },
     "keywords": [],
     "author": {
@@ -31,8 +32,7 @@
                 "executableName": "Omnipetal",
                 "icon": "src/icon.ico"
             },
-            "makers": [
-                {
+            "makers": [{
                     "name": "@electron-forge/maker-squirrel",
                     "config": {
                         "name": "Omnipetal",
