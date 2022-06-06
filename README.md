@@ -1,4 +1,4 @@
-# Omnipetal (Client) <img src="https://user-images.githubusercontent.com/68202118/162853416-0ca7c63b-0d6d-4d28-9c5c-3f165bb31811.png" width="25" height="25"> [![Discord Link](https://img.shields.io/badge/-Server-5865F2?logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/ufAX6VqcaD)
+# Omnipetal (Client) <img src="https://user-images.githubusercontent.com/68202118/162853416-0ca7c63b-0d6d-4d28-9c5c-3f165bb31811.png" width="25" height="25"> [![Discord Link](https://img.shields.io/badge/-Server-5865F2?logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/tt5rmneEN6)
 ## Minecraft Server Manager with Remote Managment and Docker integration
 
 ### For server daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
@@ -8,6 +8,8 @@
 
 ## What is it?
 Omnipetal is a client for creating Minecraft Servers remotely using docker
+
+## How to
 
 # Developers
 ## Getting started
