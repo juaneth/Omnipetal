@@ -22,7 +22,7 @@ cd Omnipetal
 npm i
 ```
 
-Then to start Omnipetal just run `npm run dev`, DO NOT RUN `npm start` OR `npm run start` This will auto update and crash!
+**Then to start Omnipetal just run `npm run dev`, DO NOT RUN `npm start` OR `npm run start` This will auto update and crash!**
 
 ## Build
 To build Omnipetal just run `npm run make` and this wll put the build in `./out/make/[Platform]/`
