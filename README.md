@@ -32,4 +32,4 @@ Build configuration is located in `./package.json`
 To configure auto-updates you can change the settings in `./src/index.js`
 
 ## Support
-You can contact us by creating a ticket in our [Discord Server](https://discord.gg/ufAX6VqcaD) and by creating an issue.
+You can contact us by creating a ticket in our [Discord Server](https://discord.gg/tt5rmneEN6) and by creating an issue.
