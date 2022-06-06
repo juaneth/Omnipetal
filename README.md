@@ -9,7 +9,8 @@
 ## What is it?
 Omnipetal is a client for creating Minecraft Servers remotely using docker
 
-## How to
+## How to install
+If you're using windows: Go to https://github.com/juaneth/Omnipetal/releases/latest/ and download the file ending in .exe, not .nupkg. Then launch the .exe and it will install and start the Omnipetal Client for you
 
 # Developers
 ## Getting started
