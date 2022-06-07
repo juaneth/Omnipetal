@@ -5,11 +5,11 @@
 
 ### If you're looking for our Daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
-## What is it?
+# What is it?
 Omnipetal is a client for creating Minecraft Servers remotely using docker
 
-## Installation
-Head over to [Getting Started guide here](https://github.com/juaneth/Omnipetal/wiki/Getting-Started), then follow that and you should be all set <3.
+# Installation
+Head over to [Getting Started guide here](https://github.com/juaneth/Omnipetal/wiki/Getting-started#client), then follow that and you should be all set <3.
 
 # Developers
 ## Getting started
@@ -23,13 +23,5 @@ npm i
 
 **Then to start Omnipetal just run `npm run dev`, DO NOT RUN `npm start` OR `npm run start` This will auto update and crash!**
 
-## Build
-To build Omnipetal just run `npm run make` and this wll put the build in `./out/make/[Platform]/`
-
-Build configuration is located in `./package.json`
-
-## Auto Updates
-To configure auto-updates you can change the settings in `./src/index.js`
-
-## Support
+# Support
 You can contact us by creating a ticket in our [Discord Server](https://discord.gg/tt5rmneEN6) and by creating an issue.
