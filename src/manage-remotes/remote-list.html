@@ -6,31 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Omnipetal</title>
     <link rel="stylesheet" href="../index.css" />
-    <link href="../../dist/output.css" rel="stylesheet">
-
     <link rel="stylesheet" href="./page-loader.css" />
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" /> -->
+    <link href="../../dist/output.css" rel="stylesheet">
 </head>
 
 <div id="loader" class="spinner">
 </div>
 
-<body class="bg-gray-700">
+<body class="bg-background">
     <div id="macOS-titlebar"></div>
-    <nav class="bg-gray-800 h-16 content-center flex items-center" id="navbar">
+    <nav class="bg-panel h-16 content-center flex items-center" id="navbar">
         <img src="../icon.png" alt="Icon" style="max-width: 30px;" class="mx-5">
 
         <div class="flex space-x-4" style="width: 100vw;">
-            <a href="../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
+            <a href="../index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
 
-            <a href="../create-server/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Create
+            <a href="../create-server/index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Create
                 Server</a>
 
-            <a href="../server-manager/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
+            <a href="../server-manager/index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
 
-            <a href="./index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
+            <a href="./index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
 
-            <a href="../settings/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+            <a href="../settings/index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
 
             <div class="draggable p-4r" style="flex-grow: 1;"></div>
         </div>
@@ -38,42 +37,39 @@
 
     <div class="main-content grid place-items-center">
         <div class="grid place-items-center">
-            <h1 class="text-xlg text-white p-2 pt-6 text-2xl" style="font-weight: 600;">Saved Remotes</h1>
+            <h1 class="text-textPrimary p-2 pt-6 text-2xl" style="font-weight: 600;">Saved Remotes</h1>
 
-            <p class="text-gray-400 p-2">Manage your saved remotes</p>
+            <p class="text-textSecondary p-2">Manage your saved remotes</p>
         </div>
 
-        <div class="bg-gray-800 max-w-2xl rounded-lg text-middle bg-gray-800 m-4 mt-0 px-5 pb-3 pt-0">
+        <div class="bg-panel max-w-2xl rounded-lg text-middle m-4 mt-0 px-5 pb-3 pt-0">
             <div class="m-5 mb-0">
                 <div class="p-3 mb-3">
-                    <p class="text-white m-2 mt-0">Remote</p>
-                    <select class="text-center p-2 w-72 m-2 mt-0 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="remotes" form="remoteform"></select>
+                    <p class="text-textPrimary m-2 mt-0">Remote</p>
+                    <select class="text-center p-2 w-72 m-2 mt-0 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl" id="remotes" form="remoteform"></select>
                 </div>
 
                 <div class="mb-3 ">
                     <div class="mb-3">
-                        <label class="block mb-2 text-sm font-medium  text-gray-300">Remote Name</label>
-                        <input id="name" class="transition-all drop-shadow-xl text-center border text-sm rounded-lg block w-full p-2.5  bg-gray-700  border-gray-600  placeholder-gray-400  text-white
-                        focus:ring-blue-500  focus:border-blue-500 " placeholder="my-server" required>
+                        <label class="block mb-2 text-sm font-medium  text-textSecondary">Remote Name</label>
+                        <input id="name" class="transition-all drop-shadow-xl text-center border text-sm rounded-lg block w-full p-2.5  bg-background  border-borderGray  text-textPrimary focus:ring-blue-500  focus:border-blue-500 " placeholder="my-server" required>
                     </div>
 
                     <div class="mb-3">
-                        <label class="block mb-2 text-sm font-medium  text-gray-300">Remote IP</label>
-                        <input id="ip" class="transition-all drop-shadow-xl text-center border text-sm rounded-lg block w-full p-2.5  bg-gray-700  border-gray-600  placeholder-gray-400  text-white
-                        focus:ring-blue-500  focus:border-blue-500 " placeholder="192.168.0.1" required>
+                        <label class="block mb-2 text-sm font-medium  text-textSecondary">Remote IP</label>
+                        <input id="ip" class="transition-all drop-shadow-xl text-center border text-sm rounded-lg block w-full p-2.5  bg-background  border-borderGray  text-textPrimary focus:ring-blue-500  focus:border-blue-500 " placeholder="192.168.0.1" required>
                     </div>
                     <div class="mb-3">
-                        <label class="block mb-2 text-sm font-medium  text-gray-300">Remote Port</label>
-                        <input id="port" class="transition-all drop-shadow-xl text-center border text-sm rounded-lg block w-full p-2.5  bg-gray-700  border-gray-600  placeholder-gray-400  text-white
-                        focus:ring-blue-500  focus:border-blue-500 " placeholder="8080" required>
+                        <label class="block mb-2 text-sm font-medium  text-textSecondary">Remote Port</label>
+                        <input id="port" class="transition-all drop-shadow-xl text-center border text-sm rounded-lg block w-full p-2.5  bg-background  border-borderGray  text-textPrimary focus:ring-blue-500  focus:border-blue-500 " placeholder="8080" required>
                     </div>
                 </div>
 
-                <button class="bg-gray-800 hover:bg-indigo-500 mb-4 text-gray-300 font-semibold hover:text-white px-5 py-3 mt-3 border border-indigo-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50" id="save">Save</button>
+                <button class="bg-panel hover:bg-shadowPrimary mb-4 text-textSecondary font-semibold hover:text-textPrimary px-5 py-3 mt-3 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50" id="save">Save</button>
             </div>
         </div>
 
-        <button onclick="location.href='./index.html';" class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-4 mt-7 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50 ">Add
+        <button onclick="location.href='./index.html';" class="bg-panel hover:bg-shadowPrimary mb-4 text-textSecondary font-semibold hover:text-textPrimary px-5 py-3 mt-3 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50">Add
             a remote</button>
     </div>
     <script src="./remote-list.js"></script>

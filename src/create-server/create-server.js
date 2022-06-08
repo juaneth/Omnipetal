@@ -11,7 +11,7 @@ let createServer = document.getElementById("create");
 
 const api = require("../api.js");
 
-remoteList.classList.add("text-gray-500");
+remoteList.classList.add("text-textTertiary");
 
 data.remotes.forEach((obj) => {
     let option = document.createElement("option");
@@ -61,7 +61,7 @@ remoteList.addEventListener("change", () => {
     }
 
     versionList.innerText = null;
-    remoteList.classList.remove("text-gray-500");
+    remoteList.classList.remove("text-textTertiary");
 
     statusIndicator("reset");
 

@@ -7,64 +7,63 @@
     <title>Omnipetal</title>
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="./scrollbar-custom.css" />
-    <link href="../../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
-</head>
+    <link href="../../dist/output.css" rel="stylesheet"> </head>
 
 
-<body class="bg-gray-700">
+<body class="bg-background">
     <div id="macOS-titlebar"></div>
-    <nav class="bg-gray-800 h-16 content-center flex items-center" id="navbar">
+    <nav class="bg-panel h-16 content-center flex items-center" id="navbar">
         <img src="../icon.png" alt="Icon" style="max-width: 30px;" class="mx-5">
 
         <div class="flex space-x-4" style="width: 100vw;">
-            <a href="../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
+            <a href="../index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
 
-            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Create Server</a>
+            <a href="#" class="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Create Server</a>
 
-            <a href="../server-manager/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
+            <a href="../server-manager/index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
 
-            <a href="../manage-remotes/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
+            <a href="../manage-remotes/index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
 
-            <a href="../settings/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+            <a href="../settings/index.html" class="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
 
             <div class="draggable p-4r" style="flex-grow: 1;"></div>
         </div>
     </nav>
-    <div class="main-content grid place-items-center text-white">
+    <div class="main-content grid place-items-center text-textPrimary">
         <div class="grid place-items-center">
-            <h1 class="text-xlg text-white p-2 pt-6 text-2xl" style="font-weight: 600;">Create Server</h1>
+            <h1 class="text-xlg text-textPrimary p-2 pt-6 text-2xl" style="font-weight: 600;">Create Server</h1>
 
-            <p class="text-gray-400 p-2">Create a server with Vanilla, Paper, Purpur and more</p>
+            <p class="text-textSecondary p-2">Create a server with Vanilla, Paper, Purpur and more</p>
         </div>
 
-        <div class="bg-gray-800 max-w-xl rounded-lg text-middle p-5">
-            <h1 class="text-white">Remote</h1>
+        <div class="bg-panel max-w-xl rounded-lg text-middle p-5">
+            <h1 class="text-textPrimary">Remote</h1>
             <form class="text-center">
-                <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="remotes">
+                <select class="text-center p-2 w-72 m-2 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl" id="remotes">
                     <option value="" selected disabled hidden class="text-gray-400" id="whatweneedtoupdate">Select Remote</option>
                 </select>
             </form>
 
-            <div class="bg-green-500 border-2 border-green-700 rounded-lg text-center shadow-lg shadow-green-500/50 m-3 hidden" id="status-online">
+            <div class="bg-backgroundSuccess border-2 border-borderSuccess rounded-lg text-center shadow-lg shadow-green-500/50 m-3 hidden" id="status-online">
                 <h1 class="m-4">API Alive</h1>
             </div>
 
-            <div class="bg-red-500 border-2 border-red-700 rounded-lg text-center shadow-lg shadow-red-500/50 m-3 hidden" id="status-offline">
+            <div class="bg-backgroundError border-2 border-borderError rounded-lg text-center shadow-lg shadow-red-500/50 m-3 hidden" id="status-offline">
                 <h1 class="m-4">API Offline</h1>
             </div>
-            <p class="text-gray-500 p-2">Make sure to add a remote before trying to create a server!</p>
+            <p class="text-textHint p-2">Make sure to add a remote before trying to create a server!</p>
         </div>
 
-        <div class="bg-gray-800 max-w-xl rounded-lg text-middle m-6 p-5 hidden" id="settings">
-            <h1 class="text-white">Name</h1>
+        <div class="bg-panel max-w-xl rounded-lg text-middle m-6 p-5 hidden" id="settings">
+            <h1 class="text-textPrimary">Name</h1>
             <form class="text-center mb-5">
-                <input type="text" class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="name" placeholder="My Minecraft Sever">
+                <input type="text" class="text-center p-2 w-72 m-2 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl" id="name" placeholder="My Minecraft Sever">
             </form>
 
-            <h1 class="text-white">Software</h1>
+            <h1 class="text-textPrimary">Software</h1>
             <form class="text-center mb-5">
-                <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="software">
+                <select class="text-center p-2 w-72 m-2 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl" id="software">
                             <option value="vanilla">Vanilla</option>
                             <option value="paper">Paper</option>
                             <option value="purpur">Purpur</option>
@@ -72,19 +71,18 @@
                 </select>
             </form>
 
-            <h1 class="text-white">Versions</h1>
+            <h1 class="text-textPrimary">Versions</h1>
             <form class="text-center">
-                <select class="text-center p-2 w-72 m-2 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl" id="versions">
+                <select class="text-center p-2 w-72 m-2 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl" id="versions">
 
                 </select>
             </form>
 
-            <button class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-4 mt-7 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50" id="create">Create Server</button>
-            <p class="text-gray-500 p-2 mt-4">Ensure both this device and Remote are on stable internet connections and power sources before starting as any interuption will cancel the download and possibly corrupt the installation</p>
+            <button class="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-4 mt-7 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50" id="create">Create Server</button>
+            <p class="text-textHint p-2 mt-4">Ensure both this device and Remote are on stable internet connections and power sources before starting as any interuption will cancel the download and possibly corrupt the installation</p>
         </div>
     </div>
     <script src="create-server.js"></script>
-    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
     <script src="../macOS.js"></script>
 </body>
 

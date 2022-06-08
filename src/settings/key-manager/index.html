@@ -9,42 +9,42 @@
     <link href="../../../dist/output.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-700">
+<body class="bg-background">
     <div id="macOS-titlebar"></div>
-    <nav class="bg-gray-800 h-16 content-center flex items-center" id="navbar">
+    <nav class="bg-panel h-16 content-center flex items-center" id="navbar">
         <img src="../../icon.png" alt="Icon" style="max-width: 30px;" class="mx-5">
 
         <div class="flex space-x-4" style="width: 100vw;">
-            <a href="../../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
+            <a href="../../index.html" class="text-textSecondary hover:bg-gray-700 hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
 
-            <a href="../../create-server/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Create
+            <a href="../../create-server/index.html" class="text-textSecondary hover:bg-gray-700 hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Create
                 Server</a>
 
-            <a href="../../server-manager/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
+            <a href="../../server-manager/index.html" class="text-textSecondary hover:bg-gray-700 hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
 
-            <a href="../../manage-remotes/index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
+            <a href="../../manage-remotes/index.html" class="text-textSecondary hover:bg-gray-700 hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
 
-            <a href="../index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+            <a href="../index.html" class="text-textSecondary hover:bg-gray-700 hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
         </div>
     </nav>
 
     <div class="main-content grid place-items-center">
         <div class="grid place-items-center">
-            <h1 class="text-xlg text-white p-2 pt-6 text-2xl" style="font-weight: 600;">Key Manager</h1>
+            <h1 class="text-textPrimary p-2 pt-6 text-2xl" style="font-weight: 600;">Key Manager</h1>
 
-            <p class="text-gray-400 p-2">Manage your SSH/SFTP keys</p>
+            <p class="text-textSecondary p-2">Manage your SSH/SFTP keys</p>
         </div>
 
-        <div class="bg-gray-800 rounded-lg text-middle bg-gray-800 m-4 mt-0 px-5 pb-3 pt-0">
+        <div class="bg-panel rounded-lg text-middle m-4 mt-0 px-5 pb-3 pt-0">
             <form>
-                <h1 class="text-white m-3 mt-5 text-lg">Keys</h1>
+                <h1 class="text-textPrimary m-3 mt-5 text-lg">Keys</h1>
                 <div class="grid grid-cols-1 gap-4 m-5 mb-0">
                     <div class="mb-3 p-3">
-                        <select title="Select Keys" id="key-select" class="text-center p-2 w-64 m-2 mt-0 bg-gray-700 text-white rounded-lg transition-all drop-shadow-xl"></select>
+                        <select title="Select Keys" id="key-select" class="text-center p-2 w-64 m-2 mt-0 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl"></select>
                     </div>
                 </div>
             </form>
-            <button id="change-port" class="bg-gray-800 hover:bg-blue-500 text-gray-300 font-semibold hover:text-white p-4 m-3 border border-blue-500 hover:border-transparent transition-all rounded shadow-lg hover:shadow-indigo-500/50 ">Change
+            <button id="change-port" class="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-4 m-4 mt-0 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50 ">Change
                 Port</button>
         </div>
     </div>
