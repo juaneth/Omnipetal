@@ -42,6 +42,26 @@
     --color-backgroundError: 255, 156, 156;
 }
 
+[data-theme="midnight"] {
+  --color-background: 1, 2, 11;
+  --color-panel: 1, 10, 55;
+  --color-darker: 0, 0, 22;
+  --color-textPrimary: 0, 0, 0;
+  --color-textSecondary: 212, 212, 214;
+  --color-textTertiary: 145, 144, 144;
+  --color-textHint: 145, 144, 144;
+  --color-shadowPrimary: 0, 3, 150;
+  --color-shadowSuccess: 71, 214, 102;
+  --color-shadowError: 214, 71, 71;
+  --color-borderPrimary: 51, 73, 107;
+  --color-borderGray: 48, 55, 64;
+  --color-borderSuccess: 129, 222, 132;
+  --color-borderError: 227, 136, 136;
+  --color-backgroundPrimary: 2, 2, 41;
+  --color-backgroundSuccess: 174, 255, 156;
+  --color-backgroundError: 255, 156, 156;
+}
+
 .draggable {
     -webkit-app-region: drag;
 }
