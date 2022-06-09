@@ -1,8 +1,4 @@
 const fs = require("fs");
-const getAppDataPath = require("appdata-path");
-
-// Add config
-let data = require(`${getAppDataPath()}/omnipetal/config.json`);
 
 // On load of the page, set textbox to config value
 document.getElementById('port').value = data.settings[0].defaultPort
@@ -35,7 +31,11 @@ document.getElementById('reset-button').addEventListener('click', function() {
         keys: [{
 
         }, ],
-    };
+        servers: [{
+
+        }, ],
+        theme: "default",
+    }
 
     fs.writeFileSync(`${getAppDataPath()}/omnipetal/config.json`, JSON.stringify(defaultsettings));
 

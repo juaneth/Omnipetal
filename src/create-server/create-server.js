@@ -1,8 +1,3 @@
-const getAppDataPath = require("appdata-path");
-
-// Add remotes to remote list options
-let data = require(`${getAppDataPath()}/omnipetal/config.json`);
-
 let remoteList = document.getElementById("remotes");
 let softwareList = document.getElementById("software");
 let versionList = document.getElementById("versions");
@@ -16,7 +11,7 @@ remoteList.classList.add("text-textTertiary");
 data.remotes.forEach((obj) => {
     let option = document.createElement("option");
     option.text = obj.name;
-    option.className = "text-center text-white transition-all";
+    option.className = "text-center text-textPrimary transition-all";
     remoteList.appendChild(option);
 });
 
@@ -29,7 +24,7 @@ softwareList.addEventListener("change", (e) => {
                 versions.forEach((obj) => {
                     let version = document.createElement("option");
                     version.text = obj.id;
-                    version.className = "text-center text-white transition-all";
+                    version.className = "text-center text-textPrimary transition-all";
                     versionList.appendChild(version);
                 })
             })
@@ -75,7 +70,7 @@ remoteList.addEventListener("change", () => {
         versions.forEach((remote) => {
             let version = document.createElement("option");
             version.text = remote.id;
-            version.className = "text-center text-white transition-all";
+            version.className = "text-center text-textPrimary transition-all";
             versionList.appendChild(version);
         })
     }).catch(error => {

@@ -1,8 +1,6 @@
 const fs = require("fs");
 console.log(fs.readFileSync(__dirname + "/sign.txt", "utf8"));
 
-const getAppDataPath = require("appdata-path");
-
 console.log(`Config:: ${getAppDataPath()}/omnipetal/config.json`);
 
 function createStore(path) {
@@ -18,12 +16,16 @@ function createStore(path) {
         keys: [{
 
         }, ],
-    };
+        servers: [{
+
+        }, ],
+        theme: "default",
+    }
 
     if (!fs.existsSync(path)) {
         fs.writeFileSync(path, JSON.stringify(defaultsettings));
     }
-}
+};
 
 createStore(`${getAppDataPath()}/omnipetal/config.json`);
 

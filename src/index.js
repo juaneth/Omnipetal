@@ -32,7 +32,7 @@ const createWindow = () => {
         autoHideMenuBar: true,
         backgroundColor: "#fff",
         titleBarOverlay: {
-            color: "#1f2937",
+            color: "#fff",
             symbolColor: "#fff",
         },
         webPreferences: {
