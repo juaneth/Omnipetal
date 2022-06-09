@@ -1,14 +1,14 @@
 ::-webkit-scrollbar {
     position: static;
     top: 400px;
-    background: rgb(38, 50, 66);
+    background: #2b2b2b;
 }
 
 
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(27, 35, 46);
+    background: #1a1a1a;
     border-radius: 180px;
 }
 
@@ -16,9 +16,9 @@
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(25, 27, 31);
+    background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-track {
-    margin-top: 4vh;
+    margin-top: 5vh;
 }

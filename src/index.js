@@ -31,14 +31,10 @@ const createWindow = () => {
         titleBarStyle: "hidden",
         autoHideMenuBar: true,
         backgroundColor: "#fff",
-        titleBarOverlay: {
-            color: "#fff",
-            symbolColor: "#fff",
-        },
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false,
             devTools: true,
+            contextIsolation: false,
         },
     });
 
@@ -50,9 +46,18 @@ const createWindow = () => {
         mainWindow.webContents.openDevTools();
     }
 
+
+    function handleClose(event) {
+        const webContents = event.sender
+        const win = BrowserWindow.fromWebContents(webContents)
+        win.close();
+    }
+
     // Setup the tray icon
     let tray = null;
     app.whenReady().then(() => {
+        ipcMain.on('closeWindow', handleClose)
+
         // Auto Updates
 
         if (!process.argv.includes("dev")) {
