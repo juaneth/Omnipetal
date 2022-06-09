@@ -41,3 +41,13 @@ document.getElementById('reset-button').addEventListener('click', function() {
 
     location.reload();
 })
+
+document.getElementById('theme').value = data.theme
+
+document.getElementById('theme').addEventListener('input', function() {
+    data.theme = document.getElementById('theme').value
+
+    fs.writeFileSync(`${getAppDataPath()}/omnipetal/config.json`, JSON.stringify(data));
+
+    location.reload();
+})

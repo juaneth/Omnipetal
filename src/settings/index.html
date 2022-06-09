@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="../scrollbar.css" />
     <link href="../../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
     <script src="../themes.js"></script>
 </head>
 
@@ -64,7 +65,22 @@
             </form>
         </div>
 
-        <div class="bg-panel w-96 rounded-lg text-middle bg-gray-800 m-4 mt-0 px-5 pb-3 pt-0">
+        <div class="bg-panel w-96 rounded-lg text-middle m-4 mt-0 px-5 pb-3 pt-0">
+            <form>
+                <h1 class="text-textPrimary m-3 mt-5 text-lg">Theme</h1>
+                <div class="grid grid-cols-1 gap-4 m-5 mb-0">
+                    <div class="mb-3 ">
+                        <label class="block mb-2 text-sm font-medium text-textSecondary ">Theme</label>
+                        <select id="theme" class="transition-all drop-shadow-xl text-center bg-background border border-borderGray text-textPrimary text-sm rounded-lg block w-full p-2.5 focus:ring-borderPrimary focus:border-borderPrimary ">
+                            <option value="default">Default</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="bg-panel w-96 rounded-lg text-middle m-4 mt-0 px-5 pb-3 pt-0">
             <h1 class="text-textPrimary m-3 mt-5 text-lg">Info</h1>
             <div class="grid grid-cols-1 gap-4 m-5 mb-0">
                 <div class="mb-3">
