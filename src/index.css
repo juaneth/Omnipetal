@@ -58,8 +58,8 @@
     --color-borderSuccess: 129, 222, 132;
     --color-borderError: 227, 136, 136;
     --color-backgroundPrimary: 2, 2, 41;
-    --color-backgroundSuccess: 174, 255, 156;
-    --color-backgroundError: 255, 156, 156;
+    --color-backgroundSuccess: 25, 125, 2
+    --color-backgroundError: 145, 3, 3
 }
 
 .draggable {
