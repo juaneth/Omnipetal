@@ -32,6 +32,26 @@
 
             <div class="draggable p-4r" style="flex-grow: 1;"></div>
         </div>
+
+        <div class="flex space-x-2 mr-3 h-[32px]">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <script src="../windowControls.js"></script>
+
+            <a id="min" class="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <span class="material-icons">
+                    remove
+                </span>
+            </a>
+            <a id="max" class="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <span class="material-icons">
+                    check_box_outline_blank
+                </span>
+            </a>
+
+            <a id="close" class="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <span class="material-icons">close</span>
+            </a>
+        </div>
     </nav>
 
     <div class="main-content grid place-items-center">
@@ -75,6 +95,7 @@
                         <select id="theme" class="transition-all drop-shadow-xl text-center bg-background border border-borderGray text-textPrimary text-sm rounded-lg block w-full p-2.5 focus:ring-borderPrimary focus:border-borderPrimary ">
                             <option value="default">Default</option>
                             <option value="light">Light</option>
+                            <option value="midnight">Midnight</option>
                         </select>
                     </div>
                 </div>
@@ -102,7 +123,6 @@
             </form>
         </div>
     </div>
-    <script src="../macOS.js"></script>
     <script src="./index.js"></script>
 </body>
 

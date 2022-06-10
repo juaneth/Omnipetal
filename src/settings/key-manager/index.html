@@ -7,7 +7,7 @@
     <title>Omnipetal</title>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
     <link rel="stylesheet" href="../../index.css" />
-    <link href="./../../dist/output.css" rel="stylesheet">
+    <link href="../../../dist/output.css" rel="stylesheet">
     <script src="../../modules.js"></script>
     <script src="../../themes.js"></script>
 </head>
@@ -28,6 +28,26 @@
             <a href="../../manage-remotes/index.html" class="text-textSecondary hover:bg-gray-700 hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
 
             <a href="../index.html" class="text-textSecondary hover:bg-gray-700 hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+        </div>
+
+        <div class="flex space-x-2 mr-3 h-[32px]">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <script src="../../windowControls.js"></script>
+
+            <a id="min" class="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <span class="material-icons">
+                    remove
+                </span>
+            </a>
+            <a id="max" class="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <span class="material-icons">
+                    check_box_outline_blank
+                </span>
+            </a>
+
+            <a id="close" class="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <span class="material-icons">close</span>
+            </a>
         </div>
     </nav>
 
@@ -51,7 +71,6 @@
                 Port</button>
         </div>
     </div>
-    <script src="../../macOS.js"></script>
     <script src="./index.js"></script>
 </body>
 
