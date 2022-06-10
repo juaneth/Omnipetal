@@ -5,6 +5,7 @@ const {
     Menu,
     autoUpdater,
     dialog,
+    webContents,
 } = require("electron");
 const nativeImage = require("electron").nativeImage;
 const path = require("path");
@@ -46,18 +47,12 @@ const createWindow = () => {
         mainWindow.webContents.openDevTools();
     }
 
-
-    function handleClose(event) {
-        const webContents = event.sender
-        const win = BrowserWindow.fromWebContents(webContents)
-        win.close();
-    }
+    require('@electron/remote/main').initialize()
+    require("@electron/remote/main").enable(mainWindow.webContents)
 
     // Setup the tray icon
     let tray = null;
     app.whenReady().then(() => {
-        ipcMain.on('closeWindow', handleClose)
-
         // Auto Updates
 
         if (!process.argv.includes("dev")) {

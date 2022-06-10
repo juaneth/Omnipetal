@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 let remoteList = document.getElementById("remotes");
 let saveButton = document.getElementById("save");
 

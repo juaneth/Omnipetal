@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 // On load of the page, set textbox to config value
 document.getElementById('port').value = data.settings[0].defaultPort
 

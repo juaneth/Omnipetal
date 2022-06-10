@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 document.getElementById('port').placeholder = data.settings[0].defaultPort
 
 function addRemote(remotename, remoteip, remoteport) {

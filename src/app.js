@@ -1,4 +1,3 @@
-const fs = require("fs");
 console.log(fs.readFileSync(__dirname + "/sign.txt", "utf8"));
 
 console.log(`Config:: ${getAppDataPath()}/omnipetal/config.json`);
