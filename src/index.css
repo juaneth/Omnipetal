@@ -63,11 +63,11 @@
 }
 
 [data-theme="extravagant_purple"] {
-    --color-background: 108, 39, 245;
+    --color-background: 56, 23, 128;
     --color-panel: 71, 45, 150;
     --color-darker: 43, 27, 92;
     --color-textPrimary: 255, 255, 255;
-    --color-textSecondary: 176, 176, 176;
+    --color-textSecondary: 230, 230, 230;
     --color-textTertiary: 131, 132, 133;
     --color-textHint: 220, 222, 224;
     --color-shadowPrimary: 146, 128, 189;
