@@ -73,11 +73,11 @@
     --color-shadowPrimary: 146, 128, 189;
     --color-shadowSuccess: 94, 145, 111;
     --color-shadowError: 145, 41, 41;
-    --color-borderPrimary: 97, 5, 255;
-    --color-borderGray: 77, 67, 97;
+    --color-borderPrimary: 147, 84, 255;
+    --color-borderGray: 166, 143, 184;
     --color-borderSuccess: 36, 92, 57;
     --color-borderError: 143, 31, 31;
-    --color-backgroundPrimary: 118, 0, 255;
+    --color-backgroundPrimary: 115, 92, 219;
     --color-backgroundSuccess: 34, 197, 94;
     --color-backgroundError: 239, 68, 68;
 }
