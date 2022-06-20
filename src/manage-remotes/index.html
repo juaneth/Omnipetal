@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Omnipetal</title>
     <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../scrollbar.css" />
     <link href="../../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="../loader.css" />
     <script src="../modules.js"></script>
@@ -62,7 +63,7 @@
             <p class="text-textSecondary p-2">Add, remove, configure and edit remotes!</p>
         </div>
 
-        <div class="bg-panel max-w-2xl rounded-lg text-middle m-4 mt-0 px-5 pb-3 pt-0">
+        <div class="bg-panel max-w-2xl rounded-lg text-middle m-4 mt-0 mb-0 px-5 pb-3 pt-0">
             <form>
                 <h1 class="text-textPrimary m-3 mt-5 text-lg">Add remote</h1>
                 <div class="grid grid-cols-3 gap-4 m-5 mb-0">
@@ -89,14 +90,14 @@
             <button id="add-remote" class="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-4 m-3 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50 ">Add remote</button>
         </div>
 
-        <div class="bg-panel max-w-2xl rounded-lg text-middle m-4 mt-0 px-5 pb-3 pt-0">
+        <div class="bg-panel rounded-lg text-middle m-4 px-5 pb-3 pt-0 w-[672px]">
             <form>
-                <h1 class="text-textPrimary m-3 mt-5 text-lg">Or install the Omnipetal Daemon to this Device</h1>
+                <h1 class="text-textPrimary m-3 mt-5 text-lg">Install the Omnipetal Daemon to this Device</h1>
                 <button id="install-daemon" class="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-4 m-3 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50 ">Install Daemon</button>
             </form>
         </div>
 
-        <button onclick="location.href='./remote-list.html';" class="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-4 mt-7 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50 ">See all remotes</button>
+        <button onclick="location.href='./remote-list.html';" class="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-4 mt-7 mb-5 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50 ">See all remotes</button>
     </div>
 
     <script src="./create-remotes.js"></script>

@@ -527,12 +527,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0px;
 }
 
-.mt-5{
-  margin-top: 1.25rem;
-}
-
 .mb-0{
   margin-bottom: 0px;
+}
+
+.mt-5{
+  margin-top: 1.25rem;
 }
 
 .mb-3{
@@ -585,6 +585,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-full{
   width: 100%;
+}
+
+.w-\[672px\]{
+  width: 672px;
 }
 
 .w-96{
@@ -676,6 +680,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgba(var(--color-borderPrimary), var(--tw-border-opacity));
 }
 
+.border-borderGray{
+  --tw-border-opacity: 1;
+  border-color: rgba(var(--color-borderGray), var(--tw-border-opacity));
+}
+
 .border-borderSuccess{
   --tw-border-opacity: 1;
   border-color: rgba(var(--color-borderSuccess), var(--tw-border-opacity));
@@ -684,11 +693,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-borderError{
   --tw-border-opacity: 1;
   border-color: rgba(var(--color-borderError), var(--tw-border-opacity));
-}
-
-.border-borderGray{
-  --tw-border-opacity: 1;
-  border-color: rgba(var(--color-borderGray), var(--tw-border-opacity));
 }
 
 .bg-background{
@@ -714,6 +718,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-backgroundError{
   --tw-bg-opacity: 1;
   background-color: rgba(var(--color-backgroundError), var(--tw-bg-opacity));
+}
+
+.bg-darker\/70{
+  background-color: rgba(var(--color-darker), 0.7);
 }
 
 .p-1{
@@ -757,6 +765,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-3{
@@ -823,15 +836,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgba(var(--color-textTertiary), var(--tw-text-opacity));
 }
 
-.shadow-xl{
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-lg{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-xl{
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -904,6 +917,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   --color-backgroundPrimary: 2, 2, 41;
   --color-backgroundSuccess: 66, 191, 52;
   --color-backgroundError: 186, 28, 49;
+}
+
+[data-theme="extravagant_purple"] {
+  --color-background: 95, 67, 181;
+  --color-panel: 71, 45, 150;
+  --color-darker: 43, 27, 92;
+  --color-textPrimary: 255, 255, 255;
+  --color-textSecondary: 230, 230, 230;
+  --color-textTertiary: 131, 132, 133;
+  --color-textHint: 220, 222, 224;
+  --color-shadowPrimary: 146, 128, 189;
+  --color-shadowSuccess: 94, 145, 111;
+  --color-shadowError: 145, 41, 41;
+  --color-borderPrimary: 147, 84, 255;
+  --color-borderGray: 166, 143, 184;
+  --color-borderSuccess: 36, 92, 57;
+  --color-borderError: 143, 31, 31;
+  --color-backgroundPrimary: 115, 92, 219;
+  --color-backgroundSuccess: 34, 197, 94;
+  --color-backgroundError: 239, 68, 68;
 }
 
 .draggable {
