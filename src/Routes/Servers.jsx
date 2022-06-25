@@ -15,8 +15,8 @@ export default function CreateServer() {
                 <div className="bg-panel max-w-xl rounded-lg text-middle p-5">
                     <h1 className="text-textPrimary">Remote</h1>
                     <form className="text-center">
-                        <select className="text-center p-2 w-72 m-2 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl border-borderGray" id="remotes">
-                            <option selected disabled hidden className="text-gray-400" id="whatweneedtoupdate">Select Remote</option>
+                        <select defaultValue={"default"} className="text-center p-2 w-72 m-2 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl border-borderGray" id="remotes">
+                            <option value={"default"} disabled hidden className="text-gray-400" id="whatweneedtoupdate">Select Remote</option>
                         </select>
                     </form>
 
