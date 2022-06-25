@@ -45,50 +45,50 @@ const createWindow = () => {
         mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadFile(path.join(__dirname, 'build', 'index.html'));
-        // if (process.platform === "win32") {
-        //     const server = "https://update.electronjs.org";
-        //     const feed = `${server}/juaneth/omnipetal/${process.platform}-${
-        //   process.arch
-        //     }/${app.getVersion()}`;
+        if (process.platform === "win32") {
+            const server = "https://update.electronjs.org";
+            const feed = `${server}/juaneth/omnipetal/${process.platform}-${
+          process.arch
+            }/${app.getVersion()}`;
 
-        //     autoUpdater.setFeedURL(feed);
+            autoUpdater.setFeedURL(feed);
 
-        //     autoUpdater.checkForUpdates();
+            autoUpdater.checkForUpdates();
 
-        //     setInterval(() => {
-        //         autoUpdater.checkForUpdates();
-        //     }, 30000);
+            setInterval(() => {
+                autoUpdater.checkForUpdates();
+            }, 30000);
 
-        //     autoUpdater.on(
-        //         "update-downloaded",
-        //         (event, releaseNotes, releaseName) => {
-        //             const dialogOpts = {
-        //                 type: "info",
-        //                 buttons: ["Restart", "Later"],
-        //                 title: "Omnipetal Update",
-        //                 message: process.platform === "win32" ? releaseNotes : releaseName,
-        //                 detail: "A new version of Omnipetal has been downloaded. Restart to apply the update",
-        //             };
+            autoUpdater.on(
+                "update-downloaded",
+                (event, releaseNotes, releaseName) => {
+                    const dialogOpts = {
+                        type: "info",
+                        buttons: ["Restart", "Later"],
+                        title: "Omnipetal Update",
+                        message: process.platform === "win32" ? releaseNotes : releaseName,
+                        detail: "A new version of Omnipetal has been downloaded. Restart to apply the update",
+                    };
 
-        //             dialog.showMessageBox(dialogOpts).then((returnValue) => {
-        //                 if (returnValue.response === 0) autoUpdater.quitAndInstall();
-        //             });
-        //         }
-        //     );
+                    dialog.showMessageBox(dialogOpts).then((returnValue) => {
+                        if (returnValue.response === 0) autoUpdater.quitAndInstall();
+                    });
+                }
+            );
 
-        //     autoUpdater.on("error", (message) => {
-        //         console.error("There was a problem updating Omnipetal");
-        //         console.error(message);
-        //     });
-        // } else {
-        //     setTimeout(() => {
-        //         dialog.showMessageBox({
-        //             type: "warning",
-        //             title: "Omnipetal",
-        //             message: "❤️ Omnipetal is not supported for your platform, some features may not work, Windows is our recommended platform ❤️.",
-        //         });
-        //     }, 2000);
-        // }
+            autoUpdater.on("error", (message) => {
+                console.error("There was a problem updating Omnipetal");
+                console.error(message);
+            });
+        } else {
+            setTimeout(() => {
+                dialog.showMessageBox({
+                    type: "warning",
+                    title: "Omnipetal",
+                    message: "❤️ Omnipetal is not supported for your platform, some features may not work, Windows is our recommended platform ❤️.",
+                });
+            }, 2000);
+        }
     }
 
     // Setup the tray icon
@@ -194,6 +194,20 @@ const createWindow = () => {
             }
             if (action == "close") {
                 app.quit();
+            }
+        })
+
+        ipcMain.handle('config', (event, action) => {
+            console.log(action)
+
+            if (action == "getVersion") {
+                let pjson = require("../package.json")
+                return pjson.version
+            }
+
+            if (action == "getConfig") {
+                let pjson = require("../package.json")
+                return pjson
             }
         })
     });

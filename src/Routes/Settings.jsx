@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from '../Components/Navigation'
 
+const version = await window.electronAPI.config('getVersion')
+
 export default function Settings() {
     return (
       <div className="bg-background text-center min-h-screen w-screen font-[Montserrat]">
@@ -59,7 +61,7 @@ export default function Settings() {
                   <div className="grid grid-cols-1 gap-4 m-5 mb-0">
                       <div className="mb-3">
                           <h1 className="block text-sm font-medium text-textSecondary dark:text-gray-300 mb-0 pt-0">Version</h1>
-                          <p id="version" className="block text-sm font-medium text-textTertiary mt-0 pt-0">[Version Number]</p>
+                          <p id="version" className="block text-sm font-medium text-textTertiary mt-0 pt-0">{ version }</p>
                           <h1 className="block text-sm font-medium text-textSecondary dark:text-gray-300 mb-0 pt-0">Auto Update</h1>
                           <p id="auto-update" className="block text-sm font-medium text-textTertiary mt-0 pt-0">On</p>
                       </div>
