@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from '../Resources/icon.png';
 import windowControls from '../windowControls.js'
+import { Link } from "react-router-dom";
 
 const Navbar = ({ pageId, back }) => {
     return (
@@ -21,13 +22,13 @@ const Navbar = ({ pageId, back }) => {
                 }
 
                 {pageId == "home" 
-                    ?   <a href="#" className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
-                    :   <a href="#" className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Home</a>
+                    ?   <Link className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/">Home</Link>
+                    :   <Link className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/">Home</Link>
                 }
 
                 {pageId == "createServer" 
-                    ?   <a href="#" className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Create Server</a>
-                    :   <a href="../src/create-server/index.html" className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Create Server</a>
+                    ?   <Link className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/createServer">Create Server</Link>
+                    :   <Link className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/createServer">Create Server</Link>
                 }
 
                 {pageId == "servers" 

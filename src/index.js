@@ -40,7 +40,7 @@ const createWindow = () => {
     });
 
     if (process.argv.includes("dev")) {
-        mainWindow.loadURL('http://localhost:3000');
+        mainWindow.loadURL('http://localhost:3000/');
         mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadFile(path.join(__dirname, 'build', 'index.html'));

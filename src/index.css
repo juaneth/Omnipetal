@@ -88,6 +88,25 @@ body {
     overflow-x: hidden;
 }
 
+.main-content {
+    animation: fadein 300ms;
+    -webkit-animation: fadein 300ms;
+    opacity: 1;
+}
+
 .draggable {
     -webkit-app-region: drag;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
 }
