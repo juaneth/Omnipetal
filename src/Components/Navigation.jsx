@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ pageId, back }) => {
     return (
-        <div className="bg-panel h-16 content-center flex items-center shadow-lg px-3 text-center">
+        <div className="bg-panel h-16 content-center flex items-center shadow-lg px-3 text-center sticky top-0 z-50">
             <div className="flex space-x-4 w-screen items-center">
                 {back == true 
                     ? (<div className="flex space-x-2 mr-3 justify-center items-center">
@@ -26,24 +26,19 @@ const Navbar = ({ pageId, back }) => {
                     :   <Link className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/">Home</Link>
                 }
 
-                {pageId == "createServer" 
-                    ?   <Link className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/createServer">Create Server</Link>
-                    :   <Link className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/createServer">Create Server</Link>
-                }
-
                 {pageId == "servers" 
-                    ?   <a href="#" className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Servers</a>
-                    :   <a href="../src/server-manager/index.html" className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Servers</a>
+                    ?   <Link className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/servers">Servers</Link>
+                    :   <Link className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/servers">Servers</Link>
                 }
 
                 {pageId == "remotes" 
-                    ?   <a href="#" className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Remotes</a>
-                    :   <a href="../src/manage-remotes/index.html" className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Remotes</a>
+                    ?   <Link className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/remotes">Remotes</Link>
+                    :   <Link className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/remotes">Remotes</Link>
                 }
 
                 {pageId == "settings" 
-                    ?   <a href="#" className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" aria-current="page">Settings</a>
-                    :   <a href="../src/settings/index.html" className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all">Settings</a>
+                    ?   <Link className="bg-darker text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/settings">Settings</Link>
+                    :   <Link className="text-textSecondary hover:bg-background hover:text-textPrimary px-3 py-2 rounded-md text-sm font-medium transition-all" to="/settings">Settings</Link>
                 }
 
                 <div className="draggable flex-grow h-16"></div>
