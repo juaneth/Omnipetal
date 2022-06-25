@@ -9,14 +9,14 @@
     },
     "description": "Manage and create minecraft severs remotely using Docker",
     "scripts": {
-        "dev": "concurrently -k \"vite\" \"electron-forge start -- dev\"",
-        "vite": "vite start",
+        "dev": "concurrently -k \"vite\" \"npm run electron:dev\"",
         "build": "vite build",
         "watch": "vite build —watch",
         "preview": "vite preview",
         "start": "electron-forge start",
         "package": "electron-forge package",
-        "make": "electron-forge make"
+        "make": "vite build && electron-forge make",
+        "electron:dev": "cross-env IS_DEV=true electron-forge start"
     },
     "dependencies": {
         "electron-squirrel-startup": "^1.0.0",

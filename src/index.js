@@ -33,14 +33,15 @@ const createWindow = () => {
         autoHideMenuBar: true,
         backgroundColor: "#fff",
         webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
-            devTools: true,
-            preload: path.join(__dirname, 'preload.js')
         },
     });
 
-    if (process.argv.includes("dev")) {
-        mainWindow.loadURL('http://localhost:3000/');
+    const isDev = process.env.IS_DEV === 'true';
+
+    if (isDev) {
+        mainWindow.loadURL('http://localhost:3000');
         mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadFile(path.join(__dirname, 'build', 'index.html'));
