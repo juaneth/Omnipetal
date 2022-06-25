@@ -1,32 +1,34 @@
 {
-    "name": "react-test",
-    "private": true,
-    "version": "0.0.0",
+    "name": "omnipetal",
+    "version": "0.0.1",
     "main": "src/index.js",
-    "license": "MIT",
-    "author": "juaneth",
-    "description": "asdasds",
+    "license": "GPL-3.0-or-later",
+    "author": {
+        "name": "Juaneth",
+        "email": "euanwalker2008@gmail.com"
+    },
+    "description": "Manage and create minecraft severs remotely using Docker",
     "scripts": {
-        "dev": "concurrently -k \"vite\" \"npm run electron:dev\"",
+        "dev": "concurrently -k \"vite\" \"electron-forge start -- dev\"",
+        "vite": "vite start",
         "build": "vite build",
         "watch": "vite build —watch",
         "preview": "vite preview",
         "start": "electron-forge start",
         "package": "electron-forge package",
-        "make": "electron-forge make",
-        "electron:dev": "cross-env IS_DEV=true electron-forge start"
+        "make": "electron-forge make"
     },
     "dependencies": {
-        "@electron-forge/maker-dmg": "^6.0.0-beta.64",
-        "@electron/remote": "^2.0.8",
         "electron-squirrel-startup": "^1.0.0",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "react-router-dom": "^6.3.0"
+        "react-router-dom": "^6.3.0",
+        "update-electron-app": "^2.0.1"
     },
     "devDependencies": {
         "@electron-forge/cli": "^6.0.0-beta.64",
         "@electron-forge/maker-deb": "^6.0.0-beta.64",
+        "@electron-forge/maker-dmg": "^6.0.0-beta.64",
         "@electron-forge/maker-rpm": "^6.0.0-beta.64",
         "@electron-forge/maker-squirrel": "^6.0.0-beta.64",
         "@electron-forge/maker-zip": "^6.0.0-beta.64",
@@ -59,7 +61,7 @@
                 {
                     "name": "@electron-forge/maker-dmg",
                     "config": {
-                        "icon": "src/resources/icon.icns",
+                        "icon": "src/Resources/icon.icns",
                         "platforms": [
                             "darwin"
                         ],
