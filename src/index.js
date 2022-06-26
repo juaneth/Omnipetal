@@ -198,16 +198,15 @@ const createWindow = () => {
         })
 
         ipcMain.handle('config', (event, action) => {
-            console.log(action)
-
             if (action == "getVersion") {
                 let pjson = require("../package.json")
                 return pjson.version
             }
 
             if (action == "getConfig") {
-                let pjson = require("../package.json")
-                return pjson
+                const getAppDataPath = require("appdata-path");
+                const config = require(`${getAppDataPath()}/omnipetal/config.json`)
+                return config
             }
         })
     });

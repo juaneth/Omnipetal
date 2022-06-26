@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from '../Resources/icon.png';
-import windowControls from '../windowControls.js'
 import { Link } from "react-router-dom";
 
 const Navbar = ({ pageId, back }) => {
@@ -45,18 +44,18 @@ const Navbar = ({ pageId, back }) => {
             </div>
 
             <div className="flex space-x-2 mr-3 h-[32px]">
-                <a onClick={() => windowControls("min")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <a onClick={() => window.electronAPI.windowControls("min")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
                     <span className="material-icons">
                         remove
                     </span>
                 </a>
-                <a onClick={() => windowControls("max")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <a onClick={() => window.electronAPI.windowControls("max")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
                     <span className="material-icons">
                         check_box_outline_blank
                     </span>
                 </a>
 
-                <a onClick={() => windowControls("close")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
+                <a onClick={() => window.electronAPI.windowControls("close")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
                     <span className="material-icons">close</span>
                 </a>
             </div>
