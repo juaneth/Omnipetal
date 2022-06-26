@@ -1,7 +1,7 @@
 # Omnipetal (Client) - React Rewrite <img src="https://user-images.githubusercontent.com/68202118/162853416-0ca7c63b-0d6d-4d28-9c5c-3f165bb31811.png" width="25" height="25"> [![Discord Link](https://img.shields.io/badge/-Server-5865F2?logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/tt5rmneEN6)
 ## Minecraft Server Manager with Remote Managment and Docker integration
 
-<img src="/src/omnipetal.png" height="300">
+<img src="/src/Resources/omnipetal.png" height="300">
 
 ### If you're looking for our Daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
