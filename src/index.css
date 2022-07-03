@@ -99,24 +99,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-    position: static;
-    top: 400px;
-    background: #2b2b2b;
-}
-
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-    background: #1a1a1a;
-    border-radius: 180px;
-}
-
-
-/* Handle on hover */
-
-::-webkit-scrollbar-thumb:hover {
-    background: #1a1a1a;
+    display: none;
 }
 
 @keyframes fadein {

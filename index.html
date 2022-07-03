@@ -13,10 +13,6 @@
 <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-    <script type="module">
-        window.electronAPI.config("getConfig").then((config) => { document.documentElement.dataset.theme = config.theme; });
-    </script>
 </body>
 
 </html>

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ pageId, back }) => {
     return (
-        <div className="bg-panel h-16 content-center flex items-center shadow-lg px-3 text-center sticky top-0 z-50">
+        <div className="bg-panel h-16 shadow-lg text-center sticky top-0 z-50">
             <div className="flex space-x-4 w-screen items-center">
                 {back == true 
-                    ? (<div className="flex space-x-2 mr-3 justify-center items-center">
+                ? (<div className="flex space-x-2 mr-3 justify-center items-center">
                     <a id="min" className="bg-background h-[32px] w-[32px] flex justify-center items-center shadow-xl text-textSecondary hover:shadow hover:bg-panel hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
                         <span className="material-icons">
                             arrow_back
@@ -16,7 +16,7 @@ const Navbar = ({ pageId, back }) => {
                 </div>)
 
                 : (
-                    <img src={Logo} alt="Icon" className="mx-2 draggable w-[32px] h-[30px]"></img>
+                    <img src={Logo} alt="Icon" className="ml-6 mr-2 draggable w-[32px] h-[30px]"></img>
                 )
                 }
 
@@ -41,23 +41,13 @@ const Navbar = ({ pageId, back }) => {
                 }
 
                 <div className="draggable flex-grow h-16"></div>
+
+                <div className="w-[80px]"></div>
             </div>
-
-            <div className="flex space-x-2 mr-3 h-[32px]">
-                <a onClick={() => window.electronAPI.windowControls("min")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
-                    <span className="material-icons">
-                        remove
-                    </span>
-                </a>
-                <a onClick={() => window.electronAPI.windowControls("max")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
-                    <span className="material-icons">
-                        check_box_outline_blank
-                    </span>
-                </a>
-
-                <a onClick={() => window.electronAPI.windowControls("close")} className="bg-darker shadow-xl text-textSecondary hover:bg-background hover:text-textPrimary p-1 rounded-md text-sm font-medium transition-all">
-                    <span className="material-icons">close</span>
-                </a>
+            <div className="bg-darker p-3 rounded-bl-lg shadow-xl flex fixed right-0 top-0">
+                    <div onClick={() => window.electronAPI.windowControls("min")} className="transition-all rounded-full inline-block mx-0.5 bg-min hover:bg-opacity-50 w-[16px] h-[16px]"></div>
+                    <div onClick={() => window.electronAPI.windowControls("max")} className="transition-all rounded-full inline-block mx-0.5 bg-max hover:bg-opacity-50 w-[16px] h-[16px]"></div>
+                    <div onClick={() => window.electronAPI.windowControls("close")} className="transition-all rounded-full inline-block mx-0.5 bg-close hover:bg-opacity-50 w-[16px] h-[16px]"></div>
             </div>
         </div>
     );

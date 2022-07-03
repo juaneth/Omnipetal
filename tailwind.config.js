@@ -35,7 +35,13 @@ module.exports = {
             backgroundPrimary: withOpacity('--color-backgroundPrimary'),
             backgroundSuccess: withOpacity('--color-backgroundSuccess'),
             backgroundError: withOpacity('--color-backgroundError'),
+
+            'min': '#E4FC53',
+            'max': '#5DF644',
+            'close': '#D94B4B',
         }
     },
-    plugins: [],
+    plugins: [
+        require('flowbite/plugin')
+    ],
 }

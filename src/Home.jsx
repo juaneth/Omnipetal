@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import Navbar from './Components/Navigation'
 import { Link } from "react-router-dom";
 
 function App() {
+  useEffect(() => {
+    // Change theme on start
+    window.electronAPI.config("getConfig").then((config) => { document.documentElement.dataset.theme = config.theme; });
+  }, [])
+
   return (
     <div className="bg-background text-center h-screen w-screen font-[Montserrat]">
       <Navbar pageId={'home'} back={false}></Navbar>
