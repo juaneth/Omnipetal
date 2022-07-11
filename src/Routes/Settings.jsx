@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from '../Components/Navigation'
-import CustomScroll from 'react-custom-scroll';
 
 const version = await window.electronAPI.config('getVersion')
 
@@ -8,7 +7,6 @@ export default function Settings() {
     return (
     <div className="bg-background text-center min-h-screen w-screen font-[Montserrat]">
         <Navbar pageId={'settings'} back={false}></Navbar>
-        <CustomScroll>
             <div className="main-content grid place-items-center">
                 <div className="grid place-items-center">
                     <h1 className="text-textPrimary p-2 pt-6 text-2xl font-semibold">Settings</h1>
@@ -78,8 +76,7 @@ export default function Settings() {
                         </div>
                     </form>
                 </div>
-            </div>
-        </CustomScroll>      
+            </div>    
     </div>
     );
 }

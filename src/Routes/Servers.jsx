@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from '../Components/Navigation'
-import CustomScroll from 'react-custom-scroll';
 
 export default function CreateServer() {
     return (
@@ -17,7 +16,7 @@ export default function CreateServer() {
                     <h1 className="text-textPrimary">Remote</h1>
                     <form className="text-center">
                         <select defaultValue={"default"} className="text-center p-2 w-72 m-2 bg-background text-textPrimary rounded-lg transition-all drop-shadow-xl border-borderGray" id="remotes">
-                            <option value={"default"} disabled hidden className="text-gray-400" id="whatweneedtoupdate">Select Remote</option>
+                            <option value="default" disabled hidden>Select Remote</option>
                         </select>
                     </form>
 

@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from '../Components/Navigation'
-import CustomScroll from 'react-custom-scroll';
 
 export default function Remotes() {
     return (

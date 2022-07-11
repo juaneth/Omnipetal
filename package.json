@@ -26,6 +26,7 @@
         "react-custom-scroll": "^4.4.0",
         "react-dom": "^18.0.0",
         "react-router-dom": "^6.3.0",
+        "recharts": "^2.1.12",
         "update-electron-app": "^2.0.1"
     },
     "devDependencies": {

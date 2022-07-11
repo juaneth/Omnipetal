@@ -97,45 +97,6 @@ const createWindow = () => {
         const image = nativeImage.createFromPath(path.join(__dirname, "Resources", "icon.png"));
         tray = new Tray(image.resize({ width: 16, height: 16 }));
         const contextMenu = Menu.buildFromTemplate([{
-                label: "Create a Server",
-                click: () => {
-                    mainWindow.show();
-                    app.focus();
-                    mainWindow.loadFile(
-                        path.join(__dirname, "/create-server/index.html")
-                    );
-                },
-            },
-            {
-                label: "Manage Servers",
-                click: () => {
-                    mainWindow.show();
-                    app.focus();
-                    mainWindow.loadFile(
-                        path.join(__dirname, "/server-manager/index.html")
-                    );
-                },
-            },
-            {
-                label: "Manage Remotes",
-                click: () => {
-                    mainWindow.show();
-                    app.focus();
-                    mainWindow.loadFile(
-                        path.join(__dirname, "/manage-remotes/index.html")
-                    );
-                },
-            },
-            {
-                label: "Settings",
-                click: () => {
-                    mainWindow.show();
-                    app.focus();
-                    mainWindow.loadFile(path.join(__dirname, "/settings/index.html"));
-                },
-            },
-            { type: "separator", label: " " },
-            {
                 label: "Hide",
                 click: () => {
                     mainWindow.hide();

@@ -1,7 +1,22 @@
 import { useEffect, useState } from 'react'
-import logo from './logo.svg'
 import Navbar from './Components/Navigation'
 import { Link } from "react-router-dom";
+
+function Server({ name, ip }) {
+  return (
+      <div className='bg-background rounded-md p-2'>
+        <h1>{ name }</h1>
+      </div>
+  )
+}
+
+function Remote({ name, ip }) {
+  return (
+      <div className='bg-background rounded-md p-2'>
+        <h1>{ name }</h1>
+      </div>
+  )
+}
 
 function App() {
   useEffect(() => {
@@ -17,15 +32,24 @@ function App() {
               <h1 className="text-textPrimary p-3 pt-6 text-2xl font-semibold">Omnipetal</h1>
 
               <p className="text-textHint p-5">Minecraft Server Manager made with scale, simplicity, beauty and depth in mind</p>
-          </div>
+              {/* <div className='flex space-x-4 rounded-xl'>
+                <div className='bg-panel p-3 rounded-lg text-white'>
+                  <h1 className='mx-3 mb-2'>Servers</h1>
+                  <Server name={"asdasd"} ></Server>
+                </div>
 
-          <div className="bg-panel max-w-lg inline-flex p-6 rounded-lg text-middle">
-              <button  className="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-3 m-3 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50">Create Server</button>
-              <button  className="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-3 m-3 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50">Manage Servers</button>
-              <button  className="bg-panel hover:bg-backgroundPrimary text-textSecondary font-semibold hover:text-textPrimary p-3 m-3 border border-borderPrimary hover:border-transparent transition-all rounded shadow-lg hover:shadow-shadowPrimary/50">Manage Remotes</button>
-          </div>
+                <div className='bg-panel p-3 rounded-lg text-white'>
+                  <h1 className='mx-3 mb-2'>Remotes</h1>
 
-          <p className="text-textHint p-5">Make sure to add a remote before trying to create a server!</p>
+                  <Remote name={"asdasd"} ></Remote>
+                </div>
+              </div> */}
+
+              <div className='bg-panel p-5 m-3 rounded-lg text-white bottom-8'>
+                <h1 className='text-lg text-textSecondary mb-2'>Want help?</h1> 
+                <p className='text-md text-textTertiary'>Either ask in our Discord Server or follow our documentation</p>
+              </div>
+          </div>
         </div>
     </div>
   )
