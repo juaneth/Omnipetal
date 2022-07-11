@@ -15,6 +15,9 @@ We have a GitHub wiki for all documentation [here](https://github.com/juaneth/Om
 Head over to [Getting Started guide here](https://github.com/juaneth/Omnipetal/wiki/Getting-started#client), then follow that and you should be all set <3.
 
 # Developers
+## Minimum Requirements 
+- Yarn 1.22.15
+- Node (Newest version or recommended version)
 ## Getting started
 
 Clone the git repo and install dependencies
