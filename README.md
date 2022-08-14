@@ -1,12 +1,12 @@
 # Omnipetal (Client) <img src="https://user-images.githubusercontent.com/68202118/162853416-0ca7c63b-0d6d-4d28-9c5c-3f165bb31811.png" width="25" height="25"> [![Discord Link](https://img.shields.io/badge/-Server-5865F2?logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/tt5rmneEN6)
-## Minecraft Server Manager with Remote Managment and Docker integration
+## A functional, beautiful, and specialised Minecraft Server Manager
 
 <img src="/src/omnipetal.png" height="300">
 
 ### If you're looking for our Daemon: [Omnipetal-Daemon](https://github.com/juaneth/Omnipetal-Daemon)
 
 # What is it?
-Omnipetal is a client for creating Minecraft Servers remotely using docker
+Omnipetal is a functional, beautiful, and specialised Minecraft Server Manager
 
 # Documentation
 We have a GitHub wiki for all documentation [here](https://github.com/juaneth/Omnipetal/wiki)
