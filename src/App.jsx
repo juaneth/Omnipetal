@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import Navbar from './Components/Navbar'
 
+import * as Remotes from './Config/Remotes'
+import * as Servers from './Config/Servers'
+import * as Settings from './Config/Settings'
+
 function App() {
 
   return (
