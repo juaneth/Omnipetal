@@ -39,7 +39,7 @@ function createWindow() {
 
     // Open the DevTools.
     if (isDev) {
-        mainWindow.loadURL('http://localhost:5173');
+        mainWindow.loadURL('http://localhost:5177');
         mainWindow.webContents.openDevTools();
     } else {
         // mainWindow.removeMenu();
