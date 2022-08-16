@@ -1,149 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-[data-theme="default"] {
-    --color-background: 55, 65, 81;
-    --color-panel: 31, 41, 55;
-    --color-darker: 17, 24, 39;
-    --color-textPrimary: 255, 255, 255;
-    --color-textSecondary: 209, 213, 219;
-    --color-textTertiary: 107, 114, 128;
-    --color-textHint: 156, 163, 175;
-    --color-shadowPrimary: 99, 102, 241;
-    --color-shadowSuccess: 71, 214, 102;
-    --color-shadowError: 214, 71, 71;
-    --color-borderPrimary: 59, 130, 246;
-    --color-borderGray: 75, 85, 99;
-    --color-borderSuccess: 21, 128, 61;
-    --color-borderError: 185, 28, 28;
-    --color-backgroundPrimary: 59, 130, 246;
-    --color-backgroundSuccess: 34, 197, 94;
-    --color-backgroundError: 239, 68, 68;
-}
-
-[data-theme="light"] {
-    --color-background: 240, 240, 240;
-    --color-panel: 220, 220, 230;
-    --color-darker: 255, 255, 255;
-    --color-textPrimary: 0, 0, 0;
-    --color-textSecondary: 50, 50, 50;
-    --color-textTertiary: 75, 75, 75;
-    --color-textHint: 75, 75, 75;
-    --color-shadowPrimary: 99, 102, 241;
-    --color-shadowSuccess: 71, 214, 102;
-    --color-shadowError: 214, 71, 71;
-    --color-borderPrimary: 59, 130, 246;
-    --color-borderGray: 75, 85, 99;
-    --color-borderSuccess: 129, 222, 132;
-    --color-borderError: 227, 136, 136;
-    --color-backgroundPrimary: 220, 220, 250;
-    --color-backgroundSuccess: 174, 255, 156;
-    --color-backgroundError: 255, 156, 156;
-}
-
-[data-theme="midnight"] {
-    --color-background: 1, 2, 11;
-    --color-panel: 1, 10, 20;
-    --color-darker: 0, 0, 22;
-    --color-textPrimary: 255, 255, 255;
-    --color-textSecondary: 212, 212, 214;
-    --color-textTertiary: 145, 144, 144;
-    --color-textHint: 145, 144, 144;
-    --color-shadowPrimary: 0, 3, 150;
-    --color-shadowSuccess: 71, 214, 102;
-    --color-shadowError: 214, 71, 71;
-    --color-borderPrimary: 51, 73, 107;
-    --color-borderGray: 48, 55, 64;
-    --color-borderSuccess: 129, 222, 132;
-    --color-borderError: 227, 136, 136;
-    --color-backgroundPrimary: 2, 2, 41;
-    --color-backgroundSuccess: 66, 191, 52;
-    --color-backgroundError: 186, 28, 49;
-}
-
-[data-theme="extravagant_purple"] {
-    --color-background: 95, 67, 181;
-    --color-panel: 71, 45, 150;
-    --color-darker: 43, 27, 92;
-    --color-textPrimary: 255, 255, 255;
-    --color-textSecondary: 230, 230, 230;
-    --color-textTertiary: 131, 132, 133;
-    --color-textHint: 220, 222, 224;
-    --color-shadowPrimary: 146, 128, 189;
-    --color-shadowSuccess: 94, 145, 111;
-    --color-shadowError: 145, 41, 41;
-    --color-borderPrimary: 147, 84, 255;
-    --color-borderGray: 166, 143, 184;
-    --color-borderSuccess: 36, 92, 57;
-    --color-borderError: 143, 31, 31;
-    --color-backgroundPrimary: 115, 92, 219;
-    --color-backgroundSuccess: 34, 197, 94;
-    --color-backgroundError: 239, 68, 68;
-}
 
 .draggable {
-    -webkit-app-region: drag;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: drag;
 }
 
-.topbar {
-    position: sticky;
-    z-index: 999;
+.non-draggable {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: none;
 }
 
-body {
-    font-family: "Montserrat", sans-serif;
-    user-select: none;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-html {
-    height: 100%;
-}
-
-textarea:focus,
-input:focus {
-    outline: none;
-}
-
-#navbar {
-    position: sticky;
-    top: 0px;
-    z-index: 100;
-}
-
-select:-webkit-scrollbar {
-    /*For WebKit Browsers*/
-    width: 0;
-    height: 0;
-    display: none;
-}
-
-select {
-    scrollbar-width: none;
-    /*For Firefox*/
-    ;
-    -ms-overflow-style: none;
-    /*For Internet Explorer 10+*/
-    ;
-}
-
-.fade-in {
-    animation: fadein 0.3s;
-    -webkit-animation: fadein 0.3s;
-    opacity: 1;
+.main-content {
+  animation: fadein 300ms;
+  -webkit-animation: fadein 300ms;
+  opacity: 1;
 }
 
 @keyframes fadein {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-20px);
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0px);
-        transform: translateY(0px);
-    }
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
 }

@@ -1,93 +1,69 @@
 {
-    "name": "omnipetal",
-    "productName": "omnipetal",
-    "version": "0.0.19",
-    "description": "Manage and create minecraft severs remotely using Docker",
-    "main": "src/index.js",
-    "icon": "src/icon.ico",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/juaneth/omnipetal.git"
-    },
-    "scripts": {
-        "start": "electron-forge start",
-        "dev": "electron-forge start -- dev",
-        "release": "node gh-publish.js",
-        "package": "electron-forge package",
-        "make": "electron-forge make",
-        "publish": "electron-forge publish",
-        "lint": "echo \"No linting configured\"",
-        "tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
-    },
-    "keywords": [],
-    "author": {
-        "name": "Juaneth",
-        "email": "euanwalker2008@gmail.com"
-    },
-    "license": "MIT",
-    "config": {
-        "forge": {
-            "packagerConfig": {
-                "name": "Omnipetal",
-                "executableName": "Omnipetal",
-                "icon": "src/icon.ico"
-            },
-            "makers": [
-                {
-                    "name": "@electron-forge/maker-squirrel",
-                    "config": {
-                        "name": "Omnipetal",
-                        "productName": "Omnipetal",
-                        "icon": "src/icon.ico"
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-dmg",
-                    "config": {
-                        "icon": "src/icon.icns",
-                        "platforms": [
-                            "darwin"
-                        ],
-                        "overwrite": true,
-                        "name": "Omnipetal",
-                        "AdditionalDMGOptions": {
-                            "window": {
-                                "size": {
-                                    "height": 700,
-                                    "width": 500
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-deb",
-                    "config": {}
-                },
-                {
-                    "name": "@electron-forge/maker-rpm",
-                    "config": {}
-                }
-            ]
+  "name": "omnipetal-client",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "description": "A functional, beautiful, and specialised Minecraft Server Manager",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron-forge start",
+    "dev": "concurrently -k \"vite\" \"npm run electron:dev\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "cross-env IS_DEV=true electron-forge start",
+    "electron:build": "electron-forge make",
+    "electron:package": "electron-forge package",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "daisyui": "^2.24.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
+    "@electron-forge/maker-zip": "^6.0.0-beta.65",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.1",
+    "autoprefixer": "^10.4.8",
+    "concurrently": "^7.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "20.0.2",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
+    "vite": "^3.0.7"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "omnipetal_client"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
         }
-    },
-    "dependencies": {
-        "@electron/remote": "^2.0.8",
-        "appdata-path": "^1.0.0",
-        "axios": "^0.27.2",
-        "electron-squirrel-startup": "^1.0.0",
-        "open": "^8.4.0",
-        "shelljs": "^0.8.5",
-        "update-electron-app": "^2.0.1"
-    },
-    "devDependencies": {
-        "@electron-forge/cli": "^6.0.0-beta.63",
-        "@electron-forge/maker-deb": "^6.0.0-beta.63",
-        "@electron-forge/maker-dmg": "^6.0.0-beta.63",
-        "@electron-forge/maker-rpm": "^6.0.0-beta.63",
-        "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
-        "@electron-forge/maker-zip": "^6.0.0-beta.63",
-        "electron": "18.0.3",
-        "tailwindcss": "^3.0.24"
+      ]
     }
+  }
 }
