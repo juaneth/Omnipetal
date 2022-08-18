@@ -69,5 +69,10 @@ export function editRemote(name, action, newData) {
         window.electronAPI.writePasskey(name, newData)
     }
 
+    if (action == "delete") {
+        remotes.splice(obj, 1)
+        window.electronAPI.deletePasskey(name)
+    }
+
     storage.setItem('remotes', JSON.stringify(remotes))
 }

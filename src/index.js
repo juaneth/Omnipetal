@@ -128,6 +128,14 @@ function createWindow() {
             store.set('passkeys.' + name, encryptedPasskey);
         }))
 
+        ipcMain.handle('deletePasskey', (async (event, name) => {
+            if (safeStorage.isEncryptionAvailable() === false) {
+                return "ENCRYPTIONFAILED"
+            }
+
+            store.delete('passkeys.' + name);
+        }))
+
         ipcMain.handle('readPasskey', (async (event, name) => {
             if (safeStorage.isEncryptionAvailable() === false) {
                 return "ENCRYPTIONFAILED"
