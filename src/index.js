@@ -6,10 +6,15 @@ const {
     autoUpdater,
     dialog,
     webContents,
+    safeStorage,
     ipcMain
 } = require("electron");
 const nativeImage = require("electron").nativeImage;
 const path = require("path");
+const Store = require('electron-store');
+const { setDefaultResultOrder } = require("dns");
+
+const store = new Store();
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -112,6 +117,26 @@ function createWindow() {
                 app.quit();
             }
         })
+
+        ipcMain.handle('writePasskey', (async (name, passkey) => {
+            if (safeStorage.isEncryptionAvailable() === false) {
+                return "ENCRYPTIONFAILED"
+            }
+
+            const encryptedPasskey = safeStorage.encryptString(passkey)
+
+            store.set('passkeys.' + name, encryptedPasskey);
+        }))
+
+        ipcMain.handle('readPasskey', (async (name) => {
+            if (safeStorage.isEncryptionAvailable() === false) {
+                return "ENCRYPTIONFAILED"
+            }
+
+            const encryptedPasskey = store.get('passkeys.' + name)
+
+            return safeStorage.decryptString(Buffer.from(encryptedPasskey, 'utf8'))
+        }))
     });
 }
 

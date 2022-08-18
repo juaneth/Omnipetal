@@ -6,8 +6,11 @@ import * as Servers from './Config/Servers'
 import * as Settings from './Config/Settings'
 
 function App() {
-
-  Remotes.createRemote("name", "ip", "port", "passkey")
+  window.electronAPI.writePasskey('AAABBBCCC', 'CCCBBBAAA').then(() => {
+    window.electronAPI.readPasskey('AAABBBCCC').then((response) => {
+      console.log(response)
+    })
+  })
 
   return (
     <div className="w-full min-h-screen max-w-screen font-montserrat">
