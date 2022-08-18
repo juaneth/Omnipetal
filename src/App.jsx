@@ -6,11 +6,9 @@ import * as Servers from './Config/Servers'
 import * as Settings from './Config/Settings'
 
 function App() {
-  window.electronAPI.writePasskey('AAABBBCCC', 'CCCBBBAAA').then(() => {
-    window.electronAPI.readPasskey('AAABBBCCC').then((response) => {
-      console.log(response)
-    })
-  })
+  if (Remotes.createRemote('JUANETH', '1.1.1.1', '8080', 'MYPASSKEY') == "IPINVALID") {
+    console.log("IPINVALID")
+  }
 
   return (
     <div className="w-full min-h-screen max-w-screen font-montserrat">

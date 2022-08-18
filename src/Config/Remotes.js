@@ -1,7 +1,13 @@
 const storage = window.localStorage
 
 export function getRemotes() {
+    if (storage.getItem('remotes') === null) {
+        return "NOREMOTESFOUND"
+    }
 
+    let remotes = JSON.parse(storage.getItem('remotes'))
+
+    return remotes
 }
 
 export function createRemote(name, ip, port, passkey) {
@@ -27,13 +33,33 @@ export function createRemote(name, ip, port, passkey) {
 
     storage.setItem('remotes', JSON.stringify(remotes))
 
-    window.electronAPI.writePasskey(passkey).then(response => {
-        console.log(response)
+    window.electronAPI.writePasskey(name, passkey).then(() => {
+        window.electronAPI.readPasskey(name).then((response) => {
+            console.log(response)
+        })
     })
 }
 
-export function editRemote(name) {
+export function editRemote(name, action, newData) {
     let remotes = JSON.parse(storage.getItem('remotes'))
 
     let obj = remotes.find(o => o.name === name);
+
+    if (action = "name") {
+        obj.name = newData
+
+        window.electronAPI.writePasskey(name, newData)
+    }
+
+    if (action = "ip") {
+        obj.ip = newData
+    }
+
+    if (action = "port") {
+        obj.port = newData
+    }
+
+    if (action = "passkey") {
+        window.electronAPI.writePasskey(name, newData)
+    }
 }

@@ -118,7 +118,7 @@ function createWindow() {
             }
         })
 
-        ipcMain.handle('writePasskey', (async (name, passkey) => {
+        ipcMain.handle('writePasskey', (async (event, name, passkey) => {
             if (safeStorage.isEncryptionAvailable() === false) {
                 return "ENCRYPTIONFAILED"
             }
@@ -128,12 +128,14 @@ function createWindow() {
             store.set('passkeys.' + name, encryptedPasskey);
         }))
 
-        ipcMain.handle('readPasskey', (async (name) => {
+        ipcMain.handle('readPasskey', (async (event, name) => {
             if (safeStorage.isEncryptionAvailable() === false) {
                 return "ENCRYPTIONFAILED"
             }
 
             const encryptedPasskey = store.get('passkeys.' + name)
+
+            console.log('passkeys.' + name)
 
             return safeStorage.decryptString(Buffer.from(encryptedPasskey, 'utf8'))
         }))
