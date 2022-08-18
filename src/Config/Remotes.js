@@ -29,37 +29,45 @@ export function createRemote(name, ip, port, passkey) {
 
     let remotes = JSON.parse(storage.getItem('remotes'))
 
-    remotes.push({ name, ip, port })
+    let obj = remotes.findIndex(o => o.name === name);
 
-    storage.setItem('remotes', JSON.stringify(remotes))
+    console.log(remotes[obj])
 
-    window.electronAPI.writePasskey(name, passkey).then(() => {
-        window.electronAPI.readPasskey(name).then((response) => {
-            console.log(response)
-        })
-    })
+    if (remotes[obj] == undefined) {
+        remotes.push({ name, ip, port })
+
+        storage.setItem('remotes', JSON.stringify(remotes))
+
+        window.electronAPI.writePasskey(name, passkey)
+    }
 }
 
 export function editRemote(name, action, newData) {
     let remotes = JSON.parse(storage.getItem('remotes'))
 
-    let obj = remotes.find(o => o.name === name);
+    let obj = remotes.findIndex(o => o.name === name);
 
-    if (action = "name") {
-        obj.name = newData
+    if (remotes[obj] === undefined) {
+        return ("DOESNTEXIST")
+    }
+
+    if (action == "name") {
+        remotes[obj].name = newData
 
         window.electronAPI.writePasskey(name, newData)
     }
 
-    if (action = "ip") {
-        obj.ip = newData
+    if (action == "ip") {
+        remotes[obj].ip = newData
     }
 
-    if (action = "port") {
-        obj.port = newData
+    if (action == "port") {
+        remotes[obj].port = newData
     }
 
-    if (action = "passkey") {
+    if (action == "passkey") {
         window.electronAPI.writePasskey(name, newData)
     }
+
+    storage.setItem('remotes', JSON.stringify(remotes))
 }
