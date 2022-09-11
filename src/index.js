@@ -6,15 +6,10 @@ const {
     autoUpdater,
     dialog,
     webContents,
-    safeStorage,
     ipcMain
 } = require("electron");
 const nativeImage = require("electron").nativeImage;
 const path = require("path");
-const Store = require('electron-store');
-const { setDefaultResultOrder } = require("dns");
-
-const store = new Store();
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -31,8 +26,8 @@ function createWindow() {
     const mainWindow = new BrowserWindow({
         width: 1200,
         height: 650,
-        minWidth: 1000,
-        minHeight: 500,
+        minWidth: 560,
+        minHeight: 260,
         frame: false,
         title: "Omnipetal",
         backgroundColor: '#FFF',
@@ -44,7 +39,7 @@ function createWindow() {
 
     // Open the DevTools.
     if (isDev) {
-        mainWindow.loadURL('http://localhost:5177');
+        mainWindow.loadURL('http://localhost:5173');
         mainWindow.webContents.openDevTools();
     } else {
         // mainWindow.removeMenu();
@@ -117,36 +112,6 @@ function createWindow() {
                 app.quit();
             }
         })
-
-        ipcMain.handle('writePasskey', (async (event, name, passkey) => {
-            if (safeStorage.isEncryptionAvailable() === false) {
-                return "ENCRYPTIONFAILED"
-            }
-
-            const encryptedPasskey = safeStorage.encryptString(passkey)
-
-            store.set('passkeys.' + name, encryptedPasskey);
-        }))
-
-        ipcMain.handle('deletePasskey', (async (event, name) => {
-            if (safeStorage.isEncryptionAvailable() === false) {
-                return "ENCRYPTIONFAILED"
-            }
-
-            store.delete('passkeys.' + name);
-        }))
-
-        ipcMain.handle('readPasskey', (async (event, name) => {
-            if (safeStorage.isEncryptionAvailable() === false) {
-                return "ENCRYPTIONFAILED"
-            }
-
-            const encryptedPasskey = store.get('passkeys.' + name)
-
-            console.log('passkeys.' + name)
-
-            return safeStorage.decryptString(Buffer.from(encryptedPasskey, 'utf8'))
-        }))
     });
 }
 

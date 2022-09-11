@@ -4,8 +4,7 @@ import Navbar from '../Components/Navbar'
 function App() {
 
     return (
-        <div className="w-full min-h-screen max-w-screen">
-            <Navbar pageID={"settings"}></Navbar>
+        <div>
 
         </div>
     )

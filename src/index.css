@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: Montserrat, system-ui, sans-serif;
+  }
+}
+
 .draggable {
   -webkit-user-select: none;
   user-select: none;
@@ -16,8 +22,8 @@
 }
 
 .main-content {
-  animation: fadein 200ms;
-  -webkit-animation: fadein 200ms;
+  animation: fadein 300ms;
+  -webkit-animation: fadein 300ms;
   opacity: 1;
 }
 
