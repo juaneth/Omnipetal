@@ -31,8 +31,8 @@ function createWindow() {
     const mainWindow = new BrowserWindow({
         width: 1200,
         height: 650,
-        minWidth: 560,
-        minHeight: 260,
+        minWidth: 1000,
+        minHeight: 500,
         frame: false,
         title: "Omnipetal",
         backgroundColor: '#FFF',

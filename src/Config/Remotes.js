@@ -31,8 +31,6 @@ export function createRemote(name, ip, port, passkey) {
 
     let obj = remotes.findIndex(o => o.name === name);
 
-    console.log(remotes[obj])
-
     if (remotes[obj] == undefined) {
         remotes.push({ name, ip, port })
 
