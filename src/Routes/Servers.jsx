@@ -11,7 +11,11 @@ function Servers() {
 
   console.log(id);
 
-  return <div>yahh: {id}</div>;
+  if (id == undefined) {
+    return <div>Select a Server</div>;
+  }
+
+  return <div>Server: {id}</div>;
 }
 
 export default Servers;
