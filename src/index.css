@@ -22,8 +22,8 @@
 }
 
 .main-content {
-  animation: fadein 300ms;
-  -webkit-animation: fadein 300ms;
+  animation: fadein 150ms;
+  -webkit-animation: fadein 150ms;
   opacity: 1;
 }
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Navbar from '../Components/Navbar'
 
-function App() {
+function Settings() {
 
     return (
         <div>
@@ -10,4 +10,4 @@ function App() {
     )
 }
 
-export default App
+export default Settings
