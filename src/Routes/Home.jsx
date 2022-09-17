@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../Components/Navbar";
+import { Link } from "react-router-dom";
 
 import { getSettings, editSettings, resetSettings } from "../Config/Settings";
 import { getServers, createServer, editServer } from "../Config/Servers";
@@ -17,7 +18,12 @@ function ServerElement() {
 
       <p>{server.software + ", " + server.version}</p>
 
-      <button className="btn bg-info/80 hover:bg-info/50">Manage</button>
+      <Link
+        to={`/servers/${server.name}/`}
+        className="btn bg-info/80 hover:bg-info/50"
+      >
+        Manage
+      </Link>
     </div>
   ));
   return <div className="flex flex-col space-y-2 mt-3">{servers}</div>;
