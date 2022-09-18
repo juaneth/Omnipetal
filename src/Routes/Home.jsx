@@ -8,25 +8,32 @@ import { getRemotes, createRemote, editRemote } from "../Config/Remotes";
 
 console.log("DEV", getServers());
 
+createRemote("test", "1.1.1.1", "404", "AAA");
+
 function ServerElement() {
-  const servers = getServers().map((server) => (
-    <div
-      key={server.name}
-      className="p-3 rounded-lg bg-secondary shadow-lg flex flex-col space-y-2 text-center"
-    >
-      <b>{server.name}</b>
-
-      <p>{server.software + ", " + server.version}</p>
-
-      <Link
-        to={`/servers/${server.name}/`}
-        className="btn bg-info/80 hover:bg-info/50"
+  try {
+    const servers = getServers().map((server) => (
+      <div
+        key={server.name}
+        className="p-3 rounded-lg bg-secondary shadow-lg flex flex-col space-y-2 text-center"
       >
-        Manage
-      </Link>
-    </div>
-  ));
-  return <div className="flex flex-col space-y-2 mt-3">{servers}</div>;
+        <b>{server.name}</b>
+
+        <p>{server.software + ", " + server.version}</p>
+
+        <Link
+          to={`/servers/${server.name}/`}
+          className="btn bg-info/80 hover:bg-info/50"
+        >
+          Manage
+        </Link>
+      </div>
+    ));
+
+    return <div className="flex flex-col space-y-2 mt-3">{servers}</div>;
+  } catch {
+    return <div className="text-sm opacity-50 mt-3">No Servers Found</div>;
+  }
 }
 
 function Home() {

@@ -12,10 +12,10 @@ function Servers() {
   console.log(id);
 
   if (id == undefined) {
-    return <div>Select a Server</div>;
+    return <div className="main-content">Select a Server</div>;
   }
 
-  return <div>Server: {id}</div>;
+  return <div className="main-content">Server: {id}</div>;
 }
 
 export default Servers;

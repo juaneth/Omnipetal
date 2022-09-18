@@ -8,34 +8,38 @@ import { getRemotes, createRemote, editRemote } from "../Config/Remotes";
 function Remotes() {
   const { remote } = useParams();
 
-  console.log(remote);
-
   function RemotesElement() {
     try {
-      const remotes = getRemotes().map((server) => (
+      const remotes = getRemotes().map((remote) => (
         <div
-          key={server.name}
-          className="p-3 rounded-lg bg-secondary shadow-lg flex flex-col space-y-2 text-center"
+          key={remote.name}
+          className="p-3 rounded-lg bg-secondary shadow-lg flex flex-col justify-center items-center space-y-3 text-center w-fit"
         >
-          <b>{server.name}</b>
+          <b>{remote.name}</b>
 
-          <p>{server.ip + ":" + server.port}</p>
+          <div className="flex flex-row justify-center items-center space-x-2">
+            <p>{`IP: ${remote.ip} Port: ${remote.port}`}</p>
+
+            <div className="bg-success h-3 w-3 rounded-full drop-shadow-xl"></div>
+          </div>
 
           <Link
-            to={`/remotes/${server.name}`}
-            className="btn bg-info/80 hover:bg-info/50"
+            to={`/remotes/${remote.name}/`}
+            className="btn bg-info/80 hover:bg-info/50 w-48"
           >
-            Select
+            Manage
           </Link>
         </div>
       ));
+
+      return <div className="flex flex-col space-y-2 mt-3">{remotes}</div>;
     } catch {
-      return <b className="text-bold">No Remotes Found</b>;
+      return <div className="text-sm opacity-50 mt-3">No remotes Found</div>;
     }
-    return <div className="flex flex-col space-y-2 mt-3">{remotes}</div>;
   }
+
   return (
-    <div>
+    <div className="main-content">
       <RemotesElement></RemotesElement>
     </div>
   );
