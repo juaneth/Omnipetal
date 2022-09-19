@@ -6,14 +6,16 @@ import { getSettings, editSettings, resetSettings } from "../Config/Settings";
 import { getServers, createServer, editServer } from "../Config/Servers";
 import { getRemotes, createRemote, editRemote } from "../Config/Remotes";
 function Remotes() {
-  const { remote } = useParams();
+  const { id } = useParams();
+
+  console.log(id)
 
   function RemotesElement() {
     try {
       const remotes = getRemotes().map((remote) => (
         <div
           key={remote.name}
-          className="p-3 rounded-lg bg-secondary shadow-lg flex flex-col justify-center items-center space-y-3 text-center w-fit"
+          className="p-3 rounded-lg bg-primary shadow-lg flex flex-col justify-center items-center space-y-3 text-center w-fit"
         >
           <b>{remote.name}</b>
 
@@ -32,14 +34,14 @@ function Remotes() {
         </div>
       ));
 
-      return <div className="flex flex-col space-y-2 mt-3">{remotes}</div>;
+      return <div className="flex flex-col space-y-2">{remotes}</div>;
     } catch {
-      return <div className="text-sm opacity-50 mt-3">No remotes Found</div>;
+      return <div className="text-sm opacity-50">No remotes Found</div>;
     }
   }
 
   return (
-    <div className="main-content">
+    <div className='main-content'>
       <RemotesElement></RemotesElement>
     </div>
   );

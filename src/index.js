@@ -7,6 +7,7 @@ const {
     dialog,
     webContents,
     ipcMain,
+    safeStorage
 } = require("electron");
 const nativeImage = require("electron").nativeImage;
 const path = require("path");
@@ -24,10 +25,10 @@ const isDev = process.env.IS_DEV === "true";
 function createWindow() {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-        width: 1200,
-        height: 650,
-        minWidth: 560,
-        minHeight: 260,
+        width: 1400,
+        height: 720,
+        minWidth: 1400,
+        minHeight: 720,
         frame: false,
         title: "Omnipetal",
         backgroundColor: "#FFF",

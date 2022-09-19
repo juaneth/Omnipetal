@@ -4,7 +4,7 @@ import Navbar from '../Components/Navbar'
 function Settings() {
 
     return (
-        <div>
+        <div className='main-content'>
 
         </div>
     )
