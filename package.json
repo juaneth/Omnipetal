@@ -1,6 +1,6 @@
 {
   "name": "omnipetal-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "src/index.js",
   "description": "A functional, beautiful, and specialised Minecraft Server Manager",
   "license": "MIT",
@@ -13,10 +13,11 @@
     "electron:build": "electron-forge make",
     "electron:package": "electron-forge package",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "vite build && electron-forge make"
   },
   "dependencies": {
     "daisyui": "^2.24.0",
+    "electron-forge": "^5.2.4",
     "electron-squirrel-startup": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -24,10 +25,10 @@
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.65",
-    "@electron-forge/maker-deb": "^6.0.0-beta.65",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.66",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
     "@electron-forge/maker-zip": "^6.0.0-beta.65",
+    "@electron-forge/publisher-github": "^6.0.0-beta.66",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
@@ -35,33 +36,62 @@
     "concurrently": "^7.3.0",
     "cross-env": "^7.0.3",
     "electron": "20.0.2",
+    "electron-prebuilt-compile": "8.2.0",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
     "vite": "^3.0.7"
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "name": "Omnipetal",
+        "executableName": "Omnipetal",
+        "icon": "src/icon.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "omnipetal_client"
+            "name": "Omnipetal",
+            "productName": "Omnipetal Client",
+            "icon": "resources/icon.png"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "icon": "src/icon.png",
+            "platforms": [
+              "darwin"
+            ],
+            "overwrite": true,
+            "name": "Omnipetal",
+            "AdditionalDMGOptions": {
+              "window": {
+                "size": {
+                  "height": 700,
+                  "width": 500
+                }
+              }
+            }
           }
         },
         {
           "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
+          "config": {
+            "icon": "src/icon.png",
+            "name": "Omnipetal"
+          }
         },
         {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "juaneth",
+              "name": "Omnipetal"
+            },
+            "prerelease": true
+          }
         }
       ]
     }
