@@ -61,7 +61,7 @@
         {
           "name": "@electron-forge/maker-dmg",
           "config": {
-            "icon": "src/icon.png",
+            "icon": "resources/icon.png",
             "platforms": [
               "darwin"
             ],
