@@ -1,6 +1,7 @@
 {
   "name": "omnipetal-client",
   "version": "0.1.0",
+  "author": {"name": "juaneth"},
   "main": "src/index.js",
   "description": "A functional, beautiful, and specialised Minecraft Server Manager",
   "license": "MIT",
@@ -52,6 +53,7 @@
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
+          "authors": "juaneth",
           "config": {
             "name": "Omnipetal",
             "productName": "Omnipetal Client",
