@@ -1,6 +1,6 @@
 {
   "name": "omnipetal-client",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "main": "src/index.js",
   "description": "A functional, beautiful, and specialised Minecraft Server Manager",
   "license": "MIT",
@@ -25,10 +25,12 @@
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
     "@electron-forge/maker-dmg": "^6.0.0-beta.66",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-snap": "^6.0.0-beta.66",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
     "@electron-forge/maker-zip": "^6.0.0-beta.65",
-    "@electron-forge/publisher-github": "^6.0.0-beta.66",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
@@ -36,7 +38,6 @@
     "concurrently": "^7.3.0",
     "cross-env": "^7.0.3",
     "electron": "20.0.2",
-    "electron-prebuilt-compile": "8.2.0",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
     "vite": "^3.0.7"
@@ -77,21 +78,7 @@
           }
         },
         {
-          "name": "@electron-forge/maker-zip",
-          "config": {
-            "icon": "src/icon.png",
-            "name": "Omnipetal"
-          }
-        },
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "juaneth",
-              "name": "Omnipetal"
-            },
-            "prerelease": true
-          }
+          "name": "@electron-forge/maker-zip"
         }
       ]
     }
