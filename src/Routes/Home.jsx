@@ -6,10 +6,10 @@ import { getSettings, editSettings, resetSettings } from "../Config/Settings";
 import { getServers, createServer, editServer } from "../Config/Servers";
 import { getRemotes, createRemote, editRemote } from "../Config/Remotes";
 
-createServer('TEST1', "REMOTE2", "VANILLA", "1.8.9")
-createServer('TEST2', "REMOTE2", "VANILLA", "1.8.9")
-createServer('TEST3', "REMOTE2", "VANILLA", "1.8.9")
-createServer('TEST4', "REMOTE2", "VANILLA", "1.8.9")
+createServer("TEST1", "REMOTE2", "VANILLA", "1.8.9");
+createServer("TEST2", "REMOTE2", "VANILLA", "1.8.9");
+createServer("TEST3", "REMOTE2", "VANILLA", "1.8.9");
+createServer("TEST4", "REMOTE2", "VANILLA", "1.8.9");
 
 console.log("DEV", getServers());
 
@@ -35,7 +35,7 @@ function ServerElement() {
 
     return <div className="flex flex-col space-y-2 mt-3">{servers}</div>;
   } catch {
-    return <p className="text-sm opacity-50 mt-3 ml-0.5">No servers found</p>
+    return <p className="text-sm opacity-50 mt-3 ml-0.5">No servers found</p>;
   }
 }
 
@@ -65,7 +65,7 @@ function RemotesElement() {
 
     return <div className="flex flex-col space-y-2 mt-3">{remotes}</div>;
   } catch {
-    return <p className="text-sm opacity-50 mt-3 ml-0.5">No remotes found</p>
+    return <p className="text-sm opacity-50 mt-3 ml-0.5">No remotes found</p>;
   }
 }
 
@@ -83,7 +83,9 @@ function Home() {
             Your Servers
           </h1>
 
-          <ServerElement></ServerElement>
+          <div>
+            <ServerElement></ServerElement>
+          </div>
         </div>
         <div className="basis-2/4 bg-primary p-4 rounded-lg shadow-lg overflow-auto">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 bg-base-100 w-fit p-2 px-3 rounded-lg shadow-lg z-10">
