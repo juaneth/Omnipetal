@@ -78,26 +78,28 @@ function Home() {
       </p>
 
       <div className="flex flex-row space-x-3 h-full mx-6 my-2 max-h-[calc(100vh_-_8rem)]">
-        <div className="basis-1/4 bg-primary p-3 rounded-lg shadow-lg overflow-auto">
-          <h1 className="text-white/80 font-semibold text-left sticky top-0 bg-base-100 w-fit p-2 px-3 rounded-lg shadow-lg z-10">
+        <div className="basis-1/4 bg-primary rounded-lg shadow-lg overflow-auto">
+          <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Servers
           </h1>
 
-          <div>
+          <div className="p-3 pt-0">
             <ServerElement></ServerElement>
           </div>
         </div>
-        <div className="basis-2/4 bg-primary p-4 rounded-lg shadow-lg overflow-auto">
-          <h1 className="text-white/80 font-semibold text-left sticky top-0 bg-base-100 w-fit p-2 px-3 rounded-lg shadow-lg z-10">
-            Create a new server
+        <div className="basis-2/4 bg-primary rounded-lg shadow-lg overflow-auto">
+          <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
+            Create a Server
           </h1>
         </div>
-        <div className="basis-1/4 bg-primary p-4 rounded-lg shadow-lg overflow-auto">
-          <h1 className="text-white/80 font-semibold text-left sticky top-0 bg-base-100 w-fit p-2 px-3 rounded-lg shadow-lg z-10">
+        <div className="basis-1/4 bg-primary rounded-lg shadow-lg overflow-auto">
+          <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Remotes
           </h1>
 
-          <RemotesElement></RemotesElement>
+          <div className="p-4">
+            <RemotesElement></RemotesElement>
+          </div>
         </div>
       </div>
     </div>
