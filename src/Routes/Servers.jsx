@@ -6,7 +6,7 @@ import { getSettings, editSettings, resetSettings } from "../Config/Settings";
 import { getServers, createServer, editServer } from "../Config/Servers";
 import { getRemotes, createRemote, editRemote } from "../Config/Remotes";
 
-import collapse from '../Resources/icons/collapse.svg'
+import collapse from "../Resources/icons/collapse.svg";
 
 function Servers() {
   const { id } = useParams();
@@ -18,9 +18,7 @@ function Servers() {
     setSelectedServer(id);
   });
 
-  function collapseMenu() {
-
-  }
+  function collapseMenu() {}
 
   function ServersListElement() {
     try {
@@ -55,14 +53,28 @@ function Servers() {
         <div className="flex flex-col space-y-4">
           <div className="text-white/80 font-semibold flex flex-row text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             <p className="grow text-lg">Your Servers</p>
-              <div className="tooltip z-40 tooltip-left" data-tip="Collapse This Menu">
-              <div className="btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0" onClick={() => {
-                    setMenuVisibility(!menuVisibilty)
-                  }}>
-                  <img src={collapse} alt="Close Panel" className="h-5 w-5 m-0 p-0" />
-                </div>
+            <div
+              className="tooltip z-40 tooltip-left"
+              data-tip="Collapse This Menu"
+            >
+              <div
+                className={
+                  menuVisibilty == true
+                    ? "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0"
+                    : "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0 rotate-180"
+                }
+                onClick={() => {
+                  setMenuVisibility(!menuVisibilty);
+                }}
+              >
+                <img
+                  src={collapse}
+                  alt="Close Panel"
+                  className="h-5 w-5 m-0 p-0"
+                />
               </div>
             </div>
+          </div>
 
           <div className="p-3 space-y-3 pt-0">{servers}</div>
         </div>
@@ -83,11 +95,13 @@ function Servers() {
   return (
     <div className="main-content">
       <div className="flex flex-row space-x-3 m-6">
-        <div className={
-              menuVisibilty == true
-                ? "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4l"
-                : "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4 -translate-x-72 transition" 
-            }>
+        <div
+          className={
+            menuVisibilty == true
+              ? "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4l"
+              : "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4 -translate-x-72 transition"
+          }
+        >
           <div className="bg-primary h-full shadow-lg overflow-auto rounded-lg flex flex-col">
             <ServersListElement></ServersListElement>
           </div>
@@ -97,17 +111,24 @@ function Servers() {
           <button className="btn mt-3">Create A New Server</button>
         </div>
 
-        <div className={
-              menuVisibilty == true
-                ? "divider divider-horizontal w-1 mx-0"
-                : "divider divider-horizontal w-1 mx-0 -translate-x-72 transition"
-            }></div>
+        <div
+          className={
+            menuVisibilty == true
+              ? "divider divider-horizontal w-1 mx-0"
+              : "divider divider-horizontal w-1 mx-0 -translate-x-72 transition"
+          }
+        ></div>
 
-        <div className={
-              menuVisibilty == true
-                ? "h-full"
-                : "h-full -translate-x-72 transition"
-            }> Selected: {selectedServer}</div>
+        <div
+          className={
+            menuVisibilty == true
+              ? "h-full"
+              : "h-full -translate-x-72 transition"
+          }
+        >
+          {" "}
+          Selected: {selectedServer}
+        </div>
       </div>
     </div>
   );
