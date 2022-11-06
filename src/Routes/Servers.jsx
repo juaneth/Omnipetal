@@ -54,25 +54,20 @@ function Servers() {
           <div className="text-white/80 font-semibold flex flex-row text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             <p className="grow text-lg">Your Servers</p>
             <div
-              className="tooltip z-40 tooltip-left"
-              data-tip="Collapse This Menu"
+              className={
+                menuVisibilty == true
+                  ? "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0"
+                  : "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0 rotate-180"
+              }
+              onClick={() => {
+                setMenuVisibility(!menuVisibilty);
+              }}
             >
-              <div
-                className={
-                  menuVisibilty == true
-                    ? "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0"
-                    : "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0 rotate-180"
-                }
-                onClick={() => {
-                  setMenuVisibility(!menuVisibilty);
-                }}
-              >
-                <img
-                  src={collapse}
-                  alt="Close Panel"
-                  className="h-5 w-5 m-0 p-0"
-                />
-              </div>
+              <img
+                src={collapse}
+                alt="Close Panel"
+                className="h-5 w-5 m-0 p-0"
+              />
             </div>
           </div>
 
@@ -98,7 +93,7 @@ function Servers() {
         <div
           className={
             menuVisibilty == true
-              ? "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4l"
+              ? "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4l transition"
               : "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4 -translate-x-72 transition"
           }
         >
@@ -114,7 +109,7 @@ function Servers() {
         <div
           className={
             menuVisibilty == true
-              ? "divider divider-horizontal w-1 mx-0"
+              ? "divider divider-horizontal w-1 mx-0 transition"
               : "divider divider-horizontal w-1 mx-0 -translate-x-72 transition"
           }
         ></div>
@@ -122,7 +117,7 @@ function Servers() {
         <div
           className={
             menuVisibilty == true
-              ? "h-full"
+              ? "h-full transition"
               : "h-full -translate-x-72 transition"
           }
         >
