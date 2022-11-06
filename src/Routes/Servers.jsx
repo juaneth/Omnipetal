@@ -86,7 +86,7 @@ function Servers() {
         <div className={
               menuVisibilty == true
                 ? "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4l"
-                : "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4 -translate-x-72 transition"
+                : "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4 -translate-x-72 transition" 
             }>
           <div className="bg-primary h-full shadow-lg overflow-auto rounded-lg flex flex-col">
             <ServersListElement></ServersListElement>
@@ -106,7 +106,7 @@ function Servers() {
         <div className={
               menuVisibilty == true
                 ? "h-full"
-                : "h-full"
+                : "h-full -translate-x-72 transition"
             }> Selected: {selectedServer}</div>
       </div>
     </div>
