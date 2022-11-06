@@ -20,18 +20,20 @@ function Servers() {
       const servers = getServers().map((server) => (
         <div
           key={server.name}
-          className="rounded-lg bg-secondary shadow-lg p-3 flex flex-col justify-center items-center space-y-3 text-center w-full"
+          className="rounded-lg bg-secondary shadow-lg p-4 flex flex-row justify-center items-center space-x-3 text-center w-full"
         >
-          <b>{server.name}</b>
+          <div className="flex-1 text-left">
+            <b>{server.name}</b>
 
-          <p>{server.software + ", " + server.version}</p>
+            <p>{server.software + ", " + server.version}</p>
+          </div>
 
           <Link
             to={`/servers/${server.name}/`}
             className={
               selectedServer == server.name
-                ? "btn bg-success/80 hover:bg-success/50 w-full"
-                : "btn bg-info/80 hover:bg-info/50 w-full"
+                ? "btn bg-success/80 hover:bg-success/50 w-32"
+                : "btn bg-info/80 hover:bg-info/50 w-32"
             }
             onClick={() => {
               setSelectedServer(server.name);
@@ -67,7 +69,7 @@ function Servers() {
   return (
     <div className="main-content">
       <div className="flex flex-row space-x-3 m-6">
-        <div className="w-72 h-[calc(100vh_-_7rem)] flex flex-col space-y-4">
+        <div className="w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4">
           <div className="bg-primary h-full shadow-lg overflow-auto rounded-lg relative flex flex-col">
             <ServersListElement></ServersListElement>
           </div>

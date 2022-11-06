@@ -18,15 +18,17 @@ function ServerElement() {
     const servers = getServers().map((server) => (
       <div
         key={server.name}
-        className="p-3 rounded-lg bg-secondary shadow-lg flex flex-col justify-center items-center space-y-3 text-center w-full overflow-auto"
+        className="rounded-lg bg-secondary shadow-lg p-4 flex flex-row justify-center items-center space-x-3 text-center w-full overflow-auto"
       >
-        <b>{server.name}</b>
+        <div className="flex-1 text-left">
+          <b>{server.name}</b>
 
-        <p>{server.software + ", " + server.version}</p>
+          <p>{server.software + ", " + server.version}</p>
+        </div>
 
         <Link
           to={`/servers/${server.name}/`}
-          className="btn bg-info/80 hover:bg-info/50 w-full"
+          className="btn bg-info/80 hover:bg-info/50 w-32 min-w-lg"
         >
           Manage
         </Link>
@@ -65,7 +67,7 @@ function RemotesElement() {
 
     return <div className="flex flex-col space-y-2 mt-3">{remotes}</div>;
   } catch {
-    return <p className="text-sm opacity-50 mt-3 ml-0.5">No remotes found</p>;
+    return <p className="text-sm opacity-50 m-0.5">No remotes found</p>;
   }
 }
 
@@ -77,7 +79,7 @@ function Home() {
         Server Manager
       </p>
 
-      <div className="flex flex-row space-x-3 h-full mx-6 my-2 max-h-[calc(100vh_-_8rem)]">
+      <div className="flex flex-row space-x-3 max-h-[calc(100vh_-_8rem)] mx-6 my-2">
         <div className="basis-1/4 bg-primary rounded-lg shadow-lg overflow-auto">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Servers

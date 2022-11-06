@@ -9,7 +9,7 @@ function Navbar() {
 
   if (isElectron() == true) {
     return (
-      <div className="navbar sticky top-0 p-0 bg-primary shadow-xl">
+      <div className="navbar sticky top-0 p-0 bg-primary shadow-xl z-50">
         <div className="pr-5 h-3 text-center align-middle draggable">
           <img src={Icon} alt="icon" className="max-w-6 max-h-6 ml-4 mr-2" />
           <h1 className="font-bold text-[12pt]">Omnipetal</h1>
