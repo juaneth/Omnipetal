@@ -11,16 +11,14 @@ createServer("TEST2", "REMOTE2", "VANILLA", "1.8.9");
 createServer("TEST3", "REMOTE2", "VANILLA", "1.8.9");
 createServer("TEST4", "REMOTE2", "VANILLA", "1.8.9");
 
-console.log("DEV", getServers());
-
 function ServerElement() {
   try {
     const servers = getServers().map((server) => (
       <div
         key={server.name}
-        className="rounded-lg bg-secondary shadow-lg p-4 flex flex-row justify-center items-center space-x-3 text-center w-full overflow-auto"
+        className="rounded-lg bg-secondary shadow-lg p-4 flex flex-col lg:flex-row justify-center items-center lg:space-x-3 sm:space-y-2 text-center w-full overflow-auto"
       >
-        <div className="flex-1 text-left">
+        <div className="flex-1 sm:text-center lg:text-left">
           <b>{server.name}</b>
 
           <p>{server.software + ", " + server.version}</p>
@@ -28,7 +26,7 @@ function ServerElement() {
 
         <Link
           to={`/servers/${server.name}/`}
-          className="btn bg-info/80 hover:bg-info/50 w-32 min-w-lg"
+          className="btn bg-info/80 hover:bg-info/50 w-32"
         >
           Manage
         </Link>

@@ -49,7 +49,8 @@
             "packagerConfig": {
                 "name": "Omnipetal",
                 "executableName": "Omnipetal",
-                "icon": "src/icon.ico"
+                "icon": "src/resources/icon.ico",
+                "asar": true
             },
             "makers": [{
                     "name": "@electron-forge/maker-squirrel",
@@ -57,7 +58,7 @@
                     "config": {
                         "name": "Omnipetal",
                         "productName": "Omnipetal Client",
-                        "icon": "resources/icon.png"
+                        "icon": "src/resources/icon.ico"
                     }
                 },
                 {
