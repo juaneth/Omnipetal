@@ -4,10 +4,10 @@ import App from "./App";
 import "./index.css";
 
 // Routes
-import Home from "./Routes/Home";
-import Servers from "./Routes/Servers";
-import Remotes from "./Routes/Remotes";
-import Settings from "./Routes/Settings";
+import Home from "./Routes/Home/Home.jsx";
+import Servers from "./Routes/Servers/Servers.jsx";
+import Remotes from "./Routes/Remotes/Remotes.jsx";
+import Settings from "./Routes/Settings/Settings.jsx";
 
 import { HashRouter, Routes, Route } from "react-router-dom";
 

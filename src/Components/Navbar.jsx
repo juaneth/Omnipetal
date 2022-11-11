@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Icon from "../Resources/icon-noBg-zoom.png";
 import "../index.css";
 import isElectron from "is-electron";
 
 function Navbar() {
-  const [activeTab, setActiveTab] = useState("home");
+  const [activeTab, setActiveTab] = useState(location.pathname.split("/")[1]);
 
   if (isElectron() == true) {
     return (
