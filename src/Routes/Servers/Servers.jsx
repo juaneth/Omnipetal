@@ -81,10 +81,26 @@ function Servers() {
       );
     } catch {
       return (
-        <div className="flex flex-col space-y-3">
-          <h1 className="text-white/80 font-semibold text-left sticky top-0 bg-base-100 w-fit p-2 px-3 rounded-lg shadow-lg z-10">
-            Your Servers
-          </h1>
+        <div className="flex flex-col space-y-4">
+          <div className="text-white/80 font-semibold flex flex-row text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
+            <p className="grow text-lg">Your Servers</p>
+            <div
+              className={
+                menuVisibilty == true
+                  ? "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0"
+                  : "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0 rotate-180"
+              }
+              onClick={() => {
+                setMenuVisibility(!menuVisibilty);
+              }}
+            >
+              <img
+                src={collapse}
+                alt="Close Panel"
+                className="h-5 w-5 m-0 p-0"
+              />
+            </div>
+          </div>
 
           <p className="text-sm opacity-50 ml-0.5">No servers found</p>
         </div>

@@ -10,11 +10,6 @@ import {
 import { getServers, createServer, editServer } from "../../Config/Servers";
 import { getRemotes, createRemote, editRemote } from "../../Config/Remotes";
 
-createServer("TEST1", "REMOTE2", "VANILLA", "1.8.9");
-createServer("TEST2", "REMOTE2", "VANILLA", "1.8.9");
-createServer("TEST3", "REMOTE2", "VANILLA", "1.8.9");
-createServer("TEST4", "REMOTE2", "VANILLA", "1.8.9");
-
 function ServerElement() {
   try {
     const servers = getServers().map((server) => (
@@ -69,7 +64,7 @@ function RemotesElement() {
 
     return <div className="flex flex-col space-y-2 mt-3">{remotes}</div>;
   } catch {
-    return <p className="text-sm opacity-50 m-0.5">No remotes found</p>;
+    return <p className="text-sm opacity-50 mt-3 ml-0.5">No remotes found</p>;
   }
 }
 
@@ -101,7 +96,7 @@ function Home() {
             Your Remotes
           </h1>
 
-          <div className="p-4">
+          <div className="p-3 pt-0">
             <RemotesElement></RemotesElement>
           </div>
         </div>
