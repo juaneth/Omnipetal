@@ -2,13 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import Navbar from "../../Components/Navbar";
 import { useParams, Link } from "react-router-dom";
 
-import {
-  getSettings,
-  editSettings,
-  resetSettings,
-} from "../../Config/Settings";
-
-import { getServers, createServer, editServer } from "../../Config/Servers";
+import { getSettings } from "../../Config/Settings";
+import { getServers } from "../../Config/Servers";
 import { getRemotes, createRemote, editRemote } from "../../Config/Remotes";
 
 import collapse from "../../Resources/icons/collapse.svg";
@@ -20,6 +15,7 @@ function Remotes() {
 
   const [selectedRemote, setselectedRemote] = useState(id);
   const [menuVisibilty, setMenuVisibility] = useState(true);
+  const [remotesList, setRemotes] = useState(getRemotes());
 
   useEffect(() => {
     setselectedRemote(id);
@@ -28,7 +24,7 @@ function Remotes() {
   function RemoteListElement() {
     // Server Element
     try {
-      const remotes = getRemotes().map((remote) => (
+      const remotes = remotesList.map((remote) => (
         <div
           key={remote.name}
           className="rounded-lg bg-secondary shadow-lg p-4 flex flex-row justify-center items-center space-x-3 text-center w-full"

@@ -6445,6 +6445,11 @@
   dependencies:
     "minipass" "^3.1.1"
 
+"store-js@^2.0.4":
+  "integrity" "sha512-ap3Tcpc5kbPnUOpty9g5v7XozAxPylPokzhPxnQ4EtyTbjt+pHw4GVgxkng8vxcT1R9ZShXY/aCKqAQrhjTESA=="
+  "resolved" "https://registry.npmjs.org/store-js/-/store-js-2.0.4.tgz"
+  "version" "2.0.4"
+
 "streamsink@~1.2.0":
   "integrity" "sha512-MJ440L2+j2vmc1v8Z/BkMx3X+HsJ++V7mgDROboQKxqCLZdNbu+AeSwQbayXw3LPHVAMxw+h7ZJUnyFYl/zp2g=="
   "resolved" "https://registry.npmjs.org/streamsink/-/streamsink-1.2.0.tgz"

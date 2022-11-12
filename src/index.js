@@ -12,13 +12,12 @@ const {
 const nativeImage = require("electron").nativeImage;
 const path = require("path");
 
+const store = require('store-js')
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
     app.quit();
 }
-
-// Disable hardware acceleration for lower end hardware (my gf's laptop)
-app.disableHardwareAcceleration();
 
 const isDev = process.env.IS_DEV === "true";
 

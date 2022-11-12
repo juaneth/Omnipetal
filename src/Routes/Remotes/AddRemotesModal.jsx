@@ -9,7 +9,7 @@ function RemoteModal() {
   const PasskeyRef = useRef();
 
   function addRemotePush() {
-    console.log("AAA");
+    window.location.reload();
     createRemote(
       NameRef.current.value,
       IpRef.current.value,
@@ -21,7 +21,7 @@ function RemoteModal() {
   return (
     <div>
       <input type="checkbox" id="addRemote" className="modal-toggle" />
-      <div className="modal transition in-out">
+      <div className="modal transition in-out w-full">
         <div className="modal-box">
           <h1 className="text-lg font-bold">Add Remote</h1>
           <div className="flex flex-row w-full space-x-6 mt-2">
