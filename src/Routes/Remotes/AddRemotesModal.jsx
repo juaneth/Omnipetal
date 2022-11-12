@@ -9,13 +9,13 @@ function RemoteModal() {
   const PasskeyRef = useRef();
 
   function addRemotePush() {
-    window.location.reload();
     createRemote(
       NameRef.current.value,
       IpRef.current.value,
       PortRef.current.value,
       PasskeyRef.current.value
     );
+    window.location.reload();
   }
 
   return (
