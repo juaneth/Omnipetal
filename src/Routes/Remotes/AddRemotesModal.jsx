@@ -24,32 +24,32 @@ function RemoteModal() {
       <div className="modal transition in-out w-full">
         <div className="modal-box">
           <h1 className="text-lg font-bold">Add Remote</h1>
-          <div className="flex flex-row w-full space-x-6 mt-2">
+          <div className="flex flex-col w-full space-y-2 mt-2">
             <input
               type="text"
               placeholder="Name"
-              className="input input-bordered basis-1/4"
+              className="input input-bordered basis-1/4 py-3"
               ref={NameRef}
             />
 
             <input
               type="text"
               placeholder="IP Address"
-              className="input input-bordered basis-1/4"
+              className="input input-bordered basis-1/4 py-3"
               ref={IpRef}
             />
 
             <input
               type="text"
               placeholder="Port"
-              className="input input-bordered basis-1/4"
+              className="input input-bordered basis-1/4 py-3"
               ref={PortRef}
             />
 
             <input
               type="text"
               placeholder="Passkey"
-              className="input input-bordered basis-1/4"
+              className="input input-bordered basis-1/4 py-3"
               ref={PasskeyRef}
             />
           </div>

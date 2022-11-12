@@ -13,6 +13,8 @@ import { getRemotes, createRemote, editRemote } from "../../Config/Remotes";
 
 import collapse from "../../Resources/icons/collapse.svg";
 
+import ServerModal from "./AddServersModal";
+
 function Servers() {
   const { id } = useParams();
 
@@ -110,6 +112,7 @@ function Servers() {
 
   return (
     <div className="main-content">
+      <ServerModal></ServerModal>
       <div className="flex flex-row space-x-3 m-6">
         <div
           className={
@@ -124,9 +127,9 @@ function Servers() {
 
           <div className="divider mx-6">OR</div>
 
-          <button htmlFor="addServer" className="btn mt-3">
-            Create A New Server
-          </button>
+          <label htmlFor="addServer" className="btn mt-3">
+            Create a Server
+          </label>
         </div>
 
         <div
