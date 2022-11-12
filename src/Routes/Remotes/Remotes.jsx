@@ -13,6 +13,8 @@ import { getRemotes, createRemote, editRemote } from "../../Config/Remotes";
 
 import collapse from "../../Resources/icons/collapse.svg";
 
+import RemoteModal from "./AddRemotesModal";
+
 function Remotes() {
   const { id } = useParams();
 
@@ -34,7 +36,7 @@ function Remotes() {
           <div className="flex-1 text-left">
             <b>{remote.name}</b>
 
-            <p>{remote.software + ", " + remote.version}</p>
+            <p>{`IP: ${remote.ip}, Port: ${remote.port}`}</p>
           </div>
 
           <Link
@@ -76,17 +78,33 @@ function Remotes() {
             </div>
           </div>
 
-          <div className="p-3 space-y-3 pt-0">{servers}</div>
+          <div className="p-3 space-y-3 pt-0">{remotes}</div>
         </div>
       );
     } catch {
       return (
         <div className="flex flex-col space-y-3">
-          <h1 className="text-white/80 font-semibold text-left sticky top-0 bg-base-100 w-fit p-2 px-3 rounded-lg shadow-lg z-10">
-            Your Remotes
-          </h1>
+          <div className="text-white/80 font-semibold flex flex-row text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
+            <p className="grow text-lg">Your Remotes</p>
+            <div
+              className={
+                menuVisibilty == true
+                  ? "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0"
+                  : "btn btn-circle bg-neutral/80 hover:bg-neutral/50 btn-sm p-0 rotate-180"
+              }
+              onClick={() => {
+                setMenuVisibility(!menuVisibilty);
+              }}
+            >
+              <img
+                src={collapse}
+                alt="Close Panel"
+                className="h-5 w-5 m-0 p-0"
+              />
+            </div>
+          </div>
 
-          <p className="text-sm opacity-50 ml-0.5">No remotes found</p>
+          <p className="text-sm opacity-50 ml-4">No remotes found</p>
         </div>
       );
     }
@@ -94,6 +112,7 @@ function Remotes() {
 
   return (
     <div className="main-content">
+      <RemoteModal></RemoteModal>
       <div className="flex flex-row space-x-3 m-6">
         <div
           className={
@@ -108,7 +127,9 @@ function Remotes() {
 
           <div className="divider mx-6">OR</div>
 
-          <button className="btn mt-3">Create A New Server</button>
+          <label htmlFor="addRemote" className="btn mt-3">
+            Add a new Remote
+          </label>
         </div>
 
         <div

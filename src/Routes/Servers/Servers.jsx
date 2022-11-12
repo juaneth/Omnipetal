@@ -102,7 +102,7 @@ function Servers() {
             </div>
           </div>
 
-          <p className="text-sm opacity-50 ml-0.5">No servers found</p>
+          <p className="text-sm opacity-50 ml-4">No servers found</p>
         </div>
       );
     }
@@ -124,7 +124,9 @@ function Servers() {
 
           <div className="divider mx-6">OR</div>
 
-          <button className="btn mt-3">Create A New Server</button>
+          <button htmlFor="addServer" className="btn mt-3">
+            Create A New Server
+          </button>
         </div>
 
         <div

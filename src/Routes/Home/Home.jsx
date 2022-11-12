@@ -9,6 +9,8 @@ import {
 } from "../../Config/Settings";
 import { getServers, createServer, editServer } from "../../Config/Servers";
 import { getRemotes, createRemote, editRemote } from "../../Config/Remotes";
+createRemote("test1", "1.1.1.1", "8080", "passkey");
+createServer("Test2");
 
 function ServerElement() {
   try {
@@ -43,19 +45,17 @@ function RemotesElement() {
     const remotes = getRemotes().map((remote) => (
       <div
         key={remote.name}
-        className="p-3 rounded-lg bg-secondary shadow-lg flex flex-col justify-center items-center space-y-3 text-center w-full"
+        className="rounded-lg bg-secondary shadow-lg p-4 flex flex-col lg:flex-row justify-center items-center lg:space-x-3 sm:space-y-2 text-center w-full overflow-auto"
       >
-        <b>{remote.name}</b>
+        <div className="flex-1 sm:text-center lg:text-left">
+          <b>{remote.name}</b>
 
-        <div className="flex flex-row justify-center items-center space-x-2">
-          <p>{`IP: ${remote.ip} Port: ${remote.port}`}</p>
-
-          <div className="bg-success h-3 w-3 rounded-full shadow-xl"></div>
+          <p>{`IP: ${remote.ip}:${remote.port}`}</p>
         </div>
 
         <Link
           to={`/remotes/${remote.name}/`}
-          className="btn bg-info/80 hover:bg-info/50 w-full"
+          className="btn bg-info/80 hover:bg-info/50 w-32"
         >
           Manage
         </Link>
