@@ -74,7 +74,7 @@ function Home() {
     <div className="main-content">
       <RemoteModal></RemoteModal>
       <ServerModal></ServerModal>
-      <p className="text-white/50 font-semibold text-left mt-4 ml-6 text-[11pt]">
+      <p className="text-white/50 font-semibold text-left ml-6 text-[11pt]">
         Welcome to Omnipetal, A functional, beautiful and specialised Minecraft
         Server Manager
       </p>

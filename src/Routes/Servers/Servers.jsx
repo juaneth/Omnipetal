@@ -113,12 +113,12 @@ function Servers() {
   return (
     <div className="main-content">
       <ServerModal></ServerModal>
-      <div className="flex flex-row space-x-3 m-6">
+      <div className="flex flex-row space-x-3 m-6 mt-0">
         <div
           className={
             menuVisibilty == true
-              ? "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4 transition"
-              : "w-96 h-[calc(100vh_-_7rem)] flex flex-col space-y-4 -translate-x-72 transition"
+              ? "w-96 h-[calc(100vh_-_5.5rem)] flex flex-col space-y-4 transition"
+              : "w-96 h-[calc(100vh_-_5.5rem)] flex flex-col space-y-4 -translate-x-72 transition"
           }
         >
           <div className="bg-primary h-full shadow-lg overflow-auto rounded-lg flex flex-col">
