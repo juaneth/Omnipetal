@@ -5,7 +5,11 @@ import "../index.css";
 import isElectron from "is-electron";
 
 function Navbar() {
-  const [activeTab, setActiveTab] = useState(location.pathname.split("/")[1]);
+  const [activeTab, setActiveTab] = useState(
+    useLocation().pathname.split("/")[1]
+  );
+
+  console.log(useLocation(), useLocation().pathname.split("/")[1], activeTab);
 
   if (isElectron() == true) {
     return (

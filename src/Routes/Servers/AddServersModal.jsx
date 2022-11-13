@@ -15,6 +15,7 @@ function ServerModal() {
       SoftwareRef.current.value,
       VersionRef.current.value
     );
+    
     window.location.reload();
   }
 
