@@ -1,4 +1,4 @@
-import { getRemotes, createRemote, editRemote } from "../../Config/Remotes";
+import { getServers, createServer, editServer } from "../../Config/Servers";
 
 import React, { useRef } from "react";
 
@@ -9,7 +9,7 @@ function ServerModal() {
   const VersionRef = useRef();
 
   function addServerPush() {
-    createRemote(
+    createServer(
       NameRef.current.value,
       RemoteRef.current.value,
       SoftwareRef.current.value,

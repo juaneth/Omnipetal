@@ -10,6 +10,9 @@ import {
 import { getServers, createServer, editServer } from "../../Config/Servers";
 import { getRemotes, createRemote, editRemote } from "../../Config/Remotes";
 
+import ServerModal from "../Servers/AddServersModal";
+import RemoteModal from "../Remotes/AddRemotesModal";
+
 function ServerElement() {
   try {
     const servers = getServers().map((server) => (
@@ -69,34 +72,52 @@ function RemotesElement() {
 function Home() {
   return (
     <div className="main-content">
+      <RemoteModal></RemoteModal>
+      <ServerModal></ServerModal>
       <p className="text-white/50 font-semibold text-left mt-4 ml-6 text-[11pt]">
         Welcome to Omnipetal, A functional, beautiful and specialised Minecraft
         Server Manager
       </p>
 
-      <div className="flex flex-row space-x-3 max-h-[calc(100vh_-_8rem)] mx-6 my-2">
-        <div className="basis-1/4 bg-primary rounded-lg shadow-lg overflow-auto">
+      <div className="flex flex-row space-x-3 h-[calc(100vh_-_8rem)] mx-6 my-2">
+        <div className="basis-1/3 flex flex-col bg-primary rounded-lg shadow-lg overflow-auto">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Servers
           </h1>
 
-          <div className="p-3 pt-0">
+          <div className="p-3 pt-0 grow">
             <ServerElement></ServerElement>
           </div>
+
+          <div className="flex flex-row p-3 pt-0 space-x-3">
+            <div className="w-full flex flex-col transition">
+              <label htmlFor="addServer" className="btn">
+                Create a Server
+              </label>
+            </div>
+          </div>
         </div>
-        <div className="basis-2/4 bg-primary rounded-lg shadow-lg overflow-auto">
-          <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
-            Create a Server
-          </h1>
-        </div>
-        <div className="basis-1/4 bg-primary rounded-lg shadow-lg overflow-auto">
+        <div className="basis-1/3 flex flex-col bg-primary rounded-lg shadow-lg overflow-auto">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Remotes
           </h1>
 
-          <div className="p-3 pt-0">
+          <div className="p-3 pt-0 flex-grow">
             <RemotesElement></RemotesElement>
           </div>
+
+          <div className="flex flex-row p-3 pt-0 space-x-3">
+            <div className="w-full flex flex-col transition">
+              <label htmlFor="addRemote" className="btn">
+                Add a new Remote
+              </label>
+            </div>
+          </div>
+        </div>
+        <div className="basis-1/3 bg-primary rounded-lg shadow-lg overflow-auto">
+          <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
+            News/Updates
+          </h1>
         </div>
       </div>
     </div>
