@@ -21,6 +21,8 @@ if (require("electron-squirrel-startup")) {
 
 const isDev = process.env.IS_DEV === "true";
 
+require('update-electron-app')()
+
 function createWindow() {
     // Create the browser window.
     const mainWindow = new BrowserWindow({

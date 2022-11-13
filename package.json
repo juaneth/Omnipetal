@@ -1,6 +1,10 @@
 {
     "name": "omnipetal-client",
-    "version": "0.1.0",
+    "version": "0.1.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/juaneth/Omnipetal.git"
+    },
     "author": {
         "name": "juaneth"
     },
@@ -27,7 +31,8 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.3.0",
-        "store-js": "^2.0.4"
+        "store-js": "^2.0.4",
+        "update-electron-app": "^2.0.1"
     },
     "devDependencies": {
         "@electron-forge/cli": "^6.0.0-beta.65",
@@ -53,8 +58,7 @@
                 "icon": "src/resources/icon.ico",
                 "asar": true
             },
-            "makers": [
-                {
+            "makers": [{
                     "name": "@electron-forge/maker-squirrel",
                     "authors": "juaneth",
                     "config": {
