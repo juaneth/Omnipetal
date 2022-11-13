@@ -28,28 +28,28 @@ function RemoteModal() {
             <input
               type="text"
               placeholder="Name"
-              className="input input-bordered basis-1/4 py-3"
+              className="input input-bordered"
               ref={NameRef}
             />
 
             <input
               type="text"
               placeholder="IP Address"
-              className="input input-bordered basis-1/4 py-3"
+              className="input input-bordered"
               ref={IpRef}
             />
 
             <input
               type="text"
               placeholder="Port"
-              className="input input-bordered basis-1/4 py-3"
+              className="input input-bordered"
               ref={PortRef}
             />
 
             <input
               type="text"
               placeholder="Passkey"
-              className="input input-bordered basis-1/4 py-3"
+              className="input input-bordered"
               ref={PasskeyRef}
             />
           </div>

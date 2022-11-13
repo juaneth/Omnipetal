@@ -9,8 +9,6 @@ import {
 } from "../../Config/Settings";
 import { getServers, createServer, editServer } from "../../Config/Servers";
 import { getRemotes, createRemote, editRemote } from "../../Config/Remotes";
-createRemote("test1", "1.1.1.1", "8080", "passkey");
-createServer("Test2");
 
 function ServerElement() {
   try {

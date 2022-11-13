@@ -24,24 +24,17 @@ function ServerModal() {
       <div className="modal transition in-out w-full">
         <div className="modal-box">
           <h1 className="text-lg font-bold">Create a Server</h1>
-          <div className="flex flex-row w-full space-x-6 mt-2">
+          <div className="flex flex-col w-full space-y-3 mt-2">
             <input
               type="text"
               placeholder="Name"
-              className="input input-bordered basis-1/4"
+              className="input input-bordered"
               ref={NameRef}
-            />
-
-            <input
-              type="select"
-              placeholder="IP Address"
-              className="input input-bordered "
-              ref={RemoteRef}
             />
 
             <select
               defaultValue={"DEFAULT"}
-              className="select select-bordered basis-1/4"
+              className="select select-bordered"
               ref={RemoteRef}
             >
               <option disabled value={"DEFAULT"}>
@@ -49,19 +42,27 @@ function ServerModal() {
               </option>
             </select>
 
-            <input
-              type="text"
-              placeholder="Port"
-              className="input input-bordered basis-1/4"
-              ref={SoftwareRef}
-            />
+            <div className="flex flex-row space-x-4">
+              <select
+                defaultValue={"DEFAULT"}
+                className="select select-bordered flex-grow"
+                ref={RemoteRef}
+              >
+                <option disabled value={"DEFAULT"}>
+                  Software
+                </option>
+              </select>
 
-            <input
-              type="text"
-              placeholder="Passkey"
-              className="input input-bordered basis-1/4"
-              ref={VersionRef}
-            />
+              <select
+                defaultValue={"DEFAULT"}
+                className="select select-bordered flex-grow"
+                ref={RemoteRef}
+              >
+                <option disabled value={"DEFAULT"}>
+                  Version
+                </option>
+              </select>
+            </div>
           </div>
           <div className="modal-action">
             <label htmlFor="addServer" className="btn">
