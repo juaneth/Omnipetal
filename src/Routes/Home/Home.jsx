@@ -46,7 +46,7 @@ function RemotesElement() {
     const remotes = getRemotes().map((remote) => (
       <div
         key={remote.name}
-        className="rounded-lg bg-secondary shadow-lg p-4 flex flex-col lg:flex-row justify-center items-center lg:space-x-3 sm:space-y-2 text-center w-full overflow-auto"
+        className="rounded-lg bg-secondary shadow-lg p-4 sm:flex sm:flex-col auto-cols-auto lg:flex-row justify-center items-center lg:space-x-3 sm:space-y-2 text-center w-full overflow-auto sm:w-full w-fit"
       >
         <div className="flex-1 sm:text-center lg:text-left">
           <b>{remote.name}</b>
@@ -63,7 +63,11 @@ function RemotesElement() {
       </div>
     ));
 
-    return <div className="flex flex-col space-y-2 mt-3">{remotes}</div>;
+    return (
+      <div className="sm:flex sm:flex-col grid grid-flow-col auto-cols-max auto-rows-auto sm:space-y-2 space-y-0 sm:space-x-0 space-x-2 mt-3">
+        {remotes}
+      </div>
+    );
   } catch {
     return <p className="text-sm opacity-50 mt-3 ml-0.5">No remotes found</p>;
   }
@@ -79,7 +83,7 @@ function Home() {
         Server Manager
       </p>
 
-      <div className="flex flex-row space-x-3 h-[calc(100vh_-_8rem)] mx-6 my-2">
+      <div className="flex sm:flex-row flex-col md:space-x-3 sm:space-y-0 space-y-4  h-[calc(100vh_-_8rem)] mx-6 my-2">
         <div className="basis-1/3 flex flex-col bg-primary rounded-lg shadow-lg overflow-auto">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Servers
@@ -89,7 +93,7 @@ function Home() {
             <ServerElement></ServerElement>
           </div>
           <div className="w-full flex flex-col p-3 bg-secondary shadow-t-xl sticky z-20 bottom-0">
-            <label htmlFor="addServer" className="btn">
+            <label htmlFor="addServer" className="btn sm:btn-md btn-sm">
               Create a Server
             </label>
           </div>

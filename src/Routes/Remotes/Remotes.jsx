@@ -136,14 +136,7 @@ function Remotes() {
           }
         ></div>
 
-        <div
-          className={
-            menuVisibilty == true ? "h-full transition" : "h-full transition"
-          }
-        >
-          {" "}
-          Selected: {selectedRemote}
-        </div>
+        <div className="h-full transition grow">Selected: {selectedRemote}</div>
       </div>
     </div>
   );
