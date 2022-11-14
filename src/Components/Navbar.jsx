@@ -12,7 +12,7 @@ function Navbar() {
     <div className="navbar sticky top-0 p-0 z-50 bg-base-100">
       <div className="pr-5 h-3 text-center align-middle draggable">
         <img src={Icon} alt="icon" className="max-w-6 max-h-6 ml-4 mr-2" />
-        <h1 className="font-bold text-[12pt]">Omnipetal</h1>
+        <h1 className="font-bold text-[12pt] sm:block hidden">Omnipetal</h1>
       </div>
       <div className="tabs space-x-2 items-center">
         <Link
