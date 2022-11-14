@@ -138,9 +138,7 @@ function Remotes() {
 
         <div
           className={
-            menuVisibilty == true
-              ? "h-full transition"
-              : "h-full -translate-x-72 transition"
+            menuVisibilty == true ? "h-full transition" : "h-full transition"
           }
         >
           {" "}

@@ -88,13 +88,10 @@ function Home() {
           <div className="p-3 pt-0 grow">
             <ServerElement></ServerElement>
           </div>
-
-          <div className="flex flex-row p-3 pt-0 space-x-3">
-            <div className="w-full flex flex-col transition">
-              <label htmlFor="addServer" className="btn">
-                Create a Server
-              </label>
-            </div>
+          <div className="w-full flex flex-col p-3 bg-secondary shadow-t-xl sticky z-20 bottom-0">
+            <label htmlFor="addServer" className="btn">
+              Create a Server
+            </label>
           </div>
         </div>
         <div className="basis-1/3 flex flex-col bg-primary rounded-lg shadow-lg overflow-auto">
@@ -106,12 +103,10 @@ function Home() {
             <RemotesElement></RemotesElement>
           </div>
 
-          <div className="flex flex-row p-3 pt-0 space-x-3">
-            <div className="w-full flex flex-col transition">
-              <label htmlFor="addRemote" className="btn">
-                Add a new Remote
-              </label>
-            </div>
+          <div className="w-full flex flex-col p-3 bg-secondary shadow-t-xl sticky z-20 bottom-0">
+            <label htmlFor="addRemote" className="btn">
+              Add a new Remote
+            </label>
           </div>
         </div>
         <div className="basis-1/3 bg-primary rounded-lg shadow-lg overflow-auto">

@@ -5,7 +5,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="w-full min-h-screen max-w-screen">
+    <div className="w-full h-screen w-screen">
       <Navbar></Navbar>
 
       <Outlet />
