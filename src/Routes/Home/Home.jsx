@@ -28,7 +28,7 @@ function ServerElement() {
 
         <Link
           to={`/servers/${server.name}/`}
-          className="btn bg-info/80 hover:bg-info/50 w-32"
+          className="btn bg-info/80 hover:bg-info/50 lg:w-32 w-full"
         >
           Manage
         </Link>
@@ -60,7 +60,7 @@ function RemotesElement() {
 
         <Link
           to={`/remotes/${remote.name}/`}
-          className="btn bg-info/80 hover:bg-info/50 w-32"
+          className="btn bg-info/80 hover:bg-info/50 lg:w-32 w-full"
         >
           Manage
         </Link>
