@@ -15,6 +15,7 @@ function RemoteModal() {
       PortRef.current.value,
       PasskeyRef.current.value
     );
+
     window.location.reload();
   }
 
@@ -47,7 +48,7 @@ function RemoteModal() {
             />
 
             <input
-              type="text"
+              type="password"
               placeholder="Passkey"
               className="input input-bordered"
               ref={PasskeyRef}

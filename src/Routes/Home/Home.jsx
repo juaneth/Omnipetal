@@ -79,7 +79,7 @@ function RemotesElement() {
 
 function Home() {
   return (
-    <div className="main-content">
+    <div className="main-content grow flex flex-col">
       <RemoteModal></RemoteModal>
       <ServerModal></ServerModal>
       <p className="text-white/50 font-semibold text-left ml-6 text-[11pt] sm:block hidden">
@@ -87,7 +87,7 @@ function Home() {
         Server Manager
       </p>
 
-      <div className="flex sm:flex-row flex-col md:space-x-3 sm:space-y-0 space-y-4  h-[calc(100vh_-_8rem)] mx-6 my-2">
+      <div className="flex sm:flex-row flex-col md:space-x-3 sm:space-y-0 space-y-4 grow m-6 mt-2">
         <div className="sm:basis-1/3 sm:h-full h-fit flex flex-col bg-primary rounded-lg shadow-lg overflow-auto">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Servers
