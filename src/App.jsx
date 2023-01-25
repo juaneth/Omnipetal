@@ -5,7 +5,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="h-screen w-screen flex flex-col">
+    <div className="flex flex-col">
       <Navbar></Navbar>
 
       <Outlet />

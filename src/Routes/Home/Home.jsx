@@ -87,13 +87,13 @@ function Home() {
         Server Manager
       </p>
 
-      <div className="flex sm:flex-row flex-col md:space-x-3 sm:space-y-0 space-y-4 grow m-6 mt-2">
-        <div className="sm:basis-1/3 sm:h-full h-fit flex flex-col bg-primary rounded-lg shadow-lg overflow-auto">
+      <div className="flex sm:flex-row flex-col md:space-x-3 sm:space-y-0 space-y-4 m-6 mt-2 flex-grow">
+        <div className="sm:basis-1/3 flex flex-col bg-primary rounded-lg shadow-lg">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Servers
           </h1>
 
-          <div className="p-3 pt-0 grow">
+          <div className="p-3 pt-0 overflow-y-scroll grow">
             <ServerElement></ServerElement>
           </div>
           <div className="w-full flex flex-col p-3 bg-secondary shadow-t-xl sticky z-20 bottom-0">
@@ -102,12 +102,12 @@ function Home() {
             </label>
           </div>
         </div>
-        <div className="sm:basis-1/3 sm:h-full h-fit flex flex-col bg-primary rounded-lg shadow-lg overflow-auto">
+        <div className="sm:basis-1/3 flex flex-col bg-primary rounded-lg shadow-lg">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             Your Remotes
           </h1>
 
-          <div className="p-3 pt-0 flex-grow">
+          <div className="p-3 pt-0 overflow-y-scroll grow">
             <RemotesElement></RemotesElement>
           </div>
 
@@ -117,7 +117,7 @@ function Home() {
             </label>
           </div>
         </div>
-        <div className="sm:basis-1/3 sm:block hidden bg-primary rounded-lg shadow-lg overflow-auto">
+        <div className="sm:basis-1/3 flex flex-col bg-primary rounded-lg shadow-lg">
           <h1 className="text-white/80 font-semibold text-left sticky top-0 w-full p-3 px-4 shadow-lg z-10 bg-secondary">
             News/Updates
           </h1>

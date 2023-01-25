@@ -10,11 +10,11 @@ function Navbar() {
   );
   return (
     <div className="navbar sticky top-0 p-0 z-50 bg-base-100">
-      <div className="pr-5 h-3 text-center align-middle draggable">
-        <img src={Icon} alt="icon" className="max-w-6 max-h-6 ml-4 mr-2" />
+      <div className="sm:pr-5 pr-3 h-3 text-center align-middle draggable">
+        <img src={Icon} alt="icon" className="max-w-6 max-h-6 ml-5 sm:mr-2" />
         <h1 className="font-bold text-[12pt] sm:block hidden">Omnipetal</h1>
       </div>
-      <div className="tabs space-x-2 items-center">
+      <div className="tabs sm:space-x-2 space-x-1 items-center">
         <Link
           className={
             activeTab == "home"
